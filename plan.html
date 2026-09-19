@@ -306,12 +306,40 @@ footer{padding:44px 0 70px;color:var(--muted)}
   body{background:#fff}
   .paper,.hero-map,.branch,.risk,.kpi,.check-card{box-shadow:none}
 }
+
+/* v3: параллельные стратегии и альтернативы */
+.strategy-switch{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.strategy-btn{border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:10px 13px;cursor:pointer;font-weight:900;color:var(--ink)}
+.strategy-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.strategy-card{padding:22px}
+.strategy-top{display:grid;grid-template-columns:1.12fr .88fr;gap:18px;align-items:start}
+.strategy-name{font-size:34px;font-weight:1000;letter-spacing:-.04em}
+.strategy-desc{font-size:18px;color:var(--muted);margin-top:6px}
+.strategy-route{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:18px 0 0}
+.strategy-route span{padding:9px 11px;border-radius:12px;background:#fff;border:1px solid var(--line);font-weight:850}
+.strategy-route i{font-style:normal;color:var(--mint);font-size:22px;font-weight:1000}
+.strategy-side{display:grid;gap:8px}.strategy-side .tiny{padding:11px 12px}
+.parallel-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lane{padding:18px;position:relative;overflow:hidden}.lane:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px}
+.lane.fast:before{background:var(--green)}.lane.b2b:before{background:var(--blue)}.lane.b2c:before{background:var(--orange)}
+.lane-head{display:flex;justify-content:space-between;gap:10px;align-items:start}.lane-head .icon{font-size:31px}.lane-goal{color:var(--muted);min-height:48px;margin-top:6px}
+.lane-flow{display:grid;gap:7px;margin-top:13px}.flow-step{position:relative;padding:10px 11px;border-radius:13px;border:1px solid var(--line);background:#fff;font-weight:800}
+.flow-step:not(:last-child){margin-bottom:12px}.flow-step:not(:last-child):after{content:"↓";position:absolute;left:50%;bottom:-21px;transform:translateX(-50%);color:var(--mint);font-size:19px;font-weight:1000}
+.lane-foot{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:14px}.lane-foot .mini{padding:9px}.lane-foot .mini b{font-size:14px}
+.alt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.alt-card{padding:18px}.alt-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}.alt-num{width:36px;height:36px;border-radius:12px;background:var(--mint2);display:grid;place-items:center;font-weight:1000;color:#16776b}
+.alt-path{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.alt-path span{padding:7px 9px;background:#fff;border:1px solid var(--line);border-radius:10px;font-weight:800}.alt-path i{font-style:normal;color:var(--mint);font-weight:1000}
+.ifbox{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.if{padding:10px;border-radius:12px;border:1px solid var(--line)}.if.good{background:var(--green2)}.if.bad{background:var(--pink2)}.if b{display:block;margin-bottom:3px}.if small{color:var(--muted)}
+.decision-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.decision{padding:13px;border-radius:16px;border:1px solid var(--line);background:#fff}.decision b{display:block}.decision span{color:var(--muted);font-size:13px}
+@media(max-width:1050px){.strategy-top{grid-template-columns:1fr}.parallel-board{grid-template-columns:1fr}.decision-strip{grid-template-columns:1fr}.alt-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="logo">ALTERNA <b>ПЛАН</b></div>
+    <a href="#strategy">Стратегии</a>
+    <a href="#parallel">Параллельно</a>
     <a href="#stages">Этапы</a>
     <a href="#sales">Продажи</a>
     <a href="#tech">Разработка</a>
@@ -327,18 +355,18 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="badge"><i></i> Упрощённый рабочий план alterna-edu.ru</div>
-      <h1>Сначала <span style="color:var(--mint)">проверяем спрос</span>.<br>Потом масштабируем.</h1>
-      <p class="lead">Один понятный путь: бесплатный вау‑контент → преподаватель → ученики → школа/центр → вуз → крупные партнёры. Разработка идёт параллельно и открывает следующий уровень продаж.</p>
+      <div class="badge"><i></i> Рабочий план alterna-edu.ru · несколько путей одновременно</div>
+      <h1>Не одна воронка.<br><span style="color:var(--mint)">Три продажи параллельно.</span></h1>
+      <p class="lead">Быстрые деньги проверяем через репетиторов, крупные чеки — через школы и центры, массовый спрос — через бесплатный контент для учеников. Через 30–90 дней усиливаем то, что реально подтвердилось.</p>
       <div class="hero-actions">
-        <a class="btn main" href="#stages">Смотреть по этапам →</a>
+        <a class="btn main" href="#parallel">Показать параллельные ветки →</a>
         <a class="btn" href="#gantt">Диаграмма Ганта</a>
         <a class="btn" href="#start">Что делать сейчас</a>
       </div>
     </div>
 
     <div class="hero-map">
-      <div class="hero-map-title">Главная логика проекта</div>
+      <div class="hero-map-title">Один продукт — несколько путей к деньгам</div>
       <div class="big-route">
         <div class="route-card current"><div class="route-num">1</div><div><b>Вау‑контент</b><small>Интерактив, новелла, тренажёр</small></div><div class="route-arrow">↓</div></div>
         <div class="route-card"><div class="route-num">2</div><div><b>Репетитор / учитель</b><small>Получает бесплатный пробный доступ</small></div><div class="route-arrow">↓</div></div>
@@ -350,10 +378,79 @@ footer{padding:44px 0 70px;color:var(--muted)}
   </div>
 </section>
 
+
+<section id="strategy">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">01 · Стратегии</div><h2>Не один сценарий, а четыре</h2></div>
+    <p class="sub">Выберите режим. Меняется порядок усилий, но техническое ядро остаётся тем же.</p>
+  </div>
+  <div class="strategy-switch" id="strategySwitch"></div>
+  <div class="paper strategy-card" id="strategyCard"></div>
+
+  <div class="alt-grid">
+    <div class="paper alt-card">
+      <div class="alt-title"><div class="alt-num">A</div><h3>Если репетиторы платят</h3></div>
+      <div class="alt-path"><span>5 оплат</span><i>→</i><span>кейсы</span><i>→</i><span>рефералы</span><i>→</i><span>центры</span></div>
+      <div class="ifbox"><div class="if good"><b>Усиливаем</b><small>кабинет преподавателя, задания, аналитику групп</small></div><div class="if bad"><b>Если не платят</b><small>перепаковываем как «готовая домашка + проверка + экономия времени»</small></div></div>
+    </div>
+    <div class="paper alt-card">
+      <div class="alt-title"><div class="alt-num">B</div><h3>Если школы готовы к пилоту</h3></div>
+      <div class="alt-path"><span>1 класс</span><i>→</i><span>1 предмет</span><i>→</i><span>отчёт</span><i>→</i><span>лицензия</span></div>
+      <div class="ifbox"><div class="if good"><b>Усиливаем</b><small>импорт, роли, отчёты, лицензии, места</small></div><div class="if bad"><b>Если цикл долгий</b><small>переносим усилия в частные школы и учебные центры</small></div></div>
+    </div>
+    <div class="paper alt-card">
+      <div class="alt-title"><div class="alt-num">C</div><h3>Если ученики приходят сами</h3></div>
+      <div class="alt-path"><span>вау‑модуль</span><i>→</i><span>регистрация</span><i>→</i><span>trial</span><i>→</i><span>подписка</span></div>
+      <div class="ifbox"><div class="if good"><b>Усиливаем</b><small>SEO, бесплатные интерактивы, персональный маршрут</small></div><div class="if bad"><b>Если трафик дорогой</b><small>B2C оставляем витриной, деньги берём через Tutor/B2B</small></div></div>
+    </div>
+    <div class="paper alt-card">
+      <div class="alt-title"><div class="alt-num">D</div><h3>Если появляется сильный партнёр</h3></div>
+      <div class="alt-path"><span>вуз/компания</span><i>→</i><span>пилот</span><i>→</i><span>бренд</span><i>→</i><span>крупный договор</span></div>
+      <div class="ifbox"><div class="if good"><b>Усиливаем</b><small>организации, потоки, API, брендирование</small></div><div class="if bad"><b>Важно</b><small>не переписывать ядро под одного клиента — всё через настройки</small></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="parallel">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">02 · Параллельные продажи</div><h2>Три эксперимента идут одновременно</h2></div>
+    <p class="sub">Так снижается риск: один канал даёт быстрые деньги, второй — крупный чек, третий — массовый спрос.</p>
+  </div>
+  <div class="parallel-board">
+    <div class="paper lane fast">
+      <div class="lane-head"><div><div class="kicker">Ветка A</div><h3>Быстрые деньги</h3></div><div class="icon">👩‍🏫</div></div>
+      <p class="lane-goal">Репетиторы → небольшие учебные центры. Самый быстрый способ проверить готовность платить.</p>
+      <div class="lane-flow"><div class="flow-step">30 репетиторов</div><div class="flow-step">14 дней бесплатно</div><div class="flow-step">3 ученика в классе</div><div class="flow-step">5–10 оплат</div><div class="flow-step">кейсы → центры</div></div>
+      <div class="lane-foot"><div class="mini"><small>Нужно</small><b>кабинет учителя</b></div><div class="mini"><small>Срок</small><b>1–2 месяца</b></div><div class="mini"><small>Риск</small><b>низкий</b></div><div class="mini"><small>Цель</small><b>первые деньги</b></div></div>
+    </div>
+    <div class="paper lane b2b">
+      <div class="lane-head"><div><div class="kicker">Ветка B</div><h3>Крупные договоры</h3></div><div class="icon">🏫</div></div>
+      <p class="lane-goal">Школы → центры → вузы. Клиентов меньше, цикл дольше, но один договор даёт сразу десятки и сотни пользователей.</p>
+      <div class="lane-flow"><div class="flow-step">2–3 пилота</div><div class="flow-step">1 предмет / 1 группа</div><div class="flow-step">измеримый отчёт</div><div class="flow-step">лицензия</div><div class="flow-step">годовой договор</div></div>
+      <div class="lane-foot"><div class="mini"><small>Нужно</small><b>Organization + отчёты</b></div><div class="mini"><small>Срок</small><b>2–6 месяцев</b></div><div class="mini"><small>Риск</small><b>средний</b></div><div class="mini"><small>Цель</small><b>крупный чек</b></div></div>
+    </div>
+    <div class="paper lane b2c">
+      <div class="lane-head"><div><div class="kicker">Ветка C</div><h3>Массовый вход</h3></div><div class="icon">🎓</div></div>
+      <p class="lane-goal">Ученики и родители. Только дешёвый тест: бесплатные интерактивы, диагностика, SEO, рекомендации.</p>
+      <div class="lane-flow"><div class="flow-step">3 бесплатных вау‑модуля</div><div class="flow-step">диагностика</div><div class="flow-step">личный маршрут</div><div class="flow-step">пробный доступ</div><div class="flow-step">подписка</div></div>
+      <div class="lane-foot"><div class="mini"><small>Нужно</small><b>аналитика + тариф</b></div><div class="mini"><small>Срок</small><b>1–3 месяца</b></div><div class="mini"><small>Риск</small><b>выше</b></div><div class="mini"><small>Цель</small><b>органический рост</b></div></div>
+    </div>
+  </div>
+  <div class="decision-strip">
+    <div class="decision"><b>Через 30 дней</b><span>Не выбираем победителя. Проверяем: кто реально пользуется?</span></div>
+    <div class="decision"><b>Через 60 дней</b><span>Усиливаем канал, где появились реальные оплаты или пилот.</span></div>
+    <div class="decision"><b>Через 90 дней</b><span>Основной бюджет и разработку переносим в 1–2 подтверждённые ветки.</span></div>
+  </div>
+</div>
+</section>
+
 <section id="stages">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">01 · По этапам</div><h2>Шесть простых этапов</h2></div>
+    <div><div class="kicker">03 · По этапам</div><h2>Шесть простых этапов</h2></div>
     <p class="sub">Нажимайте на этапы. Каждый экран отвечает на три вопроса: что делаем, что должно появиться на сайте и какой результат считаем успехом.</p>
   </div>
 
@@ -365,7 +462,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section id="sales">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">02 · Продажи</div><h2>Кому и что продаём</h2></div>
+    <div><div class="kicker">04 · Продажи</div><h2>Кому и что продаём</h2></div>
     <p class="sub">Не один продукт для всех. Одно ядро — разные понятные предложения.</p>
   </div>
 
@@ -426,7 +523,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section id="tech">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">03 · Разработка</div><h2>Что дописываем и зачем</h2></div>
+    <div><div class="kicker">05 · Разработка</div><h2>Что дописываем и зачем</h2></div>
     <p class="sub">Каждая техническая задача должна открывать новый тип продаж. Если функция не даёт продаж, данных или экономии времени — её приоритет ниже.</p>
   </div>
 
@@ -493,7 +590,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section id="gantt">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">04 · Диаграмма Ганта</div><h2>Год развития без «сначала всё сделаем»</h2></div>
+    <div><div class="kicker">06 · Диаграмма Ганта</div><h2>Год развития без «сначала всё сделаем»</h2></div>
     <p class="sub">Продажи идут с первого месяца. Фильтруйте слои, чтобы не смотреть на всё сразу.</p>
   </div>
 
@@ -581,7 +678,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section id="numbers">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">05 · Контроль</div><h2>Когда считать, что этап сработал</h2></div>
+    <div><div class="kicker">07 · Контроль</div><h2>Когда считать, что этап сработал</h2></div>
   </div>
 
   <div class="kpi-grid">
@@ -635,7 +732,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section id="start">
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">06 · Что делать сейчас</div><h2>Первые четыре блока работы</h2></div>
+    <div><div class="kicker">08 · Что делать сейчас</div><h2>Первые четыре блока работы</h2></div>
     <p class="sub">Чекбоксы сохраняются в браузере. Это можно использовать как рабочий список.</p>
   </div>
 
@@ -679,7 +776,7 @@ footer{padding:44px 0 70px;color:var(--muted)}
 <section>
 <div class="wrap">
   <div class="section-head">
-    <div><div class="kicker">07 · Не делать</div><h2>Шесть ловушек</h2></div>
+    <div><div class="kicker">09 · Не делать</div><h2>Шесть ловушек</h2></div>
   </div>
   <div class="risk-grid">
     <div class="risk"><div class="no">×</div><b>Переписывать весь сайт с нуля</b><div class="yes">→ Оставить сильный публичный слой и менять ядро.</div></div>
@@ -701,6 +798,24 @@ footer{padding:44px 0 70px;color:var(--muted)}
 </footer>
 
 <script>
+
+const strategies = [
+  {name:"Сбалансированная",desc:"Три ветки одновременно: репетиторы дают быстрые деньги, школы и центры — крупный чек, ученики — органический рост.",route:["Tutor","центры/школы","Student","вузы"],side:[["Риск","средний"],["Вложения","минимальные"],["Когда","по умолчанию"],["Цель","найти 2–3 рабочих канала"]]},
+  {name:"Осторожная",desc:"Почти без бюджета: сначала преподаватели и пилоты, массовый B2C не ускоряем до появления доказательств.",route:["30 репетиторов","5 оплат","2 центра","1 школа"],side:[["Риск","низкий"],["Вложения","очень низкие"],["Когда","если ресурсов мало"],["Цель","доказать платежеспособность"]]},
+  {name:"B2B‑фокус",desc:"Если есть хороший доступ к школам и вузам — раньше строим организационный слой, B2C оставляем витриной.",route:["пилот","отчёт","лицензия","вуз/партнёр"],side:[["Риск","средний"],["Вложения","низкие/средние"],["Когда","есть тёплые контакты"],["Цель","крупные чеки"]]},
+  {name:"Массовая",desc:"Упор на бесплатный контент, поиск и подписку ученика. Имеет смысл только если органика действительно начинает расти.",route:["вау‑контент","регистрация","trial","подписка"],side:[["Риск","выше"],["Вложения","растут позже"],["Когда","есть органический трафик"],["Цель","массовая подписка"]]}
+];
+const strategySwitch=document.getElementById('strategySwitch');
+const strategyCard=document.getElementById('strategyCard');
+function renderStrategy(i){
+  document.querySelectorAll('.strategy-btn').forEach((b,j)=>b.classList.toggle('active',i===j));
+  const s=strategies[i];
+  strategyCard.innerHTML=`<div class="strategy-top"><div><div class="strategy-name">${s.name}</div><div class="strategy-desc">${s.desc}</div><div class="strategy-route">${s.route.map((x,j)=>`<span>${x}</span>${j<s.route.length-1?'<i>→</i>':''}`).join('')}</div></div><div class="strategy-side">${s.side.map(x=>`<div class="tiny"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div></div>`;
+  localStorage.setItem('alternaStrategyV3',i);
+}
+strategies.forEach((s,i)=>{const b=document.createElement('button');b.className='strategy-btn';b.textContent=s.name;b.onclick=()=>renderStrategy(i);strategySwitch.appendChild(b)});
+renderStrategy(parseInt(localStorage.getItem('alternaStrategyV3')||'0'));
+
 const stages = [
   {
     short:"Этап 1", time:"1–2 недели", title:"Понять, что людям нужно",
