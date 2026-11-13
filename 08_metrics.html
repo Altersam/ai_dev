@@ -1,4 +1,6 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами."><title>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика · AI Dev Live 2026 — книга</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="08_metrics.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html" aria-label="Оглавление книги"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>КНИГА · 2026 · ДЕНЬ 01</small></span></a><nav class="top-links" aria-label="Основная навигация"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">▶ Трансляция</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" title="Содержание" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ГЛАВЫ</div><div class="side-chapters"><a class="side-chapter " href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter " href="02_ai_native.html"><span>02</span>AI-native организация</a><a class="side-chapter " href="03_orchestration.html"><span>03</span>Оркестрация</a><a class="side-chapter " href="04_inference.html"><span>04</span>GPU и инференс</a><a class="side-chapter " href="05_career.html"><span>05</span>Карьера и найм</a><a class="side-chapter " href="06_quality.html"><span>06</span>Контроль качества</a><a class="side-chapter " href="07_sdd.html"><span>07</span>Spec-Driven Development</a><a class="side-chapter active" href="08_metrics.html"><span>08</span>Эффект и метрики</a><a class="side-chapter " href="09_human.html"><span>09</span>Человек и ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главный-вопрос-стало-быстрее-делать-что-именно">Главный вопрос: стало быстрее делать что именно?</a>
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><meta content="#0c1424" name="theme-color"/><meta content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами." name="description"/><title>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика · AI Dev Live 2026 — книга</title><link href="assets/style.css" rel="stylesheet"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="assets/catalog.js"></script><script defer="" src="assets/app.js"></script></head><body data-page="08_metrics.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" rel="noopener" target="_blank">▶ Видео 1</a></nav><div class="header-actions"><button aria-label="Включить или выключить анимации" class="icon-btn motion-btn" id="motionToggle" title="Управление анимациями">◉</button><button aria-label="Переключить светлую и тёмную тему" class="icon-btn" id="themeToggle">◐</button><button aria-label="Показать содержание" class="icon-btn mobile-menu" id="menuToggle">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главный-вопрос-стало-быстрее-делать-что-именно">Главный вопрос: стало быстрее делать что именно?</a>
 <a class="toc-item toc-level-2" href="#1-output-outcome-и-impact-три-разных-вещи">1. Output, outcome и impact — три разных вещи</a>
 <a class="toc-item toc-level-2" href="#2-три-масштаба-измерения">2. Три масштаба измерения</a>
 <a class="toc-item toc-level-3" href="#а-весь-путь-discovery-delivery">А. Весь путь Discovery → Delivery</a>
@@ -16,84 +18,84 @@
 <a class="toc-item toc-level-2" href="#10-кейс-массовая-миграция">10. Кейс: массовая миграция</a>
 <a class="toc-item toc-level-2" href="#11-кейс-прототипирование-продуктовых-гипотез">11. Кейс: прототипирование продуктовых гипотез</a>
 <a class="toc-item toc-level-2" href="#12-убывающая-полезность-скорости">12. Убывающая полезность скорости</a>
-<a class="toc-item toc-level-2" href="#13-практический-план-измерения">13. Практический план измерения</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Библиотека</a><span>›</span> Глава 08 / 09</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 08 <span>·</span> PRODUCTIVITY И ROI</div><h1>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика</h1><p class="lead">Как измерить реальную пользу агентной разработки и не принять рост активности за ускорение поставки нужных пользователям изменений.</p><div class="speaker-line"><span class="speaker-avatar">АП</span><div><strong>Александр Поломодов</strong><small>AI ускорил разработку: как понять, что это правда</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=17400s" target="_blank" rel="noopener">▶ Смотреть с 04:50:00</a></div><div class="key-facts"><span>⏱ ≈ 44 мин</span><span>◎ 19 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=17450s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:50:50</time> Противоречивые исследования ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=18000s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:00:00</time> Бизнес-результат ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=18250s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:04:10</time> Метрики Delivery ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=18500s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:08:20</time> Телеметрия ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=18850s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:14:10</time> Поток и интервью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=19200s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:20:00</time> Экономика ревью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=19500s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:25:00</time> Миграции и прототипы ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=19830s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>05:30:30</time> Убывающая полезность ↗</a></div></nav><article class="article prose"><h2 id="главный-вопрос-стало-быстрее-делать-что-именно">Главный вопрос: стало быстрее делать что именно?<a class="anchor" href="#главный-вопрос-стало-быстрее-делать-что-именно" aria-label="Ссылка на раздел">#</a></h2>
+<a class="toc-item toc-level-2" href="#13-практический-план-измерения">13. Практический план измерения</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a><span>›</span> День 1 <span>›</span> Глава 08/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 08 <span>·</span> PRODUCTIVITY И ROI</div><h1>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика</h1><p class="lead">Как измерить реальную пользу агентной разработки и не принять рост активности за ускорение поставки нужных пользователям изменений.</p><div class="speaker-line"><span class="speaker-avatar">АП</span><div><strong>Александр Поломодов</strong><small>AI ускорил разработку: как понять, что это правда</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=17400s" rel="noopener" target="_blank">▶ Смотреть с 04:50:00</a></div><div class="key-facts"><span>⏱ ≈ 44 мин</span><span>◎ 19 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=17450s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:50:50</time> Противоречивые исследования ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=18000s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:00:00</time> Бизнес-результат ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=18250s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:04:10</time> Метрики Delivery ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=18500s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:08:20</time> Телеметрия ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=18850s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:14:10</time> Поток и интервью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=19200s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:20:00</time> Экономика ревью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=19500s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:25:00</time> Миграции и прототипы ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=19830s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>05:30:30</time> Убывающая полезность ↗</a></div></nav><article class="article prose"><h2 id="главный-вопрос-стало-быстрее-делать-что-именно">Главный вопрос: стало быстрее делать что именно?<a aria-label="Ссылка на раздел" class="anchor" href="#главный-вопрос-стало-быстрее-делать-что-именно">#</a></h2>
 <p>Александр Поломодов показывает, почему заявления вроде «ИИ увеличил производительность в пять раз» без контекста могут вводить в заблуждение. У разных организаций различаются задачи, инструменты, зрелость процессов, метрики и исходная скорость работы.</p>
 <p>Рост количества коммитов, pull request, тестов или токенов не равен <strong>росту созданной ценности</strong>. Можно выпускать в десять раз больше функций, которые никому не нужны. Можно ускорить написание кода и при этом ещё дольше согласовывать, интегрировать, исправлять и сопровождать результат.</p>
 <blockquote>
 <p><strong>Главный тезис:</strong> измерять нужно путь от проблемы до полезного результата, а не только скорость производства одного из промежуточных артефактов.</p>
 </blockquote>
-<h2 id="1-output-outcome-и-impact-три-разных-вещи">1. Output, outcome и impact — три разных вещи<a class="anchor" href="#1-output-outcome-и-impact-три-разных-вещи" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="1-output-outcome-и-impact-три-разных-вещи">1. Output, outcome и impact — три разных вещи<a aria-label="Ссылка на раздел" class="anchor" href="#1-output-outcome-и-impact-три-разных-вещи">#</a></h2>
 <table>
 <thead>
 <tr>
-  <th>Уровень</th>
-  <th>Пример</th>
-  <th>Чего не доказывает</th>
+<th>Уровень</th>
+<th>Пример</th>
+<th>Чего не доказывает</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>Activity</strong> — активность</td>
-  <td>Агент выполнил 800 вызовов, разработчик сделал 20 коммитов</td>
-  <td>Что что-то нужное улучшилось</td>
+<td><strong>Activity</strong> — активность</td>
+<td>Агент выполнил 800 вызовов, разработчик сделал 20 коммитов</td>
+<td>Что что-то нужное улучшилось</td>
 </tr>
 <tr>
-  <td><strong>Output</strong> — выпуск</td>
-  <td>Команда выпустила 12 функций</td>
-  <td>Что функции востребованы и полезны</td>
+<td><strong>Output</strong> — выпуск</td>
+<td>Команда выпустила 12 функций</td>
+<td>Что функции востребованы и полезны</td>
 </tr>
 <tr>
-  <td><strong>Outcome</strong> — результат</td>
-  <td>Учителя стали тратить меньше времени на подготовку материалов</td>
-  <td>Что эффект устойчивый и стоит затрат</td>
+<td><strong>Outcome</strong> — результат</td>
+<td>Учителя стали тратить меньше времени на подготовку материалов</td>
+<td>Что эффект устойчивый и стоит затрат</td>
 </tr>
 <tr>
-  <td><strong>Impact</strong> — более широкое влияние</td>
-  <td>Выросло качество учебного процесса, уменьшились ошибки</td>
-  <td>Нужен корректный метод измерения причинности</td>
+<td><strong>Impact</strong> — более широкое влияние</td>
+<td>Выросло качество учебного процесса, уменьшились ошибки</td>
+<td>Нужен корректный метод измерения причинности</td>
 </tr>
 </tbody>
 </table>
-<p>Первые два уровня обычно легче логировать, поэтому на них часто останавливаются. Но для управленческого решения они недостаточны.</p>
-<h2 id="2-три-масштаба-измерения">2. Три масштаба измерения<a class="anchor" href="#2-три-масштаба-измерения" aria-label="Ссылка на раздел">#</a></h2>
+<p>Первые два уровня обычно легче логировать, поэтому на них часто останавливаются. Но для управленческого решения они недостаточны.</p><figure aria-label="Количество PR — только верхний слой оценки внедрения AI." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 08</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Количество PR — только верхний слой оценки внедрения AI." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Активность</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Поток</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Качество</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Ценность</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Количество PR — только верхний слой оценки внедрения AI. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<h2 id="2-три-масштаба-измерения">2. Три масштаба измерения<a aria-label="Ссылка на раздел" class="anchor" href="#2-три-масштаба-измерения">#</a></h2>
 <p>Александр предлагает различать уровни, для которых доступны разные данные.</p>
-<h3 id="а-весь-путь-discovery-delivery">А. Весь путь Discovery → Delivery<a class="anchor" href="#а-весь-путь-discovery-delivery" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="а-весь-путь-discovery-delivery">А. Весь путь Discovery → Delivery<a aria-label="Ссылка на раздел" class="anchor" href="#а-весь-путь-discovery-delivery">#</a></h3>
 <p>Лучший вариант для организации, которая может менять всю цепочку от выбора задачи до её выпуска и обратной связи. Измеряют <strong>время от идеи до полезного изменения</strong>, число проверенных гипотез, стоимость переделок, влияние на целевую метрику.</p>
-<h3 id="б-только-delivery">Б. Только Delivery<a class="anchor" href="#б-только-delivery" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="б-только-delivery">Б. Только Delivery<a aria-label="Ссылка на раздел" class="anchor" href="#б-только-delivery">#</a></h3>
 <p>Если процесс выбора задач находится вне контроля команды разработки, можно улучшать время разработки, ревью, тестирования и выпуска. Это полезно, но не позволяет доказать, что компания стала находить <strong>более правильные задачи</strong>.</p>
-<h3 id="в-конкретная-инициатива">В. Конкретная инициатива<a class="anchor" href="#в-конкретная-инициатива" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="в-конкретная-инициатива">В. Конкретная инициатива<a aria-label="Ссылка на раздел" class="anchor" href="#в-конкретная-инициатива">#</a></h3>
 <p>Например, внедрение ИИ-ревью, миграция на новый стек или ускорение прототипирования. Здесь можно провести локальный эксперимент с контролем затрат и дефектов.</p>
 <p><strong>Вывод:</strong> нельзя ожидать одинаковой метрики от директора по продукту, инженера инфраструктуры и владельца одного QA-агента.</p>
-<h2 id="3-три-группы-метрик-использование-поток-экономика">3. Три группы метрик: использование, поток, экономика<a class="anchor" href="#3-три-группы-метрик-использование-поток-экономика" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="3-три-группы-метрик-использование-поток-экономика">3. Три группы метрик: использование, поток, экономика<a aria-label="Ссылка на раздел" class="anchor" href="#3-три-группы-метрик-использование-поток-экономика">#</a></h2>
 <p>В докладе рассматривается подход к оценке developer productivity, включающий несколько независимых ракурсов.</p>
 <table>
 <thead>
 <tr>
-  <th>Группа</th>
-  <th>Примеры</th>
-  <th>Как интерпретировать</th>
+<th>Группа</th>
+<th>Примеры</th>
+<th>Как интерпретировать</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>Usage</strong></td>
-  <td>Доля задач с ИИ, лицензии, вызовы агента</td>
-  <td>Насколько инструмент внедрён</td>
+<td><strong>Usage</strong></td>
+<td>Доля задач с ИИ, лицензии, вызовы агента</td>
+<td>Насколько инструмент внедрён</td>
 </tr>
 <tr>
-  <td><strong>Flow / Experience</strong></td>
-  <td>Время задачи, ожидание ревью, частота возвратов, опросы специалистов</td>
-  <td>Как изменился процесс</td>
+<td><strong>Flow / Experience</strong></td>
+<td>Время задачи, ожидание ревью, частота возвратов, опросы специалистов</td>
+<td>Как изменился процесс</td>
 </tr>
 <tr>
-  <td><strong>Economics</strong></td>
-  <td>Стоимость готового изменения, переделки, поддержка</td>
-  <td>Окупилась ли автоматизация</td>
+<td><strong>Economics</strong></td>
+<td>Стоимость готового изменения, переделки, поддержка</td>
+<td>Окупилась ли автоматизация</td>
 </tr>
 </tbody>
 </table>
 <p>Ни одна из этих групп не должна существовать отдельно. Высокое использование инструмента при неизменном времени доставки — <strong>сигнал для расследования</strong>, а не готовый успех.</p>
-<h2 id="4-сбор-телеметрии-связываем-действия-с-задачей">4. Сбор телеметрии: связываем действия с задачей<a class="anchor" href="#4-сбор-телеметрии-связываем-действия-с-задачей" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="4-сбор-телеметрии-связываем-действия-с-задачей">4. Сбор телеметрии: связываем действия с задачей<a aria-label="Ссылка на раздел" class="anchor" href="#4-сбор-телеметрии-связываем-действия-с-задачей">#</a></h2>
 <p>Чтобы оценить полезность агента, недостаточно знать, сколько запросов ушло к модели. Нужно понимать, <strong>для какой рабочей задачи они выполнялись и каким итогом завершились</strong>.</p>
 <pre><code class="language-text">          события агентов
           события Git/CI
@@ -117,7 +119,7 @@
                  ▼
        метрики и сравнение
 </code></pre>
-<h3 id="какие-события-стоит-собирать">Какие события стоит собирать<a class="anchor" href="#какие-события-стоит-собирать" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="какие-события-стоит-собирать">Какие события стоит собирать<a aria-label="Ссылка на раздел" class="anchor" href="#какие-события-стоит-собирать">#</a></h3>
 <ul>
 <li>момент появления задачи;</li>
 <li>момент начала исследования;</li>
@@ -130,13 +132,13 @@
 <li>стоимость использованных инструментов и труда людей.</li>
 </ul>
 <p><strong>Сложность:</strong> в параллельной работе время агента и время человека частично перекрываются. Простое сложение длительностей всех сессий завысит «затраченное время», а одна временная метка коммита не расскажет, сколько длилось планирование.</p>
-<h2 id="5-время-задачи-и-поток-смотрите-на-узкие-места">5. Время задачи и поток: смотрите на узкие места<a class="anchor" href="#5-время-задачи-и-поток-смотрите-на-узкие-места" aria-label="Ссылка на раздел">#</a></h2>
-<p>Полезно разложить полный срок на этапы:</p>
+<h2 id="5-время-задачи-и-поток-смотрите-на-узкие-места">5. Время задачи и поток: смотрите на узкие места<a aria-label="Ссылка на раздел" class="anchor" href="#5-время-задачи-и-поток-смотрите-на-узкие-места">#</a></h2>
+<p>Полезно разложить полный срок на этапы:</p><figure aria-label="Метрики обязательно дополняют контрметриками." class="concept-viz" data-viz="fork"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 08</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Метрики обязательно дополняют контрметриками." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 305" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="66" rx="16" width="280" x="300" y="22"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="24"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="55.0">Результат</text><path class="viz-wire" d="M 440 88 Q 150 127 150 185"></path><path class="viz-wire-glow" d="M 440 88 Q 150 127 150 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="25" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="223.0">Скорость</text><path class="viz-wire" d="M 440 88 Q 440 127 440 185"></path><path class="viz-wire-glow" d="M 440 88 Q 440 127 440 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="315" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="223.0">Стоимость</text><path class="viz-wire" d="M 440 88 Q 730 127 730 185"></path><path class="viz-wire-glow" d="M 440 88 Q 730 127 730 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="605" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="223.0">Дефекты</text><text class="viz-small" text-anchor="middle" x="440" y="287">ВАРИАНТЫ / ВЕТВИ</text></svg><figcaption>Метрики обязательно дополняют контрметриками. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p><code>Lead time = ожидание постановки + уточнение + реализация + проверки + согласования + выпуск</code>.</p>
 <p>Часть этапов может выполняться параллельно, поэтому это <strong>концептуальное разложение</strong>, а не всегда точная арифметическая сумма без учёта пересечений.</p>
 <p>Представим, что написание кода занимало 6 часов, а стало занимать 1 час. Но на согласования и проверку по-прежнему уходит 8 дней. Экономия пяти часов может почти не изменить время появления результата у пользователя.</p>
 <p><strong>Практика:</strong> наберите диаграмму распределения времени процесса и определите, какой участок ограничивает поток. Не ускоряйте только тот этап, который легче измерить.</p>
-<h2 id="6-почему-интервью-с-людьми-нужны-даже-при-полной-телеметрии">6. Почему интервью с людьми нужны даже при полной телеметрии<a class="anchor" href="#6-почему-интервью-с-людьми-нужны-даже-при-полной-телеметрии" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="6-почему-интервью-с-людьми-нужны-даже-при-полной-телеметрии">6. Почему интервью с людьми нужны даже при полной телеметрии<a aria-label="Ссылка на раздел" class="anchor" href="#6-почему-интервью-с-людьми-нужны-даже-при-полной-телеметрии">#</a></h2>
 <p>Логи показывают <strong>что произошло</strong>, но часто плохо объясняют <strong>почему</strong>.</p>
 <p>Может оказаться, что инженеры ускорили генерацию кода, но:</p>
 <ul>
@@ -147,55 +149,55 @@
 <li>теряют время на согласование разных подходов к агентам.</li>
 </ul>
 <p>Поэтому Александр обращает внимание на сочетание <strong>объективной телеметрии, опросов и углублённых интервью</strong>. Так можно обнаружить bottleneck, который не виден по количеству коммитов.</p>
-<h2 id="7-контрметрики-как-не-получить-ускорение-ценой-разрушения-качества">7. Контрметрики: как не получить ускорение ценой разрушения качества<a class="anchor" href="#7-контрметрики-как-не-получить-ускорение-ценой-разрушения-качества" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="7-контрметрики-как-не-получить-ускорение-ценой-разрушения-качества">7. Контрметрики: как не получить ускорение ценой разрушения качества<a aria-label="Ссылка на раздел" class="anchor" href="#7-контрметрики-как-не-получить-ускорение-ценой-разрушения-качества">#</a></h2>
 <p>Любая метрика роста требует хотя бы одной <strong>контрметрики</strong> — признака, что система не деградировала.</p>
 <table>
 <thead>
 <tr>
-  <th>Цель</th>
-  <th>Основная метрика</th>
-  <th>Контрметрики</th>
+<th>Цель</th>
+<th>Основная метрика</th>
+<th>Контрметрики</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Ускорить релизы</td>
-  <td>Lead time</td>
-  <td>Инциденты, откаты, баги</td>
+<td>Ускорить релизы</td>
+<td>Lead time</td>
+<td>Инциденты, откаты, баги</td>
 </tr>
 <tr>
-  <td>Ускорить ревью</td>
-  <td>Время PR до принятия</td>
-  <td>Пропущенные дефекты, шум замечаний</td>
+<td>Ускорить ревью</td>
+<td>Время PR до принятия</td>
+<td>Пропущенные дефекты, шум замечаний</td>
 </tr>
 <tr>
-  <td>Увеличить выпуск</td>
-  <td>Принятые функции</td>
-  <td>Использование, удовлетворённость, поддержка</td>
+<td>Увеличить выпуск</td>
+<td>Принятые функции</td>
+<td>Использование, удовлетворённость, поддержка</td>
 </tr>
 <tr>
-  <td>Удешевить разработку</td>
-  <td>Цена готовой задачи</td>
-  <td>Повторные работы, безопасность, качество</td>
+<td>Удешевить разработку</td>
+<td>Цена готовой задачи</td>
+<td>Повторные работы, безопасность, качество</td>
 </tr>
 <tr>
-  <td>Автоматизировать поддержку</td>
-  <td>Доля решённых обращений</td>
-  <td>Ошибочные ответы, повторные обращения, эскалации</td>
+<td>Автоматизировать поддержку</td>
+<td>Доля решённых обращений</td>
+<td>Ошибочные ответы, повторные обращения, эскалации</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Правило:</strong> если выросла основная метрика, но резко испортилась контрметрика, объявлять успех преждевременно.</p>
-<h2 id="8-экономика-агента-считаем-стоимость-законченной-работы">8. Экономика агента: считаем стоимость законченной работы<a class="anchor" href="#8-экономика-агента-считаем-стоимость-законченной-работы" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="8-экономика-агента-считаем-стоимость-законченной-работы">8. Экономика агента: считаем стоимость законченной работы<a aria-label="Ссылка на раздел" class="anchor" href="#8-экономика-агента-считаем-стоимость-законченной-работы">#</a></h2>
 <p>Суммарная стоимость одной задачи:</p>
 <p><code>C_total = C_AI + C_human + C_infrastructure + C_rework + C_incidents</code>.</p>
 <p>Где <code>C_AI</code> — стоимость всех вызовов, <strong>включая неудачные</strong>; <code>C_human</code> — затраты времени специалистов; <code>C_rework</code> — исправление; <code>C_incidents</code> — последствия дефектов.</p>
-<h3 id="числовой-пример-условный">Числовой пример (условный)<a class="anchor" href="#числовой-пример-условный" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="числовой-пример-условный">Числовой пример (условный)<a aria-label="Ссылка на раздел" class="anchor" href="#числовой-пример-условный">#</a></h3>
 <p>До внедрения: 100 задач × 2 часа специалиста = 200 часов. При условной стоимости часа 2 000 ₽ получаем 400 000 ₽.</p>
 <p>После внедрения: 100 задач × 0,8 часа = 80 часов (160 000 ₽) + 70 000 ₽ на ИИ-инструменты + 50 000 ₽ на дополнительные проверки и переделки = <strong>280 000 ₽</strong>.</p>
 <p>Расчётная экономия = 120 000 ₽, или 30%. Но это <strong>пока не доказанный ROI</strong>: нужно сопоставить качество, типы задач, сезонность, эффект обучения и постоянные расходы на систему.</p>
 <p>В идеале сравнивать <strong>сходные классы задач</strong> в сопоставимых условиях, а не любые 100 задач этого месяца со случайными 100 прошлого.</p>
-<h2 id="9-кейс-автоматизированное-code-review">9. Кейс: автоматизированное code review<a class="anchor" href="#9-кейс-автоматизированное-code-review" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="9-кейс-автоматизированное-code-review">9. Кейс: автоматизированное code review<a aria-label="Ссылка на раздел" class="anchor" href="#9-кейс-автоматизированное-code-review">#</a></h2>
 <p>ИИ-ревью может уменьшить труд человека, но генерировать слишком много ложных замечаний. Поэтому измерять полезно:</p>
 <ol>
 <li>Сколько замечаний подтверждено и действительно исправлено.</li>
@@ -205,10 +207,10 @@
 <li>Сколько стоили агентные вызовы и инфраструктура.</li>
 </ol>
 <p>Если бот нашёл 100 проблем, из них две настоящие, а люди потратили на чтение несколько дней, экономическая полезность сомнительна.</p>
-<h2 id="10-кейс-массовая-миграция">10. Кейс: массовая миграция<a class="anchor" href="#10-кейс-массовая-миграция" aria-label="Ссылка на раздел">#</a></h2>
-<p>При миграции часто легко продемонстрировать «95% кода переписано». Но это не означает, что миграция закончена. Нужно подтвердить <strong>отключение старого пути</strong>, отсутствие критичных регрессий, совместимость и сохранность данных.</p>
+<h2 id="10-кейс-массовая-миграция">10. Кейс: массовая миграция<a aria-label="Ссылка на раздел" class="anchor" href="#10-кейс-массовая-миграция">#</a></h2>
+<p>При миграции часто легко продемонстрировать «95% кода переписано». Но это не означает, что миграция закончена. Нужно подтвердить <strong>отключение старого пути</strong>, отсутствие критичных регрессий, совместимость и сохранность данных.</p><figure aria-label="Ценность возникает после связки исследовательского и инженерного процессов." class="concept-viz" data-viz="layers"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 08</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Ценность возникает после связки исследовательского и инженерного процессов." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 290" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="62" rx="16" width="700" x="90" y="30"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="696" x="92" y="32"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="61.0">Discovery</text><path class="viz-wire" d="M 440 92 L 440 115"></path><path class="viz-wire-glow" d="M 440 92 L 440 115"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="116"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="696" x="92" y="118"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="147.0">Delivery</text><path class="viz-wire" d="M 440 178 L 440 201"></path><path class="viz-wire-glow" d="M 440 178 L 440 201"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="202"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="696" x="92" y="204"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="233.0">Outcome</text><text class="viz-small" transform="rotate(-90 45 55)" x="45" y="55">СЛОИ</text></svg><figcaption>Ценность возникает после связки исследовательского и инженерного процессов. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p>Издержки могут проявиться позже в эксплуатации. Поэтому часть эффекта миграции стоит измерять <strong>после</strong> полного выпуска и стабилизации, а не по факту закрытия агентом списка файлов.</p>
-<h2 id="11-кейс-прототипирование-продуктовых-гипотез">11. Кейс: прототипирование продуктовых гипотез<a class="anchor" href="#11-кейс-прототипирование-продуктовых-гипотез" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="11-кейс-прототипирование-продуктовых-гипотез">11. Кейс: прототипирование продуктовых гипотез<a aria-label="Ссылка на раздел" class="anchor" href="#11-кейс-прототипирование-продуктовых-гипотез">#</a></h2>
 <p>Для прототипа можно измерять:</p>
 <ul>
 <li>время от постановки гипотезы до первого теста с пользователем;</li>
@@ -218,10 +220,10 @@
 <li>какое решение приняли по итогам эксперимента.</li>
 </ul>
 <p>Генерация пятидесяти интерфейсов имеет смысл лишь в том случае, если она помогает <strong>лучше выбирать направление продукта</strong>.</p>
-<h2 id="12-убывающая-полезность-скорости">12. Убывающая полезность скорости<a class="anchor" href="#12-убывающая-полезность-скорости" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="12-убывающая-полезность-скорости">12. Убывающая полезность скорости<a aria-label="Ссылка на раздел" class="anchor" href="#12-убывающая-полезность-скорости">#</a></h2>
 <p>Доклад завершает важное наблюдение: ускорение разработки в десять раз не означает, что бизнес получит в десять раз больше пользы. У большинства бэклогов задачи имеют разную ценность; после выполнения самых ценных остаются второстепенные.</p>
 <p>Поэтому следующий шаг после ускорения delivery — <strong>изменить discovery</strong>: лучше выбирать задачи, быстрее проверять гипотезы и не строить то, что не приносит результата.</p>
-<h2 id="13-практический-план-измерения">13. Практический план измерения<a class="anchor" href="#13-практический-план-измерения" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="13-практический-план-измерения">13. Практический план измерения<a aria-label="Ссылка на раздел" class="anchor" href="#13-практический-план-измерения">#</a></h2>
 <p><strong>Двухнедельный пилот:</strong></p>
 <ol>
 <li>Выберите один тип задачи — например, создание учебной HTML-страницы.</li>
@@ -233,4 +235,4 @@
 <li>Повторите эксперимент на другом наборе кейсов.</li>
 </ol>
 <p><strong>Вопрос для самопроверки.</strong> Почему недостаточно считать экономию времени по словам сотрудников? Потому что самооценка может расходиться с реальными временными метками, стоимостью переделок и качеством. Лучше объединять <strong>ощущения, наблюдаемые события и эффект</strong>.</p>
-</article><nav class="chapter-nav"><a href="07_sdd.html"><span>← Предыдущая глава</span><strong>Spec-Driven Development в существующем проекте</strong></a><a class="next" href="09_human.html"><span>Следующая глава →</span><strong>Человеческая сторона агентной разработки: внимание, усталость и смысл</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input type="checkbox" class="chapter-complete" data-complete="08_metrics.html"> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Количество коммитов и токенов не показывает ценности. Нужны метрики потока, качества, затрат и влияния на пользовательский результат.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>DORA</span><span>DX</span><span>ROI</span><span>Lead time</span><span>Telemetry</span><span>Outcome</span><span>Countermetrics</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=17400s" target="_blank" rel="noopener">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · День 1</b><p>Редакторское учебное пособие по выступлениям 11 ноября 2026 года. Неофициальное изложение: определения, схемы, иллюстрации, задания и примеры добавлены редактором.</p></div><div class="footer-links"><a href="index.html">Все главы</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="https://ai-dev.live/" target="_blank" rel="noopener">Программа ↗</a><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">Первоисточник ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+</article><nav class="chapter-nav"><a href="07_sdd.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Spec-Driven Development в существующем проекте</strong></a><a class="next" href="09_human.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Человеческая сторона агентной разработки: внимание, усталость </strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input class="chapter-complete" data-complete="08_metrics.html" type="checkbox"/> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Количество коммитов и токенов не показывает ценности. Нужны метрики потока, качества, затрат и влияния на пользовательский результат.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>DORA</span><span>DX</span><span>ROI</span><span>Lead time</span><span>Telemetry</span><span>Outcome</span><span>Countermetrics</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=17400s" rel="noopener" target="_blank">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" rel="noopener" target="_blank">Официальная программа ↗</a></div></footer><div aria-live="polite" id="toast" role="status"></div></body></html>

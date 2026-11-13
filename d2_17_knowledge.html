@@ -1,0 +1,160 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная книга AI Dev Live 2026: два дня, 18 докладов, 50+ анимированных схем, таймкоды и практикум."><title>LLM Wiki 2.0: знания с источниками и контролем галлюцинаций · AI Dev Live 2026</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="llm-wiki-2.0:-знания-с-источниками-и-контролем-галлюцинаций"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=RzAdlyut6Uc" target="_blank" rel="noopener">▶ Видео 2</a></nav><div class="header-actions"><button class="icon-btn motion-btn" id="motionToggle" aria-label="Включить или выключить анимации" title="Управление анимациями">◉</button><button class="icon-btn" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце </a>
+<a class="toc-item toc-level-2" href="#1-почему-простого-rag-может-не-хватить">1. Почему простого RAG может не хватить </a>
+<a class="toc-item toc-level-2" href="#2-llm-wiki-промежуточныи-слои-между-источниками-и-ответом">2. LLM Wiki: промежуточный слой между источниками и ответом </a>
+<a class="toc-item toc-level-2" href="#3-архитектура-из-тре-х-слое-в">3. Архитектура из трёх слоёв </a>
+<a class="toc-item toc-level-2" href="#4-модель-одного-знания">4. Модель одного знания </a>
+<a class="toc-item toc-level-2" href="#5-как-отличать-факт-от-слишком-широкого-обобщения">5. Как отличать факт от слишком широкого обобщения </a>
+<a class="toc-item toc-level-2" href="#6-свежесть-почему-отче-ты-должны-устаревать-явно">6. Свежесть: почему отчёты должны устаревать явно </a>
+<a class="toc-item toc-level-2" href="#7-интерфеи-с-для-человека-два-принципа">7. Интерфейс для человека: два принципа </a>
+<a class="toc-item toc-level-2" href="#8-skills-как-бизнес-операции-с-базои-знании">8. Skills как бизнес-операции с базой знаний </a>
+<a class="toc-item toc-level-2" href="#9-кеи-с-product-os-от-идеи-к-проверяемому-продукту">9. Кейс Product OS: от идеи к проверяемому продукту </a>
+<a class="toc-item toc-level-2" href="#10-агентная-база-знании-в-образовательнои-среде">10. Агентная база знаний в образовательной среде </a>
+<a class="toc-item toc-level-2" href="#11-минимальныи-набор-проверок-над-знаниями">11. Минимальный набор проверок над знаниями </a>
+<a class="toc-item toc-level-3" href="#практикум">Практикум </a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a> <span>›</span> День 2 <span>›</span> Глава 17/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 17 <span>·</span> KNOWLEDGE ENGINEERING</div><h1>LLM Wiki 2.0: знания с источниками и контролем галлюцинаций</h1><p class="lead">Растущая база знаний с provenance, неизменяемыми источниками, моделями знаний и статусом актуальности.</p><div class="speaker-line"><span class="speaker-avatar">ИИ</span><div><strong>Илья Измайлов</strong><small>AI Dev Live 2026 · 12 ноября · День 2</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=19528s" target="_blank" rel="noopener">▶ Смотреть с 05:25:28</a></div><div class="key-facts"><span>⏱ ≈ 34 мин</span><span>◎ 12 разделов</span><span>⌁ Расшифровка + авторский разбор</span></div></section><div class="editor-note"><strong>О точности.</strong> Материал основан на автоматической транскрипции видео. Схемы, таблицы и примеры добавлены для обучения; это не цитаты и не оригинальные слайды. Имена технологий и некоторые произнесённые цифры могут быть распознаны неточно.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=19528s" target="_blank" rel="noopener"><time>05:25:28</time> Начало доклада ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=20014s" target="_blank" rel="noopener"><time>05:33:34</time> Фрагмент 2 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=20461s" target="_blank" rel="noopener"><time>05:41:01</time> Фрагмент 3 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=20907s" target="_blank" rel="noopener"><time>05:48:27</time> Фрагмент 4 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=21293s" target="_blank" rel="noopener"><time>05:54:53</time> Фрагмент 5 ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Прямая ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
+<p>Илья Измайлов показывает, как строить <strong>живую базу знаний для агента</strong>, чтобы она не превращалась в коллекцию уверенных галлюцинаций. Обычный RAG позволяет находить фрагменты источников, но не гарантирует устойчивых выводов и связности знаний. Другой вариант — LLM Wiki: агент регулярно перерабатывает сырые документы в удобную структуру. Проблема возникает, когда такая система бесконтрольно переписывает собственные «знания». Поэтому докладчик предлагает явную модель данных, неизменяемые источники, проверяемую связь утверждений с основаниями, статусы актуальности, отдельные Skills и интерфейс ревью для человека.</p>
+<blockquote>
+<p><strong>Тезис доклада:</strong> база знаний агента должна хранить не просто текст ответа, а происхождение, обоснование, область применимости и свежесть каждого значимого вывода.</p>
+</blockquote>
+<h2 id="1-почему-простого-rag-может-не-хватить">1. Почему простого RAG может не хватить<a aria-label="Прямая ссылка на раздел" class="anchor" href="#1-почему-простого-rag-может-не-хватить">#</a></h2>
+<p><strong>Retrieval-Augmented Generation (RAG)</strong> выбирает релевантные фрагменты внешних источников и добавляет их в контекст модели. Это полезный базовый механизм: ответы могут опираться на документы, которые не были в обучающих данных модели. Но представьте <strong>сотню часовых интервью с пользователями</strong>. На каждый вопрос RAG ищет куски сырого текста; одни и те же темы могут повторяться десятки раз, отдельные выводы требуют сопоставить источники.</p><figure aria-label="Три слоя знаний различают наблюдения и выводы." class="concept-viz" data-viz="layers"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 17</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Три слоя знаний различают наблюдения и выводы." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 290" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="62" rx="16" width="700" x="90" y="30"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="696" x="92" y="32"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="61.0">Исходные данные</text><path class="viz-wire" d="M 440 92 L 440 115"></path><path class="viz-wire-glow" d="M 440 92 L 440 115"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="116"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="696" x="92" y="118"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="147.0">Факты и связи</text><path class="viz-wire" d="M 440 178 L 440 201"></path><path class="viz-wire-glow" d="M 440 178 L 440 201"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="202"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="696" x="92" y="204"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="233.0">Производные отчёты</text><text class="viz-small" transform="rotate(-90 45 55)" x="45" y="55">СЛОИ</text></svg><figcaption>Три слоя знаний различают наблюдения и выводы. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Возникает естественная идея подготовить промежуточную <strong>структурированную картину</strong>: сегменты пользователей, их задачи, возражения, потребности, подтверждающие цитаты и отчёты. Тогда агент сможет не только искать, но и работать с накопленным пониманием предметной области.</p>
+<h2 id="2-llm-wiki-промежуточныи-слои-между-источниками-и-ответом">2. LLM Wiki: промежуточный слой между источниками и ответом<a aria-label="Прямая ссылка на раздел" class="anchor" href="#2-llm-wiki-промежуточныи-слои-между-источниками-и-ответом">#</a></h2>
+<p>В докладе обсуждается идея LLM Wiki, ассоциируемая с Андреем Карпатым: разделять <strong>исходные материалы</strong> и <strong>синтезированные рабочие знания</strong>, которые агент может организовывать и обновлять. Такой слой способен ускорить многократную работу с одними и теми же данными.</p>
+<p>Однако в наивной реализации появляется опасность «самозаражения». Один ошибочный вывод попадает в заметку, затем другая заметка ссылается на него, затем третья обобщает обе. Через несколько итераций система уверенно повторяет ошибку, потеряв путь к первоисточнику.</p>
+<p><strong>Редакторская аналогия.</strong> В научной библиотеке недостаточно, чтобы у каждого тезиса был красивый заголовок. Должны храниться первичная публикация, дата, методика и ссылки. Иначе разные обзоры могут многократно пересказать один и тот же неверный результат как «консенсус».</p>
+<h2 id="3-архитектура-из-тре-х-слое-в">3. Архитектура из трёх слоёв<a aria-label="Прямая ссылка на раздел" class="anchor" href="#3-архитектура-из-тре-х-слое-в">#</a></h2>
+<div class="visual-flow"><span>Неизменяемые источники</span><i>→</i><span>Структурированные факты</span><i>→</i><span>Отчёты и решения</span></div>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Что содержит</th>
+<th>Кто и как изменяет</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Источники</strong></td>
+<td>Интервью, документы, метрики, исходные протоколы</td>
+<td>Сохранение исходного текста, контроль версий, без автоматического «улучшения» смысла</td>
+</tr>
+<tr>
+<td><strong>2. Структурированные знания</strong></td>
+<td>Пользователи, сегменты, потребности, связи, утверждения</td>
+<td>Агент предлагает изменения; валидация схемы и источника</td>
+</tr>
+<tr>
+<td><strong>3. Производные отчёты</strong></td>
+<td>Обобщения, гипотезы, планы, приоритеты</td>
+<td>Создаются на базе слоя 2; помечаются как устаревшие при изменении оснований</td>
+</tr>
+</tbody>
+</table>
+<p>Отчёт может быть удобным, но не становится первичным источником. При споре или сомнении пользователь должен иметь возможность пройти <strong>назад до оригинального интервью или документа</strong>.</p>
+<h2 id="4-модель-одного-знания">4. Модель одного знания<a aria-label="Прямая ссылка на раздел" class="anchor" href="#4-модель-одного-знания">#</a></h2>
+<p>Вместо отдельной заметки «клиентам важна доставка» полезно хранить <strong>формализованную запись</strong>:</p>
+<pre><code class="language-json">{
+  "claim_id": "need-014",
+  "claim": "Клиенту A важна скорость доставки",
+  "scope": "customer:A",
+  "sources": ["interview:2026-10-04#18:12"],
+  "status": "supported",
+  "reviewed_by": "product_owner",
+  "updated_at": "2026-10-05",
+  "depends_on": ["interview:2026-10-04"]
+}
+</code></pre>
+<p>Это редакторский JSON, иллюстрирующий принципы, а не буквальная схема Product OS. Поля критичны по смыслу: <strong>на что именно распространяется утверждение</strong>, чем оно обосновано, кем проверено и когда последний раз актуализировано.</p>
+<h2 id="5-как-отличать-факт-от-слишком-широкого-обобщения">5. Как отличать факт от слишком широкого обобщения<a aria-label="Прямая ссылка на раздел" class="anchor" href="#5-как-отличать-факт-от-слишком-широкого-обобщения">#</a></h2>
+<p>Допустим, из десяти интервью только один участник сказал: «Мне особенно важна скорость доставки». Агент может автоматически написать: «Для всего сегмента решающий фактор — скорость». Это логически неверный переход от одного наблюдения к общему выводу.</p><figure aria-label="Важное утверждение должно вести к первоисточникам." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 17</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Важное утверждение должно вести к первоисточникам." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Утверждение</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Интервью A</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Интервью B</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">Метрика</text></svg><figcaption>Важное утверждение должно вести к первоисточникам. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Система должна различать:</p>
+<ul>
+<li>прямое наблюдение: конкретный человек сказал конкретную фразу;</li>
+<li>квалифицированный вывод: несколько независимых свидетельств поддерживают тенденцию;</li>
+<li>гипотезу: есть предположение, но подтверждений мало;</li>
+<li>опровержение: новые данные противоречат старому тезису;</li>
+<li>неизвестное: вопрос ещё не исследован.</li>
+</ul>
+<p><strong>Кодом</strong> можно проверить, есть ли обязательная ссылка на источник, корректен ли статус, не нарушена ли схема. Но нельзя полностью кодом проверить верность человеческой интерпретации. Поэтому нужен человек или независимая экспертная проверка с доступом к исходникам.</p>
+<h2 id="6-свежесть-почему-отче-ты-должны-устаревать-явно">6. Свежесть: почему отчёты должны устаревать явно<a aria-label="Прямая ссылка на раздел" class="anchor" href="#6-свежесть-почему-отче-ты-должны-устаревать-явно">#</a></h2>
+<p>Если база пополнилась новыми интервью, прежний отчёт о сегменте может стать неактуальным. Полностью автоматически переписывать все отчёты опасно: в них могут быть приняты решения, которые важно обсуждать с человеком. Поэтому докладчик вводит статусы устаревания.</p>
+<pre><code class="language-text">Добавлено интервью #112
+   ↓
+Обновлены характеристики сегмента «малые команды»
+   ↓
+Отчёт «Приоритеты сегмента» зависит от старой версии
+   ↓
+Статус отчёта: STALE / требует пересмотра
+   ↓
+Человек утверждает новое заключение
+</code></pre>
+<p>Это не значит, что при каждом изменении источника надо пересчитать весь граф. Практичная реализация использует <strong>граф зависимостей</strong> и обновляет статусы только затронутых производных артефактов.</p>
+<h2 id="7-интерфеи-с-для-человека-два-принципа">7. Интерфейс для человека: два принципа<a aria-label="Прямая ссылка на раздел" class="anchor" href="#7-интерфеи-с-для-человека-два-принципа">#</a></h2>
+<p>Докладчик выделяет две важные практики интерфейса. Первая — <strong>просмотр от общего к частному</strong>: на панели видно обзор продукта, затем можно открыть сегмент, задачу клиента и конкретное интервью. Вторая — <strong>источник рядом с утверждением</strong>: при наведении или открытии карточки видны основания вывода; пользователь может сразу проверить, действительно ли цитата его поддерживает.</p>
+<p>Без удобного UI даже хорошо организованная папка Markdown может оказаться трудна для аудита. Человек не должен тратить двадцать минут, чтобы проверить одну спорную гипотезу. Аудируемость — свойство не только данных, но и пользовательского взаимодействия.</p>
+<h2 id="8-skills-как-бизнес-операции-с-базои-знании">8. Skills как бизнес-операции с базой знаний<a aria-label="Прямая ссылка на раздел" class="anchor" href="#8-skills-как-бизнес-операции-с-базои-знании">#</a></h2>
+<p>Вместо одного универсального агента, который «делает всё», полезно выделить процедуры:</p>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Вход</th>
+<th>Выход</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Подготовка интервью</td>
+<td>Цель исследования и профиль респондента</td>
+<td>План вопросов без наведения</td>
+</tr>
+<tr>
+<td>Разбор интервью</td>
+<td>Неизменяемый исходный текст</td>
+<td>Наблюдения и ссылки на таймкоды</td>
+</tr>
+<tr>
+<td>Синтез сегмента</td>
+<td>Несколько интервью</td>
+<td>Подтверждённые общие черты и противоречия</td>
+</tr>
+<tr>
+<td>Генерация гипотез</td>
+<td>Сегменты и задачи клиентов</td>
+<td>Гипотезы ценности с основаниями</td>
+</tr>
+<tr>
+<td>План проверки</td>
+<td>Гипотеза и доступные ресурсы</td>
+<td>Эксперимент, метрики и критерии остановки</td>
+</tr>
+<tr>
+<td>Проверка устаревания</td>
+<td>Граф зависимостей</td>
+<td>Список затронутых отчётов</td>
+</tr>
+</tbody>
+</table>
+<p>Важна дисциплина разделения прав: инструмент, который анализирует интервью, <strong>не должен незаметно изменять исходное интервью</strong>. Инструмент, который генерирует гипотезу, не должен помечать её доказанной.</p>
+<h2 id="9-кеи-с-product-os-от-идеи-к-проверяемому-продукту">9. Кейс Product OS: от идеи к проверяемому продукту<a aria-label="Прямая ссылка на раздел" class="anchor" href="#9-кеи-с-product-os-от-идеи-к-проверяемому-продукту">#</a></h2>
+<p>В выступлении показан путь продукта Business Pay, связанного с оплатой зарубежных сервисов для компаний. Это иллюстрация <strong>процесса</strong>, а не обещание аналогичных финансовых результатов. Последовательность: записать исходную идею → сформировать гипотезы сегментов → найти респондентов → провести интервью → сохранить первоисточники → синтезировать задачи клиентов → выбрать гипотезы ценности → подготовить лендинг и каналы привлечения → измерить входящий спрос.</p>
+<p>По словам докладчика, такой подход позволил ему в течение нескольких недель привлечь первые заявки из поисковых систем и AI-поиска. Его численные показатели — самоотчёт выступающего, не независимая оценка экономического эффекта. Ценнее метод: <strong>новая информация не теряется в чате, а изменяет связанную базу знаний</strong>.</p>
+<h2 id="10-агентная-база-знании-в-образовательнои-среде">10. Агентная база знаний в образовательной среде<a aria-label="Прямая ссылка на раздел" class="anchor" href="#10-агентная-база-знании-в-образовательнои-среде">#</a></h2>
+<p>Редакторский пример по мотивам принципов доклада: организация анализирует ошибки учащихся при решении задач по информатике. Источники — обезличенные решения, критерии оценивания, разборы преподавателей, учебные материалы. Структурированные сущности — тип задания, типичная ошибка, обоснование, класс, дата, методическая рекомендация. Вывод — «какую тему стоит повторить группе».</p><figure aria-label="Обновления источников требуют пересмотра производных выводов." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 17</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Обновления источников требуют пересмотра производных выводов." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Новые данные</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Зависимости</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Статус stale</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Проверка</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Обновления источников требуют пересмотра производных выводов. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Но здесь особенно важно не спутать <strong>наблюдение</strong> с выводом о личности ученика. Нельзя из одной неверной работы автоматически заключать, что учащийся «не способен» к теме. Система должна учитывать выборку, контекст задания, ошибки распознавания, права доступа и возможность педагогической корректировки.</p>
+<h2 id="11-минимальныи-набор-проверок-над-знаниями">11. Минимальный набор проверок над знаниями<a aria-label="Прямая ссылка на раздел" class="anchor" href="#11-минимальныи-набор-проверок-над-знаниями">#</a></h2>
+<ol>
+<li><strong>Provenance:</strong> у важных тезисов есть ссылка на исходный документ и фрагмент.</li>
+<li><strong>Scope:</strong> явно указано, относится ли вывод к человеку, группе, проекту или всей организации.</li>
+<li><strong>Freshness:</strong> старые выводы помечаются при изменении оснований.</li>
+<li><strong>Contradictions:</strong> новые факты могут конфликтовать с прежними, и этот конфликт виден.</li>
+<li><strong>Immutability:</strong> исходный документ нельзя заменить незаметно.</li>
+<li><strong>Permissions:</strong> пользователь видит только доступные ему источники, включая цитаты.</li>
+<li><strong>Audit:</strong> изменения и подтверждения сопровождаются автором и временем.</li>
+<li><strong>Validation:</strong> код проверяет формат, статусы и обязательные ссылки.</li>
+<li><strong>Human review:</strong> значимые обобщения и решения проходят подтверждение владельца домена.</li>
+</ol>
+<h3 id="практикум">Практикум<a aria-label="Прямая ссылка на раздел" class="anchor" href="#практикум">#</a></h3>
+<p>Возьмите десять обезличенных отзывов о небольшом сервисе. Сохраните оригиналы и создайте таблицу: утверждение, кто сообщил, ссылка на исходный фрагмент, область действия, статус, дата. Затем попросите агента составить три гипотезы улучшения. Для каждой гипотезы проверьте, <strong>сколько независимых источников</strong> её поддерживает и какие есть противоположные свидетельства. Это позволит почувствовать, как база знаний отличается от обычной папки пересказов.</p>
+<p><strong>Связанные главы:</strong> <a href="02_ai_native.html">Агентоцентричная организация</a>, <a href="d2_11_evidence.html">Evidence-based SDLC</a>, <a href="d2_16_product.html">Продуктовое мышление</a>, <a href="10_glossary.html">Глоссарий</a>.</p>
+</article><nav class="chapter-nav"><a href="d2_16_product.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Продуктовое мышление: какую проблему действительно решать</strong></a><a class="next" href="d2_18_risks.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Риски сильного ИИ: сценарии, неопределённость и контроль</strong></a></nav><div class="end-card"><h3>Сохранить прогресс чтения</h3><p>Отметка сохраняется локально на этом устройстве.</p><label class="complete-label"><input class="chapter-complete" type="checkbox" data-complete="d2_17_knowledge.html"> Я изучил(а) эту главу</label></div></main></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" target="_blank" rel="noopener">Официальная программа ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>

@@ -1,4 +1,6 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами."><title>Гарантия качества: quality gates и feedback loops для агентного кода · AI Dev Live 2026 — книга</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="06_quality.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html" aria-label="Оглавление книги"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>КНИГА · 2026 · ДЕНЬ 01</small></span></a><nav class="top-links" aria-label="Основная навигация"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">▶ Трансляция</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" title="Содержание" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ГЛАВЫ</div><div class="side-chapters"><a class="side-chapter " href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter " href="02_ai_native.html"><span>02</span>AI-native организация</a><a class="side-chapter " href="03_orchestration.html"><span>03</span>Оркестрация</a><a class="side-chapter " href="04_inference.html"><span>04</span>GPU и инференс</a><a class="side-chapter " href="05_career.html"><span>05</span>Карьера и найм</a><a class="side-chapter active" href="06_quality.html"><span>06</span>Контроль качества</a><a class="side-chapter " href="07_sdd.html"><span>07</span>Spec-Driven Development</a><a class="side-chapter " href="08_metrics.html"><span>08</span>Эффект и метрики</a><a class="side-chapter " href="09_human.html"><span>09</span>Человек и ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#почему-агентный-код-нужен-проверять-иначе">Почему агентный код нужен проверять иначе</a>
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><meta content="#0c1424" name="theme-color"/><meta content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами." name="description"/><title>Гарантия качества: quality gates и feedback loops для агентного кода · AI Dev Live 2026 — книга</title><link href="assets/style.css" rel="stylesheet"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="assets/catalog.js"></script><script defer="" src="assets/app.js"></script></head><body data-page="06_quality.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" rel="noopener" target="_blank">▶ Видео 1</a></nav><div class="header-actions"><button aria-label="Включить или выключить анимации" class="icon-btn motion-btn" id="motionToggle" title="Управление анимациями">◉</button><button aria-label="Переключить светлую и тёмную тему" class="icon-btn" id="themeToggle">◐</button><button aria-label="Показать содержание" class="icon-btn mobile-menu" id="menuToggle">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#почему-агентный-код-нужен-проверять-иначе">Почему агентный код нужен проверять иначе</a>
 <a class="toc-item toc-level-2" href="#1-две-опорные-конструкции-gate-и-loop">1. Две опорные конструкции: gate и loop</a>
 <a class="toc-item toc-level-2" href="#2-три-вида-обратной-связи">2. Три вида обратной связи</a>
 <a class="toc-item toc-level-2" href="#3-качество-начинается-с-интервью-о-требованиях">3. Качество начинается с интервью о требованиях</a>
@@ -15,13 +17,13 @@
 <a class="toc-item toc-level-2" href="#9-проверки-безопасности-раньше-и-систематически">9. Проверки безопасности: раньше и систематически</a>
 <a class="toc-item toc-level-2" href="#10-пример-полного-qa-маршрута">10. Пример полного QA-маршрута</a>
 <a class="toc-item toc-level-2" href="#11-что-измерять-после-внедрения-qa-агентов">11. Что измерять после внедрения QA-агентов</a>
-<a class="toc-item toc-level-2" href="#12-контрольный-список">12. Контрольный список</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Библиотека</a><span>›</span> Глава 06 / 09</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 06 <span>·</span> QA И БЕЗОПАСНОСТЬ</div><h1>Гарантия качества: quality gates и feedback loops для агентного кода</h1><p class="lead">Как перестать надеяться, что агент «написал всё правильно», и спроектировать доказуемое качество продукта как непрерывный процесс.</p><div class="speaker-line"><span class="speaker-avatar">КД</span><div><strong>Константин Доронин</strong><small>Гарантия качества продукта, который пишут агенты</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=12320s" target="_blank" rel="noopener">▶ Смотреть с 03:25:20</a></div><div class="key-facts"><span>⏱ ≈ 44 мин</span><span>◎ 18 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=12340s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:25:40</time> Сдвиг от задач к процессу ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=12870s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:34:30</time> Feedback loops ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=13120s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:38:40</time> Интервью и требования ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=13400s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:43:20</time> Архитектура и линтеры ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=13580s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:46:20</time> Тесты и разделение прав ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=13780s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:49:40</time> Ревью кода ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=13940s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:52:20</time> E2E и GUI ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=14130s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>03:55:30</time> Fuzzing и безопасность ↗</a></div></nav><article class="article prose"><h2 id="почему-агентный-код-нужен-проверять-иначе">Почему агентный код нужен проверять иначе<a class="anchor" href="#почему-агентный-код-нужен-проверять-иначе" aria-label="Ссылка на раздел">#</a></h2>
+<a class="toc-item toc-level-2" href="#12-контрольный-список">12. Контрольный список</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a><span>›</span> День 1 <span>›</span> Глава 06/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 06 <span>·</span> QA И БЕЗОПАСНОСТЬ</div><h1>Гарантия качества: quality gates и feedback loops для агентного кода</h1><p class="lead">Как перестать надеяться, что агент «написал всё правильно», и спроектировать доказуемое качество продукта как непрерывный процесс.</p><div class="speaker-line"><span class="speaker-avatar">КД</span><div><strong>Константин Доронин</strong><small>Гарантия качества продукта, который пишут агенты</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=12320s" rel="noopener" target="_blank">▶ Смотреть с 03:25:20</a></div><div class="key-facts"><span>⏱ ≈ 44 мин</span><span>◎ 18 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=12340s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:25:40</time> Сдвиг от задач к процессу ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=12870s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:34:30</time> Feedback loops ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=13120s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:38:40</time> Интервью и требования ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=13400s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:43:20</time> Архитектура и линтеры ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=13580s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:46:20</time> Тесты и разделение прав ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=13780s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:49:40</time> Ревью кода ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=13940s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:52:20</time> E2E и GUI ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=14130s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>03:55:30</time> Fuzzing и безопасность ↗</a></div></nav><article class="article prose"><h2 id="почему-агентный-код-нужен-проверять-иначе">Почему агентный код нужен проверять иначе<a aria-label="Ссылка на раздел" class="anchor" href="#почему-агентный-код-нужен-проверять-иначе">#</a></h2>
 <p>Константин Доронин обсуждает смещение фокуса с <strong>ручной проверки каждой небольшой задачи</strong> к проектированию <strong>непрерывной системы качества</strong>. Когда агент генерирует десятки файлов и целые приложения, человек не способен эффективно прочитать всё построчно. При этом рост скорости генерации не отменяет дефектов — он увеличивает объём того, что нужно поддерживать.</p>
 <blockquote>
 <p><strong>Главная идея:</strong> не наделяйте агента безграничным доверием. Стройте контрольные ворота (<em>quality gates</em>) на ключевых этапах жизненного цикла, а обратную связь (<em>feedback loops</em>) возвращайте исполнителю так, чтобы он мог исправить проблему.</p>
 </blockquote>
-<h2 id="1-две-опорные-конструкции-gate-и-loop">1. Две опорные конструкции: gate и loop<a class="anchor" href="#1-две-опорные-конструкции-gate-и-loop" aria-label="Ссылка на раздел">#</a></h2>
-<p><strong>Quality gate</strong> — проверка, без прохождения которой следующий этап не начинается. Например, спецификация не уходит в кодирование, пока не определены критерии готовности.</p>
+<h2 id="1-две-опорные-конструкции-gate-и-loop">1. Две опорные конструкции: gate и loop<a aria-label="Ссылка на раздел" class="anchor" href="#1-две-опорные-конструкции-gate-и-loop">#</a></h2>
+<p><strong>Quality gate</strong> — проверка, без прохождения которой следующий этап не начинается. Например, спецификация не уходит в кодирование, пока не определены критерии готовности.</p><figure aria-label="Проверки качества распределены по всему жизненному циклу." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 06</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Проверки качества распределены по всему жизненному циклу." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Требования</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Код</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Тесты</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Продакшен</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Проверки качества распределены по всему жизненному циклу. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p><strong>Feedback loop</strong> — цикл «исполнение → наблюдение → оценка → корректировка → повторная проверка».</p>
 <pre><code class="language-text">  ТРЕБОВАНИЯ ──[gate]──&gt; АРХИТЕКТУРА ──[gate]──&gt; КОД
        ▲                     ▲                   │
@@ -35,40 +37,40 @@
                                             РЕЛИЗ
 </code></pre>
 <p>Разница важна. Gate — условие перехода; loop — механизм улучшения. Система может иметь десятки проверок, но не быть полезной, если результаты проверок не превращаются в понятные исправления.</p>
-<h2 id="2-три-вида-обратной-связи">2. Три вида обратной связи<a class="anchor" href="#2-три-вида-обратной-связи" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="2-три-вида-обратной-связи">2. Три вида обратной связи<a aria-label="Ссылка на раздел" class="anchor" href="#2-три-вида-обратной-связи">#</a></h2>
 <p>В докладе выделяются разные уровни надёжности.</p>
 <table>
 <thead>
 <tr>
-  <th>Механизм</th>
-  <th>Пример</th>
-  <th>Преимущество</th>
-  <th>Ограничение</th>
+<th>Механизм</th>
+<th>Пример</th>
+<th>Преимущество</th>
+<th>Ограничение</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>Человек → агент</strong></td>
-  <td>«Кнопка должна работать иначе»</td>
-  <td>Учитывает намерение и контекст</td>
-  <td>Дорого и плохо масштабируется</td>
+<td><strong>Человек → агент</strong></td>
+<td>«Кнопка должна работать иначе»</td>
+<td>Учитывает намерение и контекст</td>
+<td>Дорого и плохо масштабируется</td>
 </tr>
 <tr>
-  <td><strong>Агент → агент</strong></td>
-  <td>Независимый ревьюер обнаруживает риск</td>
-  <td>Доступен автоматически</td>
-  <td>Сам может ошибаться и придумывать проблемы</td>
+<td><strong>Агент → агент</strong></td>
+<td>Независимый ревьюер обнаруживает риск</td>
+<td>Доступен автоматически</td>
+<td>Сам может ошибаться и придумывать проблемы</td>
 </tr>
 <tr>
-  <td><strong>Детерминированная проверка</strong></td>
-  <td><code>pytest</code>, schema validation, typecheck</td>
-  <td>Воспроизводимая оценка конкретного условия</td>
-  <td>Проверяет только формализованные свойства</td>
+<td><strong>Детерминированная проверка</strong></td>
+<td><code>pytest</code>, schema validation, typecheck</td>
+<td>Воспроизводимая оценка конкретного условия</td>
+<td>Проверяет только формализованные свойства</td>
 </tr>
 </tbody>
 </table>
 <p>Задача не в том, чтобы всё превратить в детерминированные тесты. Нужно выбрать для каждого требования <strong>самый надёжный доступный способ проверки</strong> и понимать, где остаётся человеческое суждение.</p>
-<h2 id="3-качество-начинается-с-интервью-о-требованиях">3. Качество начинается с интервью о требованиях<a class="anchor" href="#3-качество-начинается-с-интервью-о-требованиях" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="3-качество-начинается-с-интервью-о-требованиях">3. Качество начинается с интервью о требованиях<a aria-label="Ссылка на раздел" class="anchor" href="#3-качество-начинается-с-интервью-о-требованиях">#</a></h2>
 <p>Если агент получает расплывчатое «сделай красивый кабинет», он может сделать замечательный макет, но не нужный продукт. Поэтому первый quality gate — <strong>выявление требований</strong>.</p>
 <p>Агент-интервьюер должен задавать владельцу задачи конкретные вопросы, желательно небольшими порциями и с вариантами ответов. Например:</p>
 <p><strong>Задача:</strong> добавить загрузку Excel-файла с результатами учащихся.</p>
@@ -82,7 +84,7 @@
 <li>Какие данные считаются персональными и кто может их видеть?</li>
 </ol>
 <p>Такая последовательность позволяет обнаружить недоговорённости до того, как агент потратит время на неподходящую архитектуру.</p>
-<h2 id="4-архитектурный-gate-не-позволяйте-проекту-расползаться">4. Архитектурный gate: не позволяйте проекту расползаться<a class="anchor" href="#4-архитектурный-gate-не-позволяйте-проекту-расползаться" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="4-архитектурный-gate-не-позволяйте-проекту-расползаться">4. Архитектурный gate: не позволяйте проекту расползаться<a aria-label="Ссылка на раздел" class="anchor" href="#4-архитектурный-gate-не-позволяйте-проекту-расползаться">#</a></h2>
 <p>После требований нужна проверка проектного решения:</p>
 <ul>
 <li>не создаёт ли агент отдельный новый сервис для задачи, которую может решить существующий модуль;</li>
@@ -92,53 +94,53 @@
 <li>не появляется ли лишняя взаимозависимость компонентов.</li>
 </ul>
 <p>В качестве средств контроля можно использовать <strong>архитектурные линтеры</strong>, проверки импортов между модулями, анализ зависимостей и машинно-проверяемые соглашения о структуре проекта.</p>
-<h3 id="пример-правила">Пример правила<a class="anchor" href="#пример-правила" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="пример-правила">Пример правила<a aria-label="Ссылка на раздел" class="anchor" href="#пример-правила">#</a></h3>
 <p>В многослойном приложении UI не должен напрямую менять базу данных. Если агент добавляет прямой SQL-запрос в компонент интерфейса, архитектурная проверка должна блокировать изменение <strong>до</strong> ручного ревью.</p>
-<h2 id="5-не-давайте-агенту-исправлять-собственный-экзамен">5. Не давайте агенту исправлять собственный экзамен<a class="anchor" href="#5-не-давайте-агенту-исправлять-собственный-экзамен" aria-label="Ссылка на раздел">#</a></h2>
-<p>Одна из самых важных деталей доклада — <strong>разделение прав между реализацией и проверками</strong>. Если агент, который пишет код, также имеет возможность свободно переписать тесты и критерии готовности, он может «исправить» проблему, подстроив оценку под свой результат.</p>
+<h2 id="5-не-давайте-агенту-исправлять-собственный-экзамен">5. Не давайте агенту исправлять собственный экзамен<a aria-label="Ссылка на раздел" class="anchor" href="#5-не-давайте-агенту-исправлять-собственный-экзамен">#</a></h2>
+<p>Одна из самых важных деталей доклада — <strong>разделение прав между реализацией и проверками</strong>. Если агент, который пишет код, также имеет возможность свободно переписать тесты и критерии готовности, он может «исправить» проблему, подстроив оценку под свой результат.</p><figure aria-label="Детерминированная обратная связь предотвращает тихую деградацию." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 06</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Детерминированная обратная связь предотвращает тихую деградацию." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Ошибка</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Тест</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Исправление</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Регрессия</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Детерминированная обратная связь предотвращает тихую деградацию. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p><strong>Рекомендуемая схема:</strong></p>
 <table>
 <thead>
 <tr>
-  <th>Участник</th>
-  <th>Что может менять</th>
+<th>Участник</th>
+<th>Что может менять</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Спецификатор</td>
-  <td>Требования и критерии после согласования</td>
+<td>Спецификатор</td>
+<td>Требования и критерии после согласования</td>
 </tr>
 <tr>
-  <td>Автор тестов</td>
-  <td>Независимые тесты по требованиям</td>
+<td>Автор тестов</td>
+<td>Независимые тесты по требованиям</td>
 </tr>
 <tr>
-  <td>Реализатор</td>
-  <td>Производственный код</td>
+<td>Реализатор</td>
+<td>Производственный код</td>
 </tr>
 <tr>
-  <td>Ревьюер</td>
-  <td>Замечания и отчёты, но не результаты тестов</td>
+<td>Ревьюер</td>
+<td>Замечания и отчёты, но не результаты тестов</td>
 </tr>
 <tr>
-  <td>Приёмщик</td>
-  <td>Разрешение на выпуск, проверка доказательств</td>
+<td>Приёмщик</td>
+<td>Разрешение на выпуск, проверка доказательств</td>
 </tr>
 </tbody>
 </table>
 <p>В реальном репозитории такое разделение можно обеспечить не только промптами, но и отдельными ветками, файловыми правами, правилами CI, code owners и обязательными проверками.</p>
-<h2 id="6-линтеры-тесты-и-проверка-на-регрессии">6. Линтеры, тесты и проверка на регрессии<a class="anchor" href="#6-линтеры-тесты-и-проверка-на-регрессии" aria-label="Ссылка на раздел">#</a></h2>
-<h3 id="статический-анализ">Статический анализ<a class="anchor" href="#статический-анализ" aria-label="Ссылка на раздел">#</a></h3>
+<h2 id="6-линтеры-тесты-и-проверка-на-регрессии">6. Линтеры, тесты и проверка на регрессии<a aria-label="Ссылка на раздел" class="anchor" href="#6-линтеры-тесты-и-проверка-на-регрессии">#</a></h2>
+<h3 id="статический-анализ">Статический анализ<a aria-label="Ссылка на раздел" class="anchor" href="#статический-анализ">#</a></h3>
 <p>Линтеры и typechecker быстро ловят нарушения формата, типизации, импортов и ряда опасных конструкций. Они дешёвые, детерминированные и часто должны быть <strong>первым фильтром</strong>.</p>
-<h3 id="unit-тесты">Unit-тесты<a class="anchor" href="#unit-тесты" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="unit-тесты">Unit-тесты<a aria-label="Ссылка на раздел" class="anchor" href="#unit-тесты">#</a></h3>
 <p>Нужны для логики функций и модулей. Главное — тестировать <strong>поведение</strong>, а не случайные детали реализации. Десять тысяч тестов не гарантируют качество, если все они проверяют, что мок вернул мок.</p>
-<h3 id="интеграционные-тесты">Интеграционные тесты<a class="anchor" href="#интеграционные-тесты" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="интеграционные-тесты">Интеграционные тесты<a aria-label="Ссылка на раздел" class="anchor" href="#интеграционные-тесты">#</a></h3>
 <p>Подтверждают взаимодействие модулей, баз данных, API и очередей. Особенно важны в агентно-сгенерированных системах, где отдельные части могут выглядеть корректно, но плохо соединяться.</p>
-<h3 id="mutation-testing">Mutation testing<a class="anchor" href="#mutation-testing" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="mutation-testing">Mutation testing<a aria-label="Ссылка на раздел" class="anchor" href="#mutation-testing">#</a></h3>
 <p>Мутационное тестирование слегка меняет код проверяемого приложения и проверяет, замечают ли тесты такое изменение. Если тесты продолжают проходить после явной поломки поведения, возможно, они недостаточно чувствительны.</p>
 <p><strong>Аналогия:</strong> обычный тест — проверка замка ключом. Мутационное тестирование — намеренная подмена маленькой детали замка, чтобы понять, заметит ли ваш контроль, что механизм сломан.</p>
-<h2 id="7-ревью-кода-должно-учитывать-последствия-а-не-только-стиль">7. Ревью кода должно учитывать последствия, а не только стиль<a class="anchor" href="#7-ревью-кода-должно-учитывать-последствия-а-не-только-стиль" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="7-ревью-кода-должно-учитывать-последствия-а-не-только-стиль">7. Ревью кода должно учитывать последствия, а не только стиль<a aria-label="Ссылка на раздел" class="anchor" href="#7-ревью-кода-должно-учитывать-последствия-а-не-только-стиль">#</a></h2>
 <p>Спикер обсуждает продвинутую схему: агент-ревьюер находит потенциальную проблему, затем отдельный исследователь проверяет, где в кодовой базе она реально проявится.</p>
 <p>Например, ревьюер замечает, что функция может вернуть <code>None</code>. Это лишь предположение. Исследователь ищет все места вызова функции, сопоставляет типы, сценарии и граничные условия. Выясняется, что важный продакшн-путь не проверяет <code>None</code> и может завершаться с ошибкой.</p>
 <p>Порядок:</p>
@@ -151,7 +153,7 @@
 <li>Исправить подтверждённое и повторно проверить.</li>
 </ol>
 <p><strong>Такое ревью ценнее перечня из сотни косметических замечаний.</strong></p>
-<h2 id="8-автоматизация-браузерных-тестов">8. Автоматизация браузерных тестов<a class="anchor" href="#8-автоматизация-браузерных-тестов" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="8-автоматизация-браузерных-тестов">8. Автоматизация браузерных тестов<a aria-label="Ссылка на раздел" class="anchor" href="#8-автоматизация-браузерных-тестов">#</a></h2>
 <p>Для проверки пользовательского сценария можно использовать Playwright, Selenium и другие инструменты. Константин описывает гибридный подход: <strong>предсказуемый скрипт выполняется первым</strong>, а агент помогает лишь тогда, когда известный тип ошибки указывает на изменение интерфейса.</p>
 <pre><code class="language-text">     E2E-сценарий через Playwright
                 │
@@ -174,66 +176,66 @@
         Протокол успеха
 </code></pre>
 <p><strong>Не допускайте бесконечного самовосстановления.</strong> Если браузерный тест падает из-за настоящего дефекта, агент не должен «исправлять тест» до зелёного состояния без независимой проверки.</p>
-<h2 id="9-проверки-безопасности-раньше-и-систематически">9. Проверки безопасности: раньше и систематически<a class="anchor" href="#9-проверки-безопасности-раньше-и-систематически" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="9-проверки-безопасности-раньше-и-систематически">9. Проверки безопасности: раньше и систематически<a aria-label="Ссылка на раздел" class="anchor" href="#9-проверки-безопасности-раньше-и-систематически">#</a></h2>
 <p>На этапе публикации продукта нужны проверки зависимостей, секретов, прав доступа, конфигурации, опасных API и публичных форм. В докладе также обсуждаются fuzzing и автоматизированные проверки защищённости.</p>
 <p><strong>Fuzzing</strong> подаёт некорректные, необычные или случайно сгенерированные входные данные и наблюдает, как ведёт себя система. Цель — найти ошибки, которые не проявляются в обычном пользовательском сценарии.</p>
 <p>Важная граница: любые активные проверки безопасности и попытки эксплуатации должны проводиться <strong>только на собственной системе или при явном разрешении владельца</strong>, с контролем нагрузки и возможностью восстановить стенд.</p>
 <p>В учебном веб-приложении можно безопасно начать с проверки: пустые поля, слишком длинные значения, неверный JSON, повтор запроса, отсутствие доступа к чужим данным, нарушение сессии, неверный тип файла.</p>
-<h2 id="10-пример-полного-qa-маршрута">10. Пример полного QA-маршрута<a class="anchor" href="#10-пример-полного-qa-маршрута" aria-label="Ссылка на раздел">#</a></h2>
-<p><strong>Задача:</strong> агент создаёт модуль загрузки домашних заданий.</p>
+<h2 id="10-пример-полного-qa-маршрута">10. Пример полного QA-маршрута<a aria-label="Ссылка на раздел" class="anchor" href="#10-пример-полного-qa-маршрута">#</a></h2>
+<p><strong>Задача:</strong> агент создаёт модуль загрузки домашних заданий.</p><figure aria-label="Несколько разных ворот качества надежнее одного общего вердикта." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 06</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Несколько разных ворот качества надежнее одного общего вердикта." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Quality gate</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Линтер</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Unit / E2E</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">Security</text></svg><figcaption>Несколько разных ворот качества надежнее одного общего вердикта. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <table>
 <thead>
 <tr>
-  <th>Этап</th>
-  <th>Проверка</th>
-  <th>Что блокирует</th>
+<th>Этап</th>
+<th>Проверка</th>
+<th>Что блокирует</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Требования</td>
-  <td>Обработаны роли, форматы и исключения</td>
-  <td>Начало реализации</td>
+<td>Требования</td>
+<td>Обработаны роли, форматы и исключения</td>
+<td>Начало реализации</td>
 </tr>
 <tr>
-  <td>Архитектура</td>
-  <td>Нет прямого доступа UI к БД</td>
-  <td>Сборку</td>
+<td>Архитектура</td>
+<td>Нет прямого доступа UI к БД</td>
+<td>Сборку</td>
 </tr>
 <tr>
-  <td>Код</td>
-  <td>Статический анализ, типы</td>
-  <td>Pull request</td>
+<td>Код</td>
+<td>Статический анализ, типы</td>
+<td>Pull request</td>
 </tr>
 <tr>
-  <td>Unit</td>
-  <td>Правила валидации и статусы</td>
-  <td>Pull request</td>
+<td>Unit</td>
+<td>Правила валидации и статусы</td>
+<td>Pull request</td>
 </tr>
 <tr>
-  <td>Integration</td>
-  <td>Права, хранение файлов, журнал</td>
-  <td>Слияние</td>
+<td>Integration</td>
+<td>Права, хранение файлов, журнал</td>
+<td>Слияние</td>
 </tr>
 <tr>
-  <td>E2E</td>
-  <td>Ученик загрузил → учитель увидел → получил обратную связь</td>
-  <td>Релиз</td>
+<td>E2E</td>
+<td>Ученик загрузил → учитель увидел → получил обратную связь</td>
+<td>Релиз</td>
 </tr>
 <tr>
-  <td>Security</td>
-  <td>Нет доступа к чужим файлам</td>
-  <td>Релиз</td>
+<td>Security</td>
+<td>Нет доступа к чужим файлам</td>
+<td>Релиз</td>
 </tr>
 <tr>
-  <td>Acceptance</td>
-  <td>Владелец процесса принимает результат</td>
-  <td>Включение пользователям</td>
+<td>Acceptance</td>
+<td>Владелец процесса принимает результат</td>
+<td>Включение пользователям</td>
 </tr>
 </tbody>
 </table>
 <p>Такую матрицу удобнее хранить в репозитории и подключать к CI, чем каждый раз просить модель «проверь всё, что можешь».</p>
-<h2 id="11-что-измерять-после-внедрения-qa-агентов">11. Что измерять после внедрения QA-агентов<a class="anchor" href="#11-что-измерять-после-внедрения-qa-агентов" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="11-что-измерять-после-внедрения-qa-агентов">11. Что измерять после внедрения QA-агентов<a aria-label="Ссылка на раздел" class="anchor" href="#11-что-измерять-после-внедрения-qa-агентов">#</a></h2>
 <ul>
 <li>число дефектов, найденных до релиза и после него;</li>
 <li>время прохождения quality gates;</li>
@@ -244,16 +246,16 @@
 <li>скорость доставки реальной функции пользователю.</li>
 </ul>
 <p><strong>Тревожный симптом:</strong> автоматизация «качественная», потому что тестов стало в десять раз больше, но число регрессий тоже выросло. Это означает, что систему нужно оценивать по <strong>способности обнаруживать реальные ошибки</strong>, а не по объёму проверок.</p>
-<h2 id="12-контрольный-список">12. Контрольный список<a class="anchor" href="#12-контрольный-список" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="12-контрольный-список">12. Контрольный список<a aria-label="Ссылка на раздел" class="anchor" href="#12-контрольный-список">#</a></h2>
 <ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Требования содержат проверяемые сценарии.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Архитектурные ограничения зафиксированы до написания кода.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Реализатор не может без контроля ослаблять тесты.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Есть unit, integration и E2E там, где они нужны.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Ревью подтверждает проблемы доказательствами.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Известны правила автоматического исправления и эскалации.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Проверки безопасности разрешены и выполняются в подходящем контуре.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Есть измерения дефектности и времени до релиза.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Требования содержат проверяемые сценарии.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Архитектурные ограничения зафиксированы до написания кода.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Реализатор не может без контроля ослаблять тесты.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Есть unit, integration и E2E там, где они нужны.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ревью подтверждает проблемы доказательствами.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Известны правила автоматического исправления и эскалации.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Проверки безопасности разрешены и выполняются в подходящем контуре.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Есть измерения дефектности и времени до релиза.</li>
 </ul>
 <p><strong>Вопрос для самопроверки.</strong> Почему нельзя доверять простому «проверил сам себя»? Потому что агент может иметь те же неверные предпосылки, что и при написании решения; нужны <strong>независимые требования и проверочные механизмы</strong>.</p>
-</article><nav class="chapter-nav"><a href="05_career.html"><span>← Предыдущая глава</span><strong>Найм, компетенции и грейды после массового внедрения ИИ</strong></a><a class="next" href="07_sdd.html"><span>Следующая глава →</span><strong>Spec-Driven Development в существующем проекте</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input type="checkbox" class="chapter-complete" data-complete="06_quality.html"> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Проверка после генерации недостаточна: качество нужно контролировать на каждом переходе от требований и архитектуры до тестов, ревью и безопасности.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>Quality gate</span><span>Feedback loop</span><span>Unit test</span><span>Mutation test</span><span>Playwright</span><span>Fuzzing</span><span>Code review</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=12320s" target="_blank" rel="noopener">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · День 1</b><p>Редакторское учебное пособие по выступлениям 11 ноября 2026 года. Неофициальное изложение: определения, схемы, иллюстрации, задания и примеры добавлены редактором.</p></div><div class="footer-links"><a href="index.html">Все главы</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="https://ai-dev.live/" target="_blank" rel="noopener">Программа ↗</a><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">Первоисточник ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+</article><nav class="chapter-nav"><a href="05_career.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Найм, компетенции и грейды после массового внедрения ИИ</strong></a><a class="next" href="07_sdd.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Spec-Driven Development в существующем проекте</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input class="chapter-complete" data-complete="06_quality.html" type="checkbox"/> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Проверка после генерации недостаточна: качество нужно контролировать на каждом переходе от требований и архитектуры до тестов, ревью и безопасности.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>Quality gate</span><span>Feedback loop</span><span>Unit test</span><span>Mutation test</span><span>Playwright</span><span>Fuzzing</span><span>Code review</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=12320s" rel="noopener" target="_blank">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" rel="noopener" target="_blank">Официальная программа ↗</a></div></footer><div aria-live="polite" id="toast" role="status"></div></body></html>

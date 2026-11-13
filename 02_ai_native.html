@@ -1,4 +1,6 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами."><title>Агентоцентричная организация: от чата к ядру процессов · AI Dev Live 2026 — книга</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="02_ai_native.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html" aria-label="Оглавление книги"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>КНИГА · 2026 · ДЕНЬ 01</small></span></a><nav class="top-links" aria-label="Основная навигация"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">▶ Трансляция</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" title="Содержание" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ГЛАВЫ</div><div class="side-chapters"><a class="side-chapter " href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter active" href="02_ai_native.html"><span>02</span>AI-native организация</a><a class="side-chapter " href="03_orchestration.html"><span>03</span>Оркестрация</a><a class="side-chapter " href="04_inference.html"><span>04</span>GPU и инференс</a><a class="side-chapter " href="05_career.html"><span>05</span>Карьера и найм</a><a class="side-chapter " href="06_quality.html"><span>06</span>Контроль качества</a><a class="side-chapter " href="07_sdd.html"><span>07</span>Spec-Driven Development</a><a class="side-chapter " href="08_metrics.html"><span>08</span>Эффект и метрики</a><a class="side-chapter " href="09_human.html"><span>09</span>Человек и ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом">Главный сдвиг: не человек с инструментом, а процесс с агентом</a>
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><meta content="#0c1424" name="theme-color"/><meta content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами." name="description"/><title>Агентоцентричная организация: от чата к ядру процессов · AI Dev Live 2026 — книга</title><link href="assets/style.css" rel="stylesheet"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="assets/catalog.js"></script><script defer="" src="assets/app.js"></script></head><body data-page="02_ai_native.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" rel="noopener" target="_blank">▶ Видео 1</a></nav><div class="header-actions"><button aria-label="Включить или выключить анимации" class="icon-btn motion-btn" id="motionToggle" title="Управление анимациями">◉</button><button aria-label="Переключить светлую и тёмную тему" class="icon-btn" id="themeToggle">◐</button><button aria-label="Показать содержание" class="icon-btn mobile-menu" id="menuToggle">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом">Главный сдвиг: не человек с инструментом, а процесс с агентом</a>
 <a class="toc-item toc-level-2" href="#1-почему-запустим-агента-ночью-быстро-перестаёт-работать">1. Почему «запустим агента ночью» быстро перестаёт работать</a>
 <a class="toc-item toc-level-2" href="#2-ядро-данных-как-общий-контекст-бизнеса">2. Ядро данных как общий контекст бизнеса</a>
 <a class="toc-item toc-level-3" href="#что-должно-быть-в-модели-данных">Что должно быть в модели данных</a>
@@ -11,41 +13,41 @@
 <a class="toc-item toc-level-2" href="#8-когда-переводить-процесс-в-автономный-режим">8. Когда переводить процесс в автономный режим</a>
 <a class="toc-item toc-level-2" href="#9-пример-агент-обработки-учебных-материалов">9. Пример: агент обработки учебных материалов</a>
 <a class="toc-item toc-level-2" href="#10-стратегия-внедрения-не-автоматизируйте-весь-хаос-сразу">10. Стратегия внедрения: не автоматизируйте весь хаос сразу</a>
-<a class="toc-item toc-level-2" href="#11-итог-и-вопросы">11. Итог и вопросы</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Библиотека</a><span>›</span> Глава 02 / 09</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 02 <span>·</span> АРХИТЕКТУРА БИЗНЕСА</div><h1>Агентоцентричная организация: от чата к ядру процессов</h1><p class="lead">Почему «дать всем чат-бота» и «автоматизировать организацию» — разные задачи. И как появляется управляемое ядро данных, действий и доверия.</p><div class="speaker-line"><span class="speaker-avatar">ДС</span><div><strong>Данила Симонов</strong><small>К 2027 готов: как компании перейти на агентоцентричные процессы</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=2680s" target="_blank" rel="noopener">▶ Смотреть с 00:44:40</a></div><div class="key-facts"><span>⏱ ≈ 36 мин</span><span>◎ 14 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=2700s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:45:00</time> Определение AI-native ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=3000s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:50:00</time> Проблемы несвязанных агентов ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=3300s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:55:00</time> Ядро данных ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=3500s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:58:20</time> Журнал изменений ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=3700s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>01:01:40</time> Строгие инструменты ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=3950s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>01:05:50</time> Изоляция и eval ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=4220s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>01:10:20</time> Личные агенты и права ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=4660s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>01:17:40</time> Этапы внедрения ↗</a></div></nav><article class="article prose"><h2 id="главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом">Главный сдвиг: не человек с инструментом, а процесс с агентом<a class="anchor" href="#главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом" aria-label="Ссылка на раздел">#</a></h2>
+<a class="toc-item toc-level-2" href="#11-итог-и-вопросы">11. Итог и вопросы</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a><span>›</span> День 1 <span>›</span> Глава 02/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 02 <span>·</span> АРХИТЕКТУРА БИЗНЕСА</div><h1>Агентоцентричная организация: от чата к ядру процессов</h1><p class="lead">Почему «дать всем чат-бота» и «автоматизировать организацию» — разные задачи. И как появляется управляемое ядро данных, действий и доверия.</p><div class="speaker-line"><span class="speaker-avatar">ДС</span><div><strong>Данила Симонов</strong><small>К 2027 готов: как компании перейти на агентоцентричные процессы</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=2680s" rel="noopener" target="_blank">▶ Смотреть с 00:44:40</a></div><div class="key-facts"><span>⏱ ≈ 36 мин</span><span>◎ 14 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=2700s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:45:00</time> Определение AI-native ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=3000s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:50:00</time> Проблемы несвязанных агентов ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=3300s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:55:00</time> Ядро данных ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=3500s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:58:20</time> Журнал изменений ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=3700s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>01:01:40</time> Строгие инструменты ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=3950s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>01:05:50</time> Изоляция и eval ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=4220s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>01:10:20</time> Личные агенты и права ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=4660s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>01:17:40</time> Этапы внедрения ↗</a></div></nav><article class="article prose"><h2 id="главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом">Главный сдвиг: не человек с инструментом, а процесс с агентом<a aria-label="Ссылка на раздел" class="anchor" href="#главный-сдвиг-не-человек-с-инструментом-а-процесс-с-агентом">#</a></h2>
 <p>В привычной модели ИИ сотрудник открывает чат, просит помочь написать письмо или таблицу и лично отвечает за весь процесс. Организация остаётся такой же, только отдельные люди работают быстрее. <strong>AI-native</strong> в интерпретации Данилы Симонова — иной подход: каждый процесс проектируется с вопросом «какие части способен вести агент и какая поддерживающая система нужна для этого?».</p>
 <table>
 <thead>
 <tr>
-  <th>Традиционный подход</th>
-  <th>Агентоцентричный подход</th>
+<th>Традиционный подход</th>
+<th>Агентоцентричный подход</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>У каждого сотрудника свой чат и набор промптов</td>
-  <td>Общие данные, правила и наблюдаемые процессы</td>
+<td>У каждого сотрудника свой чат и набор промптов</td>
+<td>Общие данные, правила и наблюдаемые процессы</td>
 </tr>
 <tr>
-  <td>Результаты хранятся в переписках</td>
-  <td>Результаты хранятся в системах-источниках истины</td>
+<td>Результаты хранятся в переписках</td>
+<td>Результаты хранятся в системах-источниках истины</td>
 </tr>
 <tr>
-  <td>Ошибку замечает пользователь</td>
-  <td>Ошибки выявляют проверки, события и аудит</td>
+<td>Ошибку замечает пользователь</td>
+<td>Ошибки выявляют проверки, события и аудит</td>
 </tr>
 <tr>
-  <td>Агенты разово помогают выполнить действие</td>
-  <td>Агенты ведут ограниченную часть процесса по триггерам</td>
+<td>Агенты разово помогают выполнить действие</td>
+<td>Агенты ведут ограниченную часть процесса по триггерам</td>
 </tr>
 <tr>
-  <td>Доступ определяется случайной авторизацией в браузере</td>
-  <td>Доступ выдаётся по роли и конкретной операции</td>
+<td>Доступ определяется случайной авторизацией в браузере</td>
+<td>Доступ выдаётся по роли и конкретной операции</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Ключевая граница:</strong> AI-native не означает, что людей в компании больше нет. Люди формулируют цель, определяют допустимый риск, разбирают исключения и принимают решения, которые система не должна принимать самостоятельно.</p>
-<h2 id="1-почему-запустим-агента-ночью-быстро-перестаёт-работать">1. Почему «запустим агента ночью» быстро перестаёт работать<a class="anchor" href="#1-почему-запустим-агента-ночью-быстро-перестаёт-работать" aria-label="Ссылка на раздел">#</a></h2>
-<p>Спикер описывает знакомый сценарий: организация создаёт облачного агента, подключает его к CRM и просит по ночам исправлять карточки и актуализировать информацию. В начале — впечатляющее демо. Потом появляются вопросы:</p>
+<h2 id="1-почему-запустим-агента-ночью-быстро-перестаёт-работать">1. Почему «запустим агента ночью» быстро перестаёт работать<a aria-label="Ссылка на раздел" class="anchor" href="#1-почему-запустим-агента-ночью-быстро-перестаёт-работать">#</a></h2>
+<p>Спикер описывает знакомый сценарий: организация создаёт облачного агента, подключает его к CRM и просит по ночам исправлять карточки и актуализировать информацию. В начале — впечатляющее демо. Потом появляются вопросы:</p><figure aria-label="AI-native система связывает процессы, права и данные." class="concept-viz" data-viz="layers"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 02</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="AI-native система связывает процессы, права и данные." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 290" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="62" rx="16" width="700" x="90" y="30"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="696" x="92" y="32"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="61.0">Пользователи</text><path class="viz-wire" d="M 440 92 L 440 115"></path><path class="viz-wire-glow" d="M 440 92 L 440 115"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="116"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="696" x="92" y="118"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="147.0">Агентные сервисы</text><path class="viz-wire" d="M 440 178 L 440 201"></path><path class="viz-wire-glow" d="M 440 178 L 440 201"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="202"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="696" x="92" y="204"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="233.0">Ядро данных</text><text class="viz-small" transform="rotate(-90 45 55)" x="45" y="55">СЛОИ</text></svg><figcaption>AI-native система связывает процессы, права и данные. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <ul>
 <li>кто именно изменил поле клиента и по какой причине;</li>
 <li>что произошло после повторного запуска;</li>
@@ -56,7 +58,7 @@
 <li>как воспроизвести вчерашний результат, если модель сегодня решила действовать по-другому.</li>
 </ul>
 <p><strong>Вывод:</strong> автономный агент без операционной оболочки — не новая инфраструктура компании, а источник непрозрачных побочных эффектов.</p>
-<h2 id="2-ядро-данных-как-общий-контекст-бизнеса">2. Ядро данных как общий контекст бизнеса<a class="anchor" href="#2-ядро-данных-как-общий-контекст-бизнеса" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="2-ядро-данных-как-общий-контекст-бизнеса">2. Ядро данных как общий контекст бизнеса<a aria-label="Ссылка на раздел" class="anchor" href="#2-ядро-данных-как-общий-контекст-бизнеса">#</a></h2>
 <p>Первый слой системы — <strong>data core</strong>, то есть структурированное хранилище фактов об организации. Оно не обязательно должно физически содержать вообще все данные: часто разумнее объединить источники через согласованные интерфейсы и идентификаторы. Важна не единая огромная таблица, а <strong>единая семантика объектов</strong>: сотрудник, задача, согласование, документ, клиент, операция и их связи.</p>
 <pre><code class="language-text">                ИСТОЧНИКИ
       CRM   почта   документы   LMS   ERP
@@ -79,88 +81,88 @@
                       ▼
              ОБЩИЙ ЖУРНАЛ АУДИТА
 </code></pre>
-<h3 id="что-должно-быть-в-модели-данных">Что должно быть в модели данных<a class="anchor" href="#что-должно-быть-в-модели-данных" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="что-должно-быть-в-модели-данных">Что должно быть в модели данных<a aria-label="Ссылка на раздел" class="anchor" href="#что-должно-быть-в-модели-данных">#</a></h3>
 <p>Для каждой сущности полезны стабильный ID, источник, владелец данных, временные метки, версия, статус, уровень чувствительности и журнал изменений. Если объект присутствует в нескольких системах, нужны правила синхронизации и разрешения конфликтов.</p>
 <p>Например, у образовательной организации «домашнее задание» может быть представлено в LMS, электронном журнале и портфолио ученика. Если дать агенту три несвязанных способа записывать туда результат, получить единый достоверный статус будет непросто. Поэтому в агентной архитектуре сначала выбирают <strong>канонический источник статуса</strong> и понятные операции изменения.</p>
-<h2 id="3-журнал-изменений-обязательный-а-не-дополнительный-компонент">3. Журнал изменений — обязательный, а не дополнительный компонент<a class="anchor" href="#3-журнал-изменений-обязательный-а-не-дополнительный-компонент" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="3-журнал-изменений-обязательный-а-не-дополнительный-компонент">3. Журнал изменений — обязательный, а не дополнительный компонент<a aria-label="Ссылка на раздел" class="anchor" href="#3-журнал-изменений-обязательный-а-не-дополнительный-компонент">#</a></h2>
 <p>Самый сильный инженерный тезис доклада — <strong>каждое действие должно оставлять след</strong>. Недостаточно хранить итоговое значение в базе; желательно понимать, почему оно появилось.</p>
 <p>Минимальный журнал для операции:</p>
 <table>
 <thead>
 <tr>
-  <th>Поле</th>
-  <th>Пример</th>
-  <th>Для чего</th>
+<th>Поле</th>
+<th>Пример</th>
+<th>Для чего</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><code>operation_id</code></td>
-  <td>UUID</td>
-  <td>Поиск и предотвращение повторной записи</td>
+<td><code>operation_id</code></td>
+<td>UUID</td>
+<td>Поиск и предотвращение повторной записи</td>
 </tr>
 <tr>
-  <td><code>actor</code></td>
-  <td><code>agent:lesson-reviewer</code></td>
-  <td>Кто инициировал изменение</td>
+<td><code>actor</code></td>
+<td><code>agent:lesson-reviewer</code></td>
+<td>Кто инициировал изменение</td>
 </tr>
 <tr>
-  <td><code>on_behalf_of</code></td>
-  <td><code>teacher:42</code></td>
-  <td>От чьего имени действует</td>
+<td><code>on_behalf_of</code></td>
+<td><code>teacher:42</code></td>
+<td>От чьего имени действует</td>
 </tr>
 <tr>
-  <td><code>object_id</code></td>
-  <td><code>assignment:1058</code></td>
-  <td>Какой объект менялся</td>
+<td><code>object_id</code></td>
+<td><code>assignment:1058</code></td>
+<td>Какой объект менялся</td>
 </tr>
 <tr>
-  <td><code>before</code> / <code>after</code></td>
-  <td>Старый и новый статус</td>
-  <td>Анализ результата и откат</td>
+<td><code>before</code> / <code>after</code></td>
+<td>Старый и новый статус</td>
+<td>Анализ результата и откат</td>
 </tr>
 <tr>
-  <td><code>reason</code></td>
-  <td>«Проверены критерии №1–4»</td>
-  <td>Обоснование решения</td>
+<td><code>reason</code></td>
+<td>«Проверены критерии №1–4»</td>
+<td>Обоснование решения</td>
 </tr>
 <tr>
-  <td><code>trace_id</code></td>
-  <td>ID запуска агента</td>
-  <td>Связь со всеми шагами процесса</td>
+<td><code>trace_id</code></td>
+<td>ID запуска агента</td>
+<td>Связь со всеми шагами процесса</td>
 </tr>
 <tr>
-  <td><code>approval</code></td>
-  <td><code>required / granted / rejected</code></td>
-  <td>Контроль полномочий</td>
+<td><code>approval</code></td>
+<td><code>required / granted / rejected</code></td>
+<td>Контроль полномочий</td>
 </tr>
 <tr>
-  <td><code>time</code>, <code>version</code></td>
-  <td>Время и версия сценария</td>
-  <td>Воспроизводимость</td>
+<td><code>time</code>, <code>version</code></td>
+<td>Время и версия сценария</td>
+<td>Воспроизводимость</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Особая практическая ценность</strong> — функция отката. Исправить сто неправильных действий вручную всегда дороже, чем отменить пакет операций, сделанных в рамках одного запуска. Однако откат должен учитывать побочные эффекты: например, нельзя «отправить письмо назад», даже если запись о рассылке удалена.</p>
-<h2 id="4-агенты-должны-работать-через-строгие-инструменты">4. Агенты должны работать через строгие инструменты<a class="anchor" href="#4-агенты-должны-работать-через-строгие-инструменты" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="4-агенты-должны-работать-через-строгие-инструменты">4. Агенты должны работать через строгие инструменты<a aria-label="Ссылка на раздел" class="anchor" href="#4-агенты-должны-работать-через-строгие-инструменты">#</a></h2>
 <p>Люди способны исправлять странные действия в интерфейсе интуитивно; агент на длинной дистанции может постоянно выбирать разные способы одного и того же. В результате становится трудно тестировать, воспроизводить и поддерживать работу системы.</p>
 <p>Поэтому Данила рекомендует создавать <strong>не множество разрозненных входов, а небольшое число типизированных операций</strong>:</p>
 <pre><code class="language-json">{
-  &quot;tool&quot;: &quot;change_assignment_status&quot;,
-  &quot;arguments&quot;: {
-    &quot;assignment_id&quot;: 1058,
-    &quot;new_status&quot;: &quot;reviewed&quot;,
-    &quot;reason&quot;: &quot;Проверены 4 критерия&quot;,
-    &quot;expected_version&quot;: 6
+  "tool": "change_assignment_status",
+  "arguments": {
+    "assignment_id": 1058,
+    "new_status": "reviewed",
+    "reason": "Проверены 4 критерия",
+    "expected_version": 6
   }
 }
 </code></pre>
 <p>Такой инструмент должен программно проверить, что объект существует; статус входит в разрешённый набор; у инициатора есть право изменения; версия не устарела; операция допустима на текущем этапе.</p>
-<h3 id="ошибка-как-обучающая-обратная-связь">Ошибка как обучающая обратная связь<a class="anchor" href="#ошибка-как-обучающая-обратная-связь" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="ошибка-как-обучающая-обратная-связь">Ошибка как обучающая обратная связь<a aria-label="Ссылка на раздел" class="anchor" href="#ошибка-как-обучающая-обратная-связь">#</a></h3>
 <p>Плохой инструмент возвращает <code>400 Bad Request</code>. Хороший возвращает структурированное сообщение: «Поле status принимает только pending, reviewed, rejected; для текущего объекта допустим reviewed». Это снижает число бессмысленных повторов и облегчает исправление.</p>
 <p><strong>Детерминизм важнее идеального промпта.</strong> Предупредить агента «всегда указывай двухбуквенный код страны» полезно. Но надёжнее валидировать формат кодом: модель может ошибиться даже при идеальной инструкции.</p>
-<h2 id="5-среда-исполнения-и-права-доступа">5. Среда исполнения и права доступа<a class="anchor" href="#5-среда-исполнения-и-права-доступа" aria-label="Ссылка на раздел">#</a></h2>
-<p>Автономному процессу необходимы явно определённые границы:</p>
+<h2 id="5-среда-исполнения-и-права-доступа">5. Среда исполнения и права доступа<a aria-label="Ссылка на раздел" class="anchor" href="#5-среда-исполнения-и-права-доступа">#</a></h2>
+<p>Автономному процессу необходимы явно определённые границы:</p><figure aria-label="Журналирование делает автономное изменение проверяемым." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 02</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Журналирование делает автономное изменение проверяемым." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Событие</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Операция</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Аудит</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Откат</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Журналирование делает автономное изменение проверяемым. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <ul>
 <li><strong>Изоляция:</strong> одно выполнение не должно случайно менять файлы и состояние другого.</li>
 <li><strong>Секреты:</strong> учётные данные выдаются на время операции и в нужном объёме.</li>
@@ -170,47 +172,47 @@
 <li><strong>Наблюдаемость:</strong> есть журнал действий, ошибок и состояний.</li>
 </ul>
 <p>Спикер обсуждает разные способы изоляции — от отдельных процессов до контейнеров и микровиртуальных машин. Конкретный уровень зависит от риска и того, какие действия агенту разрешены.</p>
-<h2 id="6-золотой-набор-тестов-как-доказать-что-процесс-работает">6. Золотой набор тестов: как доказать, что процесс работает<a class="anchor" href="#6-золотой-набор-тестов-как-доказать-что-процесс-работает" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="6-золотой-набор-тестов-как-доказать-что-процесс-работает">6. Золотой набор тестов: как доказать, что процесс работает<a aria-label="Ссылка на раздел" class="anchor" href="#6-золотой-набор-тестов-как-доказать-что-процесс-работает">#</a></h2>
 <p>Для автоматизируемой операции заранее собирают несколько <strong>эталонных случаев</strong> — golden set. Каждый кейс содержит вход, ожидаемый результат, запрещённые действия и метод сравнения.</p>
 <p>Пример для агента, который обрабатывает обращения пользователей:</p>
 <table>
 <thead>
 <tr>
-  <th>Кейс</th>
-  <th>Вход</th>
-  <th>Ожидаемое действие</th>
+<th>Кейс</th>
+<th>Вход</th>
+<th>Ожидаемое действие</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>1</td>
-  <td>Обычное обращение</td>
-  <td>Классификация и ответ по утверждённой базе</td>
+<td>1</td>
+<td>Обычное обращение</td>
+<td>Классификация и ответ по утверждённой базе</td>
 </tr>
 <tr>
-  <td>2</td>
-  <td>Нет информации</td>
-  <td>Уточняющий вопрос; не выдумывать ответ</td>
+<td>2</td>
+<td>Нет информации</td>
+<td>Уточняющий вопрос; не выдумывать ответ</td>
 </tr>
 <tr>
-  <td>3</td>
-  <td>Есть личные данные</td>
-  <td>Минимизировать доступ, не включать ПДн в публичный ответ</td>
+<td>3</td>
+<td>Есть личные данные</td>
+<td>Минимизировать доступ, не включать ПДн в публичный ответ</td>
 </tr>
 <tr>
-  <td>4</td>
-  <td>Просьба удалить все записи</td>
-  <td>Остановиться и запросить разрешение</td>
+<td>4</td>
+<td>Просьба удалить все записи</td>
+<td>Остановиться и запросить разрешение</td>
 </tr>
 <tr>
-  <td>5</td>
-  <td>Повторное событие</td>
-  <td>Не создавать вторую копию обращения</td>
+<td>5</td>
+<td>Повторное событие</td>
+<td>Не создавать вторую копию обращения</td>
 </tr>
 </tbody>
 </table>
 <p>После изменения инструкции весь набор прогоняется заново. Иначе исправление одной ошибки может сломать три других сценария. Такой набор — не разовый этап запуска, а <strong>постоянный механизм контроля регрессий</strong>.</p>
-<h2 id="7-что-делать-с-личными-агентами-сотрудников">7. Что делать с личными агентами сотрудников<a class="anchor" href="#7-что-делать-с-личными-агентами-сотрудников" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="7-что-делать-с-личными-агентами-сотрудников">7. Что делать с личными агентами сотрудников<a aria-label="Ссылка на раздел" class="anchor" href="#7-что-делать-с-личными-агентами-сотрудников">#</a></h2>
 <p>Нельзя ожидать, что вся компания откажется от привычного интерфейса в пользу единого корпоративного чата. Сотрудники продолжат использовать своих помощников; поэтому следует заранее спроектировать <strong>контролируемый доступ к процессам и данным</strong>.</p>
 <p>Это можно реализовать через интерфейс операций — API, MCP или иной стандарт. При этом:</p>
 <ol>
@@ -221,46 +223,46 @@
 <li>Любая операция попадает в общий журнал.</li>
 </ol>
 <p>Отдельная инженерная проблема — <strong>устаревающие инструкции</strong>. Долгий чат личного агента может продолжать пользоваться инструментами так, как они выглядели несколько недель назад. Поэтому в докладе предлагается предоставлять свежие инструкции из самого сервера, а не надеяться на то, что локальный контекст всегда актуален.</p>
-<h2 id="8-когда-переводить-процесс-в-автономный-режим">8. Когда переводить процесс в автономный режим<a class="anchor" href="#8-когда-переводить-процесс-в-автономный-режим" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="8-когда-переводить-процесс-в-автономный-режим">8. Когда переводить процесс в автономный режим<a aria-label="Ссылка на раздел" class="anchor" href="#8-когда-переводить-процесс-в-автономный-режим">#</a></h2>
 <p>Удобная модель зрелости:</p>
 <table>
 <thead>
 <tr>
-  <th>Этап</th>
-  <th>Как работает процесс</th>
-  <th>Кто отвечает за исключения</th>
+<th>Этап</th>
+<th>Как работает процесс</th>
+<th>Кто отвечает за исключения</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>0. Ручной</td>
-  <td>Человек выполняет всё</td>
-  <td>Человек</td>
+<td>0. Ручной</td>
+<td>Человек выполняет всё</td>
+<td>Человек</td>
 </tr>
 <tr>
-  <td>1. Подсказки</td>
-  <td>Агент готовит текст или план</td>
-  <td>Человек</td>
+<td>1. Подсказки</td>
+<td>Агент готовит текст или план</td>
+<td>Человек</td>
 </tr>
 <tr>
-  <td>2. Ассистирование</td>
-  <td>Агент вызывает безопасные инструменты, человек утверждает изменения</td>
-  <td>Человек</td>
+<td>2. Ассистирование</td>
+<td>Агент вызывает безопасные инструменты, человек утверждает изменения</td>
+<td>Человек</td>
 </tr>
 <tr>
-  <td>3. Контролируемая автономия</td>
-  <td>Рутинные действия идут автоматически; исключения эскалируются</td>
-  <td>Агент + оператор</td>
+<td>3. Контролируемая автономия</td>
+<td>Рутинные действия идут автоматически; исключения эскалируются</td>
+<td>Агент + оператор</td>
 </tr>
 <tr>
-  <td>4. Измеряемая автономия</td>
-  <td>Процесс имеет SLA, алерты, golden set, аудит и регулярный пересмотр</td>
-  <td>Владелец процесса</td>
+<td>4. Измеряемая автономия</td>
+<td>Процесс имеет SLA, алерты, golden set, аудит и регулярный пересмотр</td>
+<td>Владелец процесса</td>
 </tr>
 </tbody>
 </table>
 <p>Не каждую деятельность следует доводить до последнего этапа. Важны объём повторяемых операций, цена ошибки, качество исходных данных и требования законодательства.</p>
-<h2 id="9-пример-агент-обработки-учебных-материалов">9. Пример: агент обработки учебных материалов<a class="anchor" href="#9-пример-агент-обработки-учебных-материалов" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="9-пример-агент-обработки-учебных-материалов">9. Пример: агент обработки учебных материалов<a aria-label="Ссылка на раздел" class="anchor" href="#9-пример-агент-обработки-учебных-материалов">#</a></h2>
 <p>Представим систему, которая регулярно получает запись занятия, расшифровку и вложения; после этого должна подготовить HTML-урок для публикации.</p>
 <p><strong>Без ядра:</strong> агент ищет папку, читает файлы, пишет HTML, случайно повторно обрабатывает уже готовое занятие, а затем удаляет не ту версию.</p>
 <p><strong>С ядром:</strong></p>
@@ -281,11 +283,11 @@ LessonRegistered (уникальный lesson_id)
 Обновление статуса + журнал операции
 </code></pre>
 <p>Это <strong>редакторский пример применения архитектуры</strong> к образовательной среде. Особые условия — персональные данные детей, права на материалы, доступ к записям, сохранность первоисточников — требуют отдельной проверки перед внедрением.</p>
-<h2 id="10-стратегия-внедрения-не-автоматизируйте-весь-хаос-сразу">10. Стратегия внедрения: не автоматизируйте весь хаос сразу<a class="anchor" href="#10-стратегия-внедрения-не-автоматизируйте-весь-хаос-сразу" aria-label="Ссылка на раздел">#</a></h2>
-<p>Для небольшого коллектива возможно быстрее экспериментировать с несколькими процессами; для крупной организации разумнее взять <strong>изолированный поток</strong> с измеримой пользой, а затем масштабировать основу.</p>
+<h2 id="10-стратегия-внедрения-не-автоматизируйте-весь-хаос-сразу">10. Стратегия внедрения: не автоматизируйте весь хаос сразу<a aria-label="Ссылка на раздел" class="anchor" href="#10-стратегия-внедрения-не-автоматизируйте-весь-хаос-сразу">#</a></h2>
+<p>Для небольшого коллектива возможно быстрее экспериментировать с несколькими процессами; для крупной организации разумнее взять <strong>изолированный поток</strong> с измеримой пользой, а затем масштабировать основу.</p><figure aria-label="Стабильное ядро определяет границы работы агентов." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 02</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Стабильное ядро определяет границы работы агентов." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Контур</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Роли</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Инструменты</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">Evals</text></svg><figcaption>Стабильное ядро определяет границы работы агентов. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p><strong>Пилот на четыре недели:</strong> выбрать одну рутину; описать объекты и права; создать 3–5 безопасных инструментов; подключить журналы; подготовить 10 тестовых кейсов; выполнить пилот с обязательной проверкой человеком; затем расширить автономию только для тех операций, которые показали устойчивое качество.</p>
 <p><strong>Критерий успеха</strong> — не количество запущенных агентов, а снижение затрат на процесс при сохранённом или выросшем качестве, предсказуемости и контроле.</p>
-<h2 id="11-итог-и-вопросы">11. Итог и вопросы<a class="anchor" href="#11-итог-и-вопросы" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="11-итог-и-вопросы">11. Итог и вопросы<a aria-label="Ссылка на раздел" class="anchor" href="#11-итог-и-вопросы">#</a></h2>
 <ul>
 <li>Можем ли мы сейчас восстановить историю каждого изменения, сделанного агентом?</li>
 <li>Знаем ли мы, что произойдёт при повторном запуске той же задачи?</li>
@@ -294,4 +296,4 @@ LessonRegistered (уникальный lesson_id)
 <li>Есть ли автоматические тесты и процедура отката?</li>
 </ul>
 <p>Если большинство ответов «нет», <strong>следующий шаг — не более мощная модель, а инженерное основание для автономности</strong>.</p>
-</article><nav class="chapter-nav"><a href="01_agent_setup.html"><span>← Предыдущая глава</span><strong>Агентный сетап: инструменты, контекст, правила и навыки</strong></a><a class="next" href="03_orchestration.html"><span>Следующая глава →</span><strong>Оркестрация длинных задач: команда агентов без потери управления</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input type="checkbox" class="chapter-complete" data-complete="02_ai_native.html"> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>AI-native — не раздача чат-ботов сотрудникам, а переустройство процессов вокруг общего ядра данных, управляемых агентов и наблюдаемых операций.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>AI-native</span><span>Data core</span><span>Audit log</span><span>Tool API</span><span>Golden set</span><span>RBAC</span><span>Sandbox</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=2680s" target="_blank" rel="noopener">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · День 1</b><p>Редакторское учебное пособие по выступлениям 11 ноября 2026 года. Неофициальное изложение: определения, схемы, иллюстрации, задания и примеры добавлены редактором.</p></div><div class="footer-links"><a href="index.html">Все главы</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="https://ai-dev.live/" target="_blank" rel="noopener">Программа ↗</a><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">Первоисточник ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+</article><nav class="chapter-nav"><a href="01_agent_setup.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Агентный сетап: инструменты, контекст, правила и навыки</strong></a><a class="next" href="03_orchestration.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Оркестрация длинных задач: команда агентов без потери управлен</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input class="chapter-complete" data-complete="02_ai_native.html" type="checkbox"/> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>AI-native — не раздача чат-ботов сотрудникам, а переустройство процессов вокруг общего ядра данных, управляемых агентов и наблюдаемых операций.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>AI-native</span><span>Data core</span><span>Audit log</span><span>Tool API</span><span>Golden set</span><span>RBAC</span><span>Sandbox</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=2680s" rel="noopener" target="_blank">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" rel="noopener" target="_blank">Официальная программа ↗</a></div></footer><div aria-live="polite" id="toast" role="status"></div></body></html>

@@ -1,0 +1,154 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная книга AI Dev Live 2026: два дня, 18 докладов, 50+ анимированных схем, таймкоды и практикум."><title>Внедрение AI в легаси: от запуска до автономной разработки · AI Dev Live 2026</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="внедрение-ai-в-легаси:-от-запуска-до-автономной-разработки"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=RzAdlyut6Uc" target="_blank" rel="noopener">▶ Видео 2</a></nav><div class="header-actions"><button class="icon-btn motion-btn" id="motionToggle" aria-label="Включить или выключить анимации" title="Управление анимациями">◉</button><button class="icon-btn" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце </a>
+<a class="toc-item toc-level-2" href="#1-что-такое-brownfield-legacy">1. Что такое brownfield / legacy </a>
+<a class="toc-item toc-level-2" href="#2-шаг-ноль-подготовить-воспроизводимое-окружение">2. Шаг ноль: подготовить воспроизводимое окружение </a>
+<a class="toc-item toc-level-3" href="#стартовыи-протокол-редакторскии-образец">Стартовый протокол (редакторский образец) </a>
+<a class="toc-item toc-level-2" href="#3-параллельные-среды-worktree-не-серебряная-пуля">3. Параллельные среды: worktree — не серебряная пуля </a>
+<a class="toc-item toc-level-2" href="#4-собрать-контекст-в-доступную-структуру">4. Собрать контекст в доступную структуру </a>
+<a class="toc-item toc-level-3" href="#иерархия-инструкции">Иерархия инструкции </a>
+<a class="toc-item toc-level-2" href="#5-доступ-к-настоящему-поведению-системы">5. Доступ к настоящему поведению системы </a>
+<a class="toc-item toc-level-2" href="#6-автоматизировать-фиксацию-неочевидного">6. Автоматизировать фиксацию неочевидного </a>
+<a class="toc-item toc-level-2" href="#7-эталонные-реализации-вместо-бесконечных-инструкции">7. Эталонные реализации вместо бесконечных инструкций </a>
+<a class="toc-item toc-level-2" href="#8-почему-стоит-предпочитать-распростране-нные-библиотеки">8. Почему стоит предпочитать распространённые библиотеки </a>
+<a class="toc-item toc-level-2" href="#9-архитектурные-линтеры-как-проверяемые-ограничения">9. Архитектурные линтеры как проверяемые ограничения </a>
+<a class="toc-item toc-level-2" href="#10-исследование-и-интервью-перед-реализациеи">10. Исследование и интервью перед реализацией </a>
+<a class="toc-item toc-level-2" href="#11-когда-ревьюить">11. Когда ревьюить </a>
+<a class="toc-item toc-level-2" href="#12-порядок-внедрения-в-деи-ствующую-команду">12. Порядок внедрения в действующую команду </a>
+<a class="toc-item toc-level-3" href="#контрольные-вопросы">Контрольные вопросы </a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a> <span>›</span> День 2 <span>›</span> Глава 13/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 13 <span>·</span> BROWNFIELD И АРХИТЕКТУРА</div><h1>Внедрение AI в легаси: от запуска до автономной разработки</h1><p class="lead">Воспроизводимая среда, проектные эталоны, архитектурные линтеры, контекст и постепенное внедрение AI.</p><div class="speaker-line"><span class="speaker-avatar">КМ</span><div><strong>Кирилл Мокевнин</strong><small>AI Dev Live 2026 · 12 ноября · День 2</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=8066s" target="_blank" rel="noopener">▶ Смотреть с 02:14:26</a></div><div class="key-facts"><span>⏱ ≈ 47 мин</span><span>◎ 13 разделов</span><span>⌁ Расшифровка + авторский разбор</span></div></section><div class="editor-note"><strong>О точности.</strong> Материал основан на автоматической транскрипции видео. Схемы, таблицы и примеры добавлены для обучения; это не цитаты и не оригинальные слайды. Имена технологий и некоторые произнесённые цифры могут быть распознаны неточно.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=8066s" target="_blank" rel="noopener"><time>02:14:26</time> Начало доклада ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=8736s" target="_blank" rel="noopener"><time>02:25:36</time> Фрагмент 2 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=9351s" target="_blank" rel="noopener"><time>02:35:51</time> Фрагмент 3 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=9966s" target="_blank" rel="noopener"><time>02:46:06</time> Фрагмент 4 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=10497s" target="_blank" rel="noopener"><time>02:54:57</time> Фрагмент 5 ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Прямая ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
+<p>Кирилл Мокевнин отвечает на практический вопрос: как внедрять ИИ-агентов <strong>в существующую систему</strong>, где уже есть годы технического долга, особенности предметной области, устаревшие соглашения и разрозненные сервисы. Предлагаемый путь начинается не со сложного фреймворка, а с элементарного требования: агент должен уметь <strong>развернуть проект, запустить его и самостоятельно проверить изменения</strong>. Затем ему поэтапно открывают документированный контекст, безопасные сведения о внешних системах, эталонные реализации и архитектурные ограничения. Рост автономности — последняя стадия, а не первая.</p>
+<blockquote>
+<p><strong>Ключевая идея:</strong> сначала сделайте существующий проект понятным и проверяемым для агента; только потом ждите от него систематически хороших изменений.</p>
+</blockquote>
+<h2 id="1-что-такое-brownfield-legacy">1. Что такое brownfield / legacy<a aria-label="Прямая ссылка на раздел" class="anchor" href="#1-что-такое-brownfield-legacy">#</a></h2>
+<p><strong>Greenfield</strong> — система с нуля, где ещё можно свободно выбрать стек, структуру и правила. <strong>Brownfield</strong> — проект, который живёт в реальности: уже есть код, клиенты, база данных, ограничения совместимости, архитектурные компромиссы и история решений. <strong>Legacy</strong> не обязательно означает «плохой код»: часть сложностей связана с требованиями бизнеса, которые не видны в текущем исходнике.</p><figure aria-label="Легаси сначала должен стать воспроизводимым и наблюдаемым." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 13</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Легаси сначала должен стать воспроизводимым и наблюдаемым." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Запуск проекта</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Контекст</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Quality gates</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Автономность</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Легаси сначала должен стать воспроизводимым и наблюдаемым. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Типичные признаки: тесты запускаются неочевидной командой, документация устарела, разные модули решают одинаковые задачи разным способом, специальное поведение не объяснено, настройки хранятся у одного сотрудника, а ошибка проявляется только на реальных данных.</p>
+<h2 id="2-шаг-ноль-подготовить-воспроизводимое-окружение">2. Шаг ноль: подготовить воспроизводимое окружение<a aria-label="Прямая ссылка на раздел" class="anchor" href="#2-шаг-ноль-подготовить-воспроизводимое-окружение">#</a></h2>
+<p>Перед любыми большими изменениями агент должен освоить «петлю»: установить зависимости → поднять БД и сервисы → запустить тесты → открыть приложение → понять ошибку. Если каждый запуск требует ручного вмешательства человека, автономная разработка будет постоянно буксовать.</p>
+<p><strong>Первый запрос агенту</strong> может быть простым: «изучи репозиторий, ничего не переписывай; добейся воспроизводимого локального запуска и задокументируй необходимые команды». После этого полезно взять <strong>чистую среду</strong>, повторить инструкции и проверить, что они действительно работают, а не зависят от случайно установленного пакета на рабочей машине автора.</p>
+<h3 id="стартовыи-протокол-редакторскии-образец">Стартовый протокол (редакторский образец)<a aria-label="Прямая ссылка на раздел" class="anchor" href="#стартовыи-протокол-редакторскии-образец">#</a></h3>
+<pre><code class="language-text">Сначала опиши среду: версии, сервисы, переменные окружения.
+Создай безопасную тестовую конфигурацию без боевых секретов.
+Запусти приложение и основной тестовый сценарий.
+Сохрани короткую инструкцию RUNBOOK.md.
+Проверь её в чистой рабочей копии.
+Не начинай рефакторинг, пока базовый запуск не воспроизведён.
+</code></pre>
+<h2 id="3-параллельные-среды-worktree-не-серебряная-пуля">3. Параллельные среды: worktree — не серебряная пуля<a aria-label="Прямая ссылка на раздел" class="anchor" href="#3-параллельные-среды-worktree-не-серебряная-пуля">#</a></h2>
+<p>При параллельной работе Git worktrees разделяют файлы, но <strong>не автоматически разделяют ресурсы</strong>. Два экземпляра могут конфликтовать за порт, одну тестовую БД, фиксированный каталог временных файлов или общий процесс.</p>
+<p>Для одновременной работы нескольких агентов понадобятся автоматическая выдача портов, отдельные тестовые базы или схемы, управляемые миграции, блокировки на конфликтующие операции и чистые окружения. Спикер отмечает, что такие инструменты — важный шаг к повышению эффективности, но их тоже надо построить и проверить.</p>
+<h2 id="4-собрать-контекст-в-доступную-структуру">4. Собрать контекст в доступную структуру<a aria-label="Прямая ссылка на раздел" class="anchor" href="#4-собрать-контекст-в-доступную-структуру">#</a></h2>
+<p>Агент не обязан читать весь монорепозиторий целиком, чтобы иметь возможность искать внутри него. Напротив, единая точка доступа позволяет <strong>находить нужный фрагмент по запросу</strong>, а не грузить тысячи файлов в контекст заранее.</p>
+<p>Соберите ссылки на архитектурную документацию, схемы модулей, контракты API, инструкции запуска, правила релиза, историю миграций и типовые ошибки. Документация может находиться в нескольких репозиториях; важно дать логический маршрут, а не свалить все материалы в одно гигантское <code>AGENTS.md</code>.</p>
+<h3 id="иерархия-инструкции">Иерархия инструкции<a aria-label="Прямая ссылка на раздел" class="anchor" href="#иерархия-инструкции">#</a></h3>
+<pre><code class="language-text">AGENTS.md
+  ├─ Как запустить и проверить проект (кратко)
+  ├─ Архитектурные правила (ссылки)
+  ├─ docs/architecture.md
+  ├─ docs/testing.md
+  ├─ docs/deploy.md
+  └─ skills/&lt;название-процедуры&gt;/SKILL.md
+</code></pre>
+<p>Самая важная характеристика инструкции — <strong>навигационность</strong>: агент должен быстро понять, где искать детали и какую проверку выполнить. Огромная универсальная инструкция теряет часть своей полезности именно из-за длины и неоднородности.</p>
+<h2 id="5-доступ-к-настоящему-поведению-системы">5. Доступ к настоящему поведению системы<a aria-label="Прямая ссылка на раздел" class="anchor" href="#5-доступ-к-настоящему-поведению-системы">#</a></h2>
+<p>Чтения кода часто недостаточно. Продакшен-данные могут не соответствовать предположениям схемы, реальная нагрузка делает прямую миграцию опасной, а логические ограничения существуют только в давно работающих сервисах.</p><figure aria-label="Примеры и проверки упрощают работу с противоречивой базой кода." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 13</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Примеры и проверки упрощают работу с противоречивой базой кода." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Архитектура</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Эталон кода</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Линтер</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">Контракт</text></svg><figcaption>Примеры и проверки упрощают работу с противоречивой базой кода. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Кирилл приводит пример с миграциями БД: если агент видит только схему, он может предложить тривиальное изменение столбца; если умеет прочитать агрегированные показатели объёма и нагрузки, способен предложить многоэтапную безопасную миграцию. Это <strong>не аргумент за неограниченный доступ в прод</strong>. Предпочтительнее readonly-метрики, безопасные выборки, санитизированные снимки данных и отдельное согласование рискованных команд.</p>
+<h2 id="6-автоматизировать-фиксацию-неочевидного">6. Автоматизировать фиксацию неочевидного<a aria-label="Прямая ссылка на раздел" class="anchor" href="#6-автоматизировать-фиксацию-неочевидного">#</a></h2>
+<p>Часть настоящих правил живёт в головах опытных разработчиков. После каждой нетривиальной задачи важно спросить: «что нового мы узнали о проекте?», «какое ложное предположение пришлось опровергнуть?», «где это знание должно храниться?».</p>
+<p>Спикер упоминает подходы, основанные на <strong>ретроспективном извлечении правил</strong> из реальных сессий. Это похоже на методику выращивания Skills из первого дня конференции: после решения задачи агент предлагает улучшения проектной документации, а инженер проверяет, что они не превращают случайную практику в обязательный стандарт.</p>
+<h2 id="7-эталонные-реализации-вместо-бесконечных-инструкции">7. Эталонные реализации вместо бесконечных инструкций<a aria-label="Прямая ссылка на раздел" class="anchor" href="#7-эталонные-реализации-вместо-бесконечных-инструкции">#</a></h2>
+<p>Если в старой системе пять способов писать один и тот же обработчик, модель может воспроизвести самый неудачный. Полезно выделить <strong>канонический пример</strong>: небольшой, правильно оформленный endpoint, handler, use case, тест или последовательность миграции. Один хорошо сделанный образец часто задаёт структуру лучше, чем длинное абстрактное правило.</p>
+<p>Важное ограничение: не превращайте весь проект в набор слепых копий. Эталон отражает <strong>принцип</strong>, а не буквально каждую строку. Инженер должен объяснить, какие элементы обязательны, а какие зависят от контекста.</p>
+<h2 id="8-почему-стоит-предпочитать-распростране-нные-библиотеки">8. Почему стоит предпочитать распространённые библиотеки<a aria-label="Прямая ссылка на раздел" class="anchor" href="#8-почему-стоит-предпочитать-распростране-нные-библиотеки">#</a></h2>
+<p>Собственная реализация всего подряд стала дешевле, но её обслуживание — нет. Код самописной библиотеки обычно сложнее понять агенту и новому сотруднику: мало документации, нет устойчивых общепринятых соглашений, меньше готовых примеров и исправлений.</p>
+<p>Это не запрет на собственный код. Сравнивайте стоимость владения, безопасность, возможность поддержки и зависимость от поставщика. Решение «написать всё самим, потому что агент способен» — слабое архитектурное обоснование.</p>
+<h2 id="9-архитектурные-линтеры-как-проверяемые-ограничения">9. Архитектурные линтеры как проверяемые ограничения<a aria-label="Прямая ссылка на раздел" class="anchor" href="#9-архитектурные-линтеры-как-проверяемые-ограничения">#</a></h2>
+<p>В большом проекте агенту недостаточно сказать: «соблюдай чистую архитектуру». Нужно кодом проверять критичные границы: контроллер не обращается напрямую к БД, бизнес-логика не импортирует UI, определённый модуль доступен только через интерфейс.</p>
+<p>Спикер упоминает архитектурные линтеры, которые умеют проверять подобные зависимости в разных языках. Важен и принцип <strong>baseline</strong>: если в системе уже есть сотни нарушений, фиксируют текущий уровень как известный долг и запрещают новые нарушения, вместо требования немедленно исправить всё в одном PR.</p>
+<table>
+<thead>
+<tr>
+<th>Правило</th>
+<th>Проверка</th>
+<th>Чем полезно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Запрет прямого SQL в обработчиках</td>
+<td>Анализ зависимостей / AST</td>
+<td>Не даёт тиражировать архитектурное нарушение</td>
+</tr>
+<tr>
+<td>Границы модулей</td>
+<td>Граф импортов</td>
+<td>Обнаруживает нежелательную связанность</td>
+</tr>
+<tr>
+<td>Стиль API</td>
+<td>Тест схемы OpenAPI</td>
+<td>Проверяет контракт интеграций</td>
+</tr>
+<tr>
+<td>Неизменность обязательных тестов</td>
+<td>CI + права в репозитории</td>
+<td>Снижает риск «подгонки» тестов под код</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-исследование-и-интервью-перед-реализациеи">10. Исследование и интервью перед реализацией<a aria-label="Прямая ссылка на раздел" class="anchor" href="#10-исследование-и-интервью-перед-реализациеи">#</a></h2>
+<p>Нельзя сразу писать код по просьбе «сделай фичу», не изучив реальные точки входа, зависимости и критерии приёмки. Спикер рекомендует <strong>research → уточнение вопросов → план → реализация → независимое ревью</strong>. Сложный SDD-инструментарий может помочь, но необязателен: достаточно дисциплины и проверяемых артефактов.</p><figure aria-label="Накопленное знание о системе фиксируется после каждой задачи." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 13</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Накопленное знание о системе фиксируется после каждой задачи." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Изучение</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Изменение</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Тест</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Ретро</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Накопленное знание о системе фиксируется после каждой задачи. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Полезны навыки, которые заставляют агента <strong>задавать точные вопросы</strong>, а не домысливать решения. Важное требование — вопросы должны исходить из уже изученного контекста проекта, а не быть общим опросником из двадцати пунктов.</p>
+<h2 id="11-когда-ревьюить">11. Когда ревьюить<a aria-label="Прямая ссылка на раздел" class="anchor" href="#11-когда-ревьюить">#</a></h2>
+<p>Практичная стратегия — независимая проверка <strong>сразу после имплементации</strong>, до публикации PR. Затем автоматические quality gates в CI и человеческое ревью для значимых изменений. Проверки на свежем контексте позволяют уменьшить самоподтверждение автора.</p>
+<p>Полезно проверять реализацию с разных сторон: соответствие постановке, соблюдение <code>AGENTS.md</code>, архитектурные ограничения, регрессионные тесты и наличие доказательств работы. При этом новый агент не должен иметь возможность незаметно переписать критерии проверки.</p>
+<h2 id="12-порядок-внедрения-в-деи-ствующую-команду">12. Порядок внедрения в действующую команду<a aria-label="Прямая ссылка на раздел" class="anchor" href="#12-порядок-внедрения-в-деи-ствующую-команду">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Инвестиция</th>
+<th>Критерий готовности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Окружение</td>
+<td>Запуск и тесты</td>
+<td>Чистый клон воспроизводимо работает</td>
+</tr>
+<tr>
+<td>2. Контекст</td>
+<td>Карта документации</td>
+<td>Новому агенту хватает ясного маршрута</td>
+</tr>
+<tr>
+<td>3. Наблюдаемость</td>
+<td>Метрики, ошибки, внешние интерфейсы</td>
+<td>Агент проверяет реальные гипотезы в безопасной среде</td>
+</tr>
+<tr>
+<td>4. Правила</td>
+<td>Эталоны, линтеры, CI</td>
+<td>Типовые архитектурные ошибки ловятся автоматически</td>
+</tr>
+<tr>
+<td>5. Процесс</td>
+<td>Research / plan / review</td>
+<td>Изменения проходят согласованную цепочку</td>
+</tr>
+<tr>
+<td>6. Автономность</td>
+<td>Отдельные сессии, права, аудит</td>
+<td>Полный цикл работает без скрытых ручных шагов</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Главный антипаттерн:</strong> сначала строить автономную «тёмную фабрику», а потом обнаруживать, что проект никогда не умел собираться и тестироваться без одного конкретного разработчика.</p>
+<h3 id="контрольные-вопросы">Контрольные вопросы<a aria-label="Прямая ссылка на раздел" class="anchor" href="#контрольные-вопросы">#</a></h3>
+<ul>
+<li>Можно ли воспроизвести проект на новом устройстве без устных подсказок?</li>
+<li>Где живут настоящие доменные правила, которых нет в исходниках?</li>
+<li>Какие архитектурные границы проверяются кодом, а не только просьбой к агенту?</li>
+<li>Какие функции и данные должны остаться недоступными для автономного исполнителя?</li>
+</ul>
+<p><strong>Связанные главы:</strong> <a href="01_agent_setup.html">01 — Агентный сетап</a>, <a href="07_sdd.html">07 — SDD</a>, <a href="d2_11_evidence.html">11 — Evidence-based SDLC</a>, <a href="d2_15_review.html">15 — AI-ревью</a>.</p>
+</article><nav class="chapter-nav"><a href="d2_12_security.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Безопасное AI-ядро: изоляция, память, полномочия</strong></a><a class="next" href="d2_14_interfaces.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>MCP, Skills и CLI: интерфейсы продукта для агентов</strong></a></nav><div class="end-card"><h3>Сохранить прогресс чтения</h3><p>Отметка сохраняется локально на этом устройстве.</p><label class="complete-label"><input class="chapter-complete" type="checkbox" data-complete="d2_13_legacy.html"> Я изучил(а) эту главу</label></div></main></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" target="_blank" rel="noopener">Официальная программа ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>

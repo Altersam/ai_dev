@@ -97,3 +97,6 @@
     if(e.key==='Escape'&&sidebar)sidebar.classList.remove('open');
   });
 })();
+
+/* Diagram animation controller: keep SVG static without scripts, animate in viewport. */
+(function(){var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;var b=document.body;var off=false;try{off=localStorage.getItem('ai_dev_motion')==='off';}catch(e){}if(reduced||off)b.classList.add('motion-off');var btn=document.getElementById('motionToggle');function sync(){if(btn){btn.textContent=b.classList.contains('motion-off')?'▷':'◉';btn.title=b.classList.contains('motion-off')?'Включить анимацию схем':'Остановить анимацию схем';btn.setAttribute('aria-pressed',String(!b.classList.contains('motion-off')))}}sync();if(btn)btn.addEventListener('click',function(){b.classList.toggle('motion-off');sync();try{localStorage.setItem('ai_dev_motion',b.classList.contains('motion-off')?'off':'on')}catch(e){}});var all=document.querySelectorAll('.concept-viz');if('IntersectionObserver' in window){var o=new IntersectionObserver(function(rows){rows.forEach(function(r){r.target.classList.toggle('in-view',r.isIntersecting)})},{rootMargin:'30px 0px 30px 0px',threshold:.06});all.forEach(function(x){o.observe(x)})}else{all.forEach(function(x){x.classList.add('in-view')})}})();

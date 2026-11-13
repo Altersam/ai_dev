@@ -1,0 +1,149 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная книга AI Dev Live 2026: два дня, 18 докладов, 50+ анимированных схем, таймкоды и практикум."><title>AI-ревью здорового человека: контекст, граф кода, шум · AI Dev Live 2026</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="ai-ревью-здорового-человека:-контекст,-граф-кода,-шум"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=RzAdlyut6Uc" target="_blank" rel="noopener">▶ Видео 2</a></nav><div class="header-actions"><button class="icon-btn motion-btn" id="motionToggle" aria-label="Включить или выключить анимации" title="Управление анимациями">◉</button><button class="icon-btn" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце </a>
+<a class="toc-item toc-level-2" href="#1-почему-ревью-стало-новым-узким-местом">1. Почему ревью стало новым узким местом </a>
+<a class="toc-item toc-level-2" href="#2-что-не-умеет-одиночныи-промпт-на-diff">2. Что не умеет одиночный промпт на diff </a>
+<a class="toc-item toc-level-2" href="#3-пять-логических-стадии-сильного-ревью">3. Пять логических стадий сильного ревью </a>
+<a class="toc-item toc-level-2" href="#4-почему-контекст-нужно-собирать-а-не-просто-накапливать">4. Почему контекст нужно собирать, а не просто накапливать </a>
+<a class="toc-item toc-level-2" href="#5-мульти-репозиторное-ревью">5. Мульти-репозиторное ревью </a>
+<a class="toc-item toc-level-2" href="#6-большие-pr-и-инкрементальные-изменения">6. Большие PR и инкрементальные изменения </a>
+<a class="toc-item toc-level-2" href="#7-память-о-прошлых-замечаниях">7. Память о прошлых замечаниях </a>
+<a class="toc-item toc-level-2" href="#8-экономика-моделеи-внутри-ревью">8. Экономика моделей внутри ревью </a>
+<a class="toc-item toc-level-2" href="#9-шум-главныи-враг-внедрения">9. Шум: главный враг внедрения </a>
+<a class="toc-item toc-level-2" href="#10-как-делать-доказательные-замечания">10. Как делать доказательные замечания </a>
+<a class="toc-item toc-level-2" href="#11-почему-наи-ти-баг-только-половина-задачи">11. Почему «найти баг» — только половина задачи </a>
+<a class="toc-item toc-level-2" href="#12-что-выбрать-сервис-или-свои-конвеи-ер">12. Что выбрать: сервис или свой конвейер </a>
+<a class="toc-item toc-level-3" href="#практикум-построить-минимальныи-review-pipeline">Практикум: построить минимальный review pipeline </a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a> <span>›</span> День 2 <span>›</span> Глава 15/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 15 <span>·</span> CODE REVIEW</div><h1>AI-ревью здорового человека: контекст, граф кода, шум</h1><p class="lead">Промышленное AI-ревью: поиск зависимостей, многошаговая проверка, контекстный движок и важность полезного сигнала.</p><div class="speaker-line"><span class="speaker-avatar">АВ</span><div><strong>Алекс Волочнев</strong><small>AI Dev Live 2026 · 12 ноября · День 2</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=13570s" target="_blank" rel="noopener">▶ Смотреть с 03:46:10</a></div><div class="key-facts"><span>⏱ ≈ 60 мин</span><span>◎ 13 разделов</span><span>⌁ Расшифровка + авторский разбор</span></div></section><div class="editor-note"><strong>О точности.</strong> Материал основан на автоматической транскрипции видео. Схемы, таблицы и примеры добавлены для обучения; это не цитаты и не оригинальные слайды. Имена технологий и некоторые произнесённые цифры могут быть распознаны неточно.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=13570s" target="_blank" rel="noopener"><time>03:46:10</time> Начало доклада ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=14436s" target="_blank" rel="noopener"><time>04:00:36</time> Фрагмент 2 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=15230s" target="_blank" rel="noopener"><time>04:13:50</time> Фрагмент 3 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=16024s" target="_blank" rel="noopener"><time>04:27:04</time> Фрагмент 4 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=16710s" target="_blank" rel="noopener"><time>04:38:30</time> Фрагмент 5 ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Прямая ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
+<p>Алекс Волочнев разбирает работу промышленной системы AI-ревью <strong>CodeRabbit</strong>. Ключевой тезис: качественное ревью — не один промпт «посмотри diff», а сложный управляемый процесс. Необходимо найти затронутые зависимости, собрать релевантный контекст, учесть архитектуру нескольких репозиториев, выполнить детерминированные проверки, выдать доказательные замечания и избавиться от шума. Чем больше кода генерируют агенты, тем важнее не масштабировать поток комментариев, а <strong>показывать человеку лишь существенные проблемы</strong>.</p>
+<blockquote>
+<p><strong>Тезис доклада:</strong> качество автоматического ревью определяется архитектурой контекстного движка, проверками и фильтрацией шума не меньше, чем «умом» модели.</p>
+</blockquote>
+<h2 id="1-почему-ревью-стало-новым-узким-местом">1. Почему ревью стало новым узким местом<a aria-label="Прямая ссылка на раздел" class="anchor" href="#1-почему-ревью-стало-новым-узким-местом">#</a></h2>
+<p>Агент может открыть несколько Pull Request за то время, за которое инженер раньше написал один. Число изменений растёт, но способность человека их прочитать — почти нет. Возникают два крайних сценария: пытаться просмотреть каждую строку и перегрузить команду; либо доверять агентным PR без проверки и накопить дефекты.</p><figure aria-label="Полезное ревью — результат сложной подготовки." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 15</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Полезное ревью — результат сложной подготовки." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Diff</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Код-граф</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Контекст</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Ревью</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Полезное ревью — результат сложной подготовки. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Спикер делится наблюдениями команды CodeRabbit о росте числа ревью и изменения характерных ошибок. Эти цифры отражают опыт сервиса, <strong>не являются универсальным исследованием всех репозиториев</strong>. Однако их практический смысл важен: масштабирование кодогенерации требует самостоятельного конвейера качества.</p>
+<p>Проблема не только в синтаксисе. В докладе разбираются классы ошибок авторизации, когда код корректно возвращает объект, но <strong>не проверяет, имеет ли текущий пользователь право его видеть</strong>. Все тесты могут оставаться зелёными, если тесты эту границу не проверяют.</p>
+<h2 id="2-что-не-умеет-одиночныи-промпт-на-diff">2. Что не умеет одиночный промпт на diff<a aria-label="Прямая ссылка на раздел" class="anchor" href="#2-что-не-умеет-одиночныи-промпт-на-diff">#</a></h2>
+<p>Представим изменение одного метода <code>get_document(id)</code>. Diff небольшой: добавили фильтр по ID. Но реальная уязвимость может находиться в том, что метод используется из пользовательского API без проверки владельца, из фоновой задачи с сервисным доступом и из административного интерфейса. По одному diff невозможно корректно понять все три контекста.</p>
+<p><strong>Code graph analysis</strong> строит граф зависимостей: вызовы, импорты, связи классов, влияние изменения на другие модули. Это нетривиально при dependency injection, динамической диспетчеризации, метапрограммировании. Простого <code>grep</code> может хватить для узкой задачи, но не всегда для реального межмодульного влияния.</p>
+<p>Редакторская схема цепочки:</p>
+<div class="visual-flow"><span>Diff</span><i>→</i><span>Граф зависимостей</span><i>→</i><span>Связанный контекст</span><i>→</i><span>Проверка</span><i>→</i><span>Замечания</span></div>
+<h2 id="3-пять-логических-стадии-сильного-ревью">3. Пять логических стадий сильного ревью<a aria-label="Прямая ссылка на раздел" class="anchor" href="#3-пять-логических-стадии-сильного-ревью">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Стадия</th>
+<th>Что происходит</th>
+<th>Защита от типичной ошибки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Подготовка</strong></td>
+<td>Определить масштаб, языки, изменённые участки</td>
+<td>Не передать модели весь репозиторий без разбора</td>
+</tr>
+<tr>
+<td><strong>Детерминированный анализ</strong></td>
+<td>Линтеры, статический анализ, граф вызовов</td>
+<td>Найти повторяемые структурные дефекты</td>
+</tr>
+<tr>
+<td><strong>Контекстное исследование</strong></td>
+<td>Найти зависимости, интерфейсы и правила</td>
+<td>Не ошибиться в назначении изменённого метода</td>
+</tr>
+<tr>
+<td><strong>LLM-review</strong></td>
+<td>Проверить риски и сценарии с учётом контекста</td>
+<td>Выявить смысловые ошибки, не видные линтеру</td>
+</tr>
+<tr>
+<td><strong>Верификация и публикация</strong></td>
+<td>Проверить замечания, убрать шум, написать ясно</td>
+<td>Не публиковать несуществующие баги</td>
+</tr>
+</tbody>
+</table>
+<p>Эти стадии не обязательно выполняются строго последовательно: сбор графа и статические проверки могут идти параллельно. Но <strong>публикация должна происходить после проверки качества самих комментариев</strong>.</p>
+<h2 id="4-почему-контекст-нужно-собирать-а-не-просто-накапливать">4. Почему контекст нужно собирать, а не просто накапливать<a aria-label="Прямая ссылка на раздел" class="anchor" href="#4-почему-контекст-нужно-собирать-а-не-просто-накапливать">#</a></h2>
+<p>У больших систем огромное количество документов, <code>AGENTS.md</code>, регламентов, устаревших схем и решений. Если всё это скормить модели, она получит шум вместо ясности. Поэтому контекстный движок должен уметь <strong>выбрать релевантное и отвергнуть нерелевантное</strong>.</p>
+<p>Пример: во внутренней документации сказано, что «все миграции хранятся в каталоге /migrations». Но текущий сервис генерирует миграции автоматом в CI. Агент, не знающий этого исключения, будет систематически писать ложное замечание «забыли файл миграции». Хороший контекст включает актуальное правило именно этого сервиса, а не усреднённый корпоративный стандарт.</p>
+<h2 id="5-мульти-репозиторное-ревью">5. Мульти-репозиторное ревью<a aria-label="Прямая ссылка на раздел" class="anchor" href="#5-мульти-репозиторное-ревью">#</a></h2>
+<p>Типичный продукт состоит из фронтенда, API, сервисов и общих контрактов, расположенных в разных репозиториях. Изменение ответа API может ломать UI, хотя внутри backend PR тесты проходят. Поэтому нужны связи между репозиториями: версия схемы, клиентская библиотека, контрактные тесты, граф потребителей.</p><figure aria-label="Изменение в одном месте затрагивает связанные участки." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 15</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Изменение в одном месте затрагивает связанные участки." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Изменение</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Frontend</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Backend</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">Данные</text></svg><figcaption>Изменение в одном месте затрагивает связанные участки. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Масштаб огромной организации делает ручное перечисление связей трудным. В докладе обсуждается автоматическое обнаружение релевантных репозиториев. Для небольшого проекта достаточно явной карты и контрактов. Главное — не выдавать <strong>локальную зелёную сборку</strong> за доказательство безопасности всей системы.</p>
+<h2 id="6-большие-pr-и-инкрементальные-изменения">6. Большие PR и инкрементальные изменения<a aria-label="Прямая ссылка на раздел" class="anchor" href="#6-большие-pr-и-инкрементальные-изменения">#</a></h2>
+<p>Очень крупные PR ухудшают качество анализа: контекст переполняется, взаимосвязи теряются, шум растёт. В промышленном процессе применяют фильтры для машинно-сгенерированных файлов и ограничения размера изменения. Это не означает, что большие изменения запрещены, — их приходится <strong>декомпозировать на осмысленные проверяемые части</strong>.</p>
+<p>Инкрементальное ревью иногда сложнее полного. Система должна заново оценить не только новый diff, но и <strong>предыдущие собственные замечания</strong>: какие исправлены, какие остаются актуальными, какие потеряли смысл после изменения кода.</p>
+<h2 id="7-память-о-прошлых-замечаниях">7. Память о прошлых замечаниях<a aria-label="Прямая ссылка на раздел" class="anchor" href="#7-память-о-прошлых-замечаниях">#</a></h2>
+<p>Один из важных механизмов — <strong>learnings</strong>: обратная связь из предыдущих PR постепенно превращается в проектное правило. Например, разработчик объясняет, что отсутствие миграции ожидаемо, потому что её создаёт CI. Система проверяет объяснение и в будущих аналогичных случаях не повторяет замечание.</p>
+<p>Однако нельзя автоматически объявлять каждый комментарий одного разработчика нормой всей компании. Знаниям нужны область действия, авторство, подтверждение и версия. Полезно разделить: локальное исключение проекта, одобренное командой правило и экспериментальную гипотезу.</p>
+<h2 id="8-экономика-моделеи-внутри-ревью">8. Экономика моделей внутри ревью<a aria-label="Прямая ссылка на раздел" class="anchor" href="#8-экономика-моделеи-внутри-ревью">#</a></h2>
+<p>Не каждый этап требует самой мощной и дорогой модели. Фильтрация файлов, классификация языка, формирование краткого описания изменений, часть маршрутизации и поиска могут выполняться детерминированным кодом или более лёгкими моделями. Сильная модель нужна на <strong>спорных смысловых дефектах</strong> и проверке сложного контекста.</p>
+<p>Эффективный бюджет выглядит так: дешёвая подготовка → выбор высокорисковых участков → дорогая экспертиза там, где она меняет решение → дешёвое форматирование → итоговая проверка. Это логика маршрутизации по стоимости ошибки, а не экономии токенов любой ценой.</p>
+<h2 id="9-шум-главныи-враг-внедрения">9. Шум: главный враг внедрения<a aria-label="Прямая ссылка на раздел" class="anchor" href="#9-шум-главныи-враг-внедрения">#</a></h2>
+<p>Если робот оставляет в каждом PR двадцать комментариев о вкусе автора или стилистике, инженеры перестают его читать. Хуже того, пропускают действительно опасные замечания. Поэтому нужна приоритизация: безопасность и корректность выше мелкой эстетики. Иногда <strong>лучший результат — отсутствие комментария</strong>, если подтверждённых проблем нет.</p>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Как поступить</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Критичная</td>
+<td>Блокировать, приложить воспроизведение</td>
+<td>Неавторизованный доступ к документу</td>
+</tr>
+<tr>
+<td>Существенная</td>
+<td>Ясно указать сценарий и последствие</td>
+<td>Ошибка при гонке запросов</td>
+</tr>
+<tr>
+<td>Умеренная</td>
+<td>Указывать по политике команды</td>
+<td>Неверная обработка редкого сбоя</td>
+</tr>
+<tr>
+<td>Стилевая</td>
+<td>Передать линтеру или скрыть</td>
+<td>Перенос строки, соглашение о названии</td>
+</tr>
+<tr>
+<td>Неподтверждённая</td>
+<td>Не публиковать как факт</td>
+<td>Гипотеза без связи с реальным кодом</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-как-делать-доказательные-замечания">10. Как делать доказательные замечания<a aria-label="Прямая ссылка на раздел" class="anchor" href="#10-как-делать-доказательные-замечания">#</a></h2>
+<p>Плохой комментарий: «Здесь проблема с безопасностью». Хороший: «Если пользователь A подставит ID объекта пользователя B, этот обработчик не проверит принадлежность; запрос возвращает объект при статусе 200. Нужен тест с двумя ролями и серверная проверка владельца». Такой комментарий содержит <strong>условие, наблюдаемый эффект, источник и предложение проверки</strong>.</p><figure aria-label="Обратная связь улучшает качество следующих замечаний." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 15</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Обратная связь улучшает качество следующих замечаний." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Комментарий</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Разбор</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Правило</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Меньше шума</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Обратная связь улучшает качество следующих замечаний. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Шаблон для вашего ревью-агента:</p>
+<pre><code class="language-text">Проверь изменение с точки зрения корректности, доступа к данным,
+конкурентности и совместимости API. Для каждой предполагаемой ошибки:
+1) укажи точное место и входной сценарий;
+2) найди в коде подтверждающее свидетельство;
+3) объясни воздействие на пользователя;
+4) предложи минимальную проверку или тест;
+5) оцени уверенность и стоимость ошибки.
+Не сообщай замечания без доказательства и не комментируй стиль,
+если его можно проверить автоматическим линтером.
+</code></pre>
+<h2 id="11-почему-наи-ти-баг-только-половина-задачи">11. Почему «найти баг» — только половина задачи<a aria-label="Прямая ссылка на раздел" class="anchor" href="#11-почему-наи-ти-баг-только-половина-задачи">#</a></h2>
+<p>Выгодная система должна делать замечания понятными и <strong>не обвинять</strong> людей без основания. Ревьюер — часть рабочего процесса, а не соревнование в количестве выявленных проблем. Комментарий нужен для решения, а не для демонстрации возможностей модели. В докладе описаны итерации, когда смена модели улучшила одни характеристики, но потребовала дополнительной настройки языка и полезности комментариев.</p>
+<p>Новые модели нельзя просто подменять без проверки: даже если они сильнее в бенчмарке, они могут иначе трактовать правила, чаще комментировать мелочи и увеличивать стоимость обработки.</p>
+<h2 id="12-что-выбрать-сервис-или-свои-конвеи-ер">12. Что выбрать: сервис или свой конвейер<a aria-label="Прямая ссылка на раздел" class="anchor" href="#12-что-выбрать-сервис-или-свои-конвеи-ер">#</a></h2>
+<p><strong>Готовый сервис</strong> уменьшает затраты на поддержку многочисленных языков, обновления моделей, сложный контекстный поиск и контроль шума. <strong>Самостоятельная реализация</strong> может быть оправданна для узкого набора проектов, особых требований конфиденциальности или собственных quality gates. В любом случае нужна реальная оценка total cost of ownership, включая наблюдаемость и сопровождение.</p>
+<h3 id="практикум-построить-минимальныи-review-pipeline">Практикум: построить минимальный review pipeline<a aria-label="Прямая ссылка на раздел" class="anchor" href="#практикум-построить-минимальныи-review-pipeline">#</a></h3>
+<ol>
+<li>Запустите компилятор, линтер и тесты из CI для текущего PR.</li>
+<li>Выделите изменённые публичные интерфейсы и их вызовы.</li>
+<li>Отберите соответствующие документы и правила проекта.</li>
+<li>Передайте LLM компактный diff + контекст + критерии риска.</li>
+<li>Второй проверкой проверьте существование каждой заявленной ошибки.</li>
+<li>Опубликуйте только существенные замечания с проверяемыми сценариями.</li>
+<li>Соберите реакцию команды на ложноположительные случаи и ведите журнал правил.</li>
+<li>Измеряйте не число комментариев, а <strong>долю полезных находок, время до исправления и дефекты после релиза</strong>.</li>
+</ol>
+<p><strong>Связанные главы:</strong> <a href="06_quality.html">Контроль качества</a>, <a href="03_orchestration.html">Оркестрация</a>, <a href="d2_11_evidence.html">Evidence-based SDLC</a>, <a href="08_metrics.html">Метрики ИИ</a>.</p>
+</article><nav class="chapter-nav"><a href="d2_14_interfaces.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>MCP, Skills и CLI: интерфейсы продукта для агентов</strong></a><a class="next" href="d2_16_product.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Продуктовое мышление: какую проблему действительно решать</strong></a></nav><div class="end-card"><h3>Сохранить прогресс чтения</h3><p>Отметка сохраняется локально на этом устройстве.</p><label class="complete-label"><input class="chapter-complete" type="checkbox" data-complete="d2_15_review.html"> Я изучил(а) эту главу</label></div></main></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" target="_blank" rel="noopener">Официальная программа ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>

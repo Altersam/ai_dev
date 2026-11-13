@@ -1,0 +1,167 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная книга AI Dev Live 2026: два дня, 18 докладов, 50+ анимированных схем, таймкоды и практикум."><title>Evidence-based SDLC: сначала проверить, потом специфицировать · AI Dev Live 2026</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="evidence-based-sdlc:-сначала-проверить,-потом-специфицироват"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=RzAdlyut6Uc" target="_blank" rel="noopener">▶ Видео 2</a></nav><div class="header-actions"><button class="icon-btn motion-btn" id="motionToggle" aria-label="Включить или выключить анимации" title="Управление анимациями">◉</button><button class="icon-btn" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце </a>
+<a class="toc-item toc-level-2" href="#1-что-изменилось-в-экономике-разработки">1. Что изменилось в экономике разработки </a>
+<a class="toc-item toc-level-3" href="#что-такое-доказательство-в-этом-контексте">Что такое «доказательство» в этом контексте </a>
+<a class="toc-item toc-level-2" href="#2-лестница-уверенности-от-предположения-до-наблюдения-в-продакшене">2. Лестница уверенности: от предположения до наблюдения в продакшене </a>
+<a class="toc-item toc-level-2" href="#3-spike-эксперимент-которыи-должен-изменить-решение">3. Spike: эксперимент, который должен изменить решение </a>
+<a class="toc-item toc-level-2" href="#4-почему-длинная-спецификация-не-заменяет-факты">4. Почему длинная спецификация не заменяет факты </a>
+<a class="toc-item toc-level-2" href="#5-реалистичныи-прототип-как-средство-выровнять-команду">5. Реалистичный прототип как средство выровнять команду </a>
+<a class="toc-item toc-level-2" href="#6-проверяем-еще-до-кода-чужие-продукты-и-интерфеи-сы">6. Проверяем ещё до кода: чужие продукты и интерфейсы </a>
+<a class="toc-item toc-level-2" href="#7-hill-climbing-агент-может-оптимизировать-измеримую-цель">7. Hill climbing: агент может оптимизировать измеримую цель </a>
+<a class="toc-item toc-level-3" href="#пример-договора-с-агентом-по-оптимизации">Пример договора с агентом по оптимизации </a>
+<a class="toc-item toc-level-2" href="#8-evidence-после-кода-не-я-проверил-а-вот-результат">8. Evidence после кода: не «я проверил», а «вот результат» </a>
+<a class="toc-item toc-level-2" href="#9-тесты-из-реальных-инцидентов">9. Тесты из реальных инцидентов </a>
+<a class="toc-item toc-level-2" href="#10-инфраструктура-для-деше-вых-экспериментов">10. Инфраструктура для дешёвых экспериментов </a>
+<a class="toc-item toc-level-2" href="#11-где-подход-особенно-полезен">11. Где подход особенно полезен </a>
+<a class="toc-item toc-level-3" href="#контрольные-вопросы">Контрольные вопросы </a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a> <span>›</span> День 2 <span>›</span> Глава 11/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 11 <span>·</span> ЭКСПЕРИМЕНТЫ И ДОКАЗАТЕЛЬСТВА</div><h1>Evidence-based SDLC: сначала проверить, потом специфицировать</h1><p class="lead">Проверяем гипотезы на реальных контрактах и прототипах до дорогой разработки; строим уверенность из фактов.</p><div class="speaker-line"><span class="speaker-avatar">РА</span><div><strong>Рефат Аметов</strong><small>AI Dev Live 2026 · 12 ноября · День 2</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=2669s" target="_blank" rel="noopener">▶ Смотреть с 00:44:29</a></div><div class="key-facts"><span>⏱ ≈ 46 мин</span><span>◎ 12 разделов</span><span>⌁ Расшифровка + авторский разбор</span></div></section><div class="editor-note"><strong>О точности.</strong> Материал основан на автоматической транскрипции видео. Схемы, таблицы и примеры добавлены для обучения; это не цитаты и не оригинальные слайды. Имена технологий и некоторые произнесённые цифры могут быть распознаны неточно.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=2669s" target="_blank" rel="noopener"><time>00:44:29</time> Начало доклада ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=3337s" target="_blank" rel="noopener"><time>00:55:37</time> Фрагмент 2 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=3950s" target="_blank" rel="noopener"><time>01:05:50</time> Фрагмент 3 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=4562s" target="_blank" rel="noopener"><time>01:16:02</time> Фрагмент 4 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=5091s" target="_blank" rel="noopener"><time>01:24:51</time> Фрагмент 5 ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Прямая ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
+<p>Рефат Аметов предлагает поменять порядок инженерной работы: <strong>сначала уменьшать неопределённость через дешёвые проверки, затем описывать и реализовывать решение</strong>. Когда агент способен быстро создать одноразовый прототип, провести эксперимент, запустить тест или сравнить реальные API, стоимость проверки часто оказывается ниже стоимости ошибочного предположения. В этом и заключается <strong>Evidence-based SDLC</strong>: важные архитектурные решения должны опираться на наблюдения, а не на уверенно написанные документы.</p>
+<blockquote>
+<p><strong>Тезис доклада:</strong> методично превращайте «туман войны» проекта в участки твёрдой почвы — факты, воспроизводимые эксперименты, измерения и проверенные контракты.</p>
+</blockquote>
+<h2 id="1-что-изменилось-в-экономике-разработки">1. Что изменилось в экономике разработки<a aria-label="Прямая ссылка на раздел" class="anchor" href="#1-что-изменилось-в-экономике-разработки">#</a></h2>
+<p>Раньше быстрый эксперимент мог быть роскошью. Чтобы проверить сторонний API или необычную архитектуру, инженер тратил часы и дни на инфраструктуру, код и интеграцию. Поэтому многие решения принимались заранее, на основе опыта и догадок. Агенты удешевили подготовку проверочных прототипов — и поменяли рациональный порядок действий.</p><figure aria-label="Эксперимент превращает неопределённость в проверяемый факт." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 11</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Эксперимент превращает неопределённость в проверяемый факт." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Гипотеза</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Spike</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Наблюдение</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Решение</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Эксперимент превращает неопределённость в проверяемый факт. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Сравним два сценария. В первом команда пишет многостраничную спецификацию для интеграции с внешним сервисом и лишь при реализации узнаёт, что нужная операция требует специальной лицензии. Во втором она сначала за час делает <strong>spike</strong> — минимальный пробный вызов API — фиксирует ограничение и только затем составляет реальный план. Второй путь не обязательно уменьшает количество написанного текста, зато позволяет избежать дорогой ошибки в основе проекта.</p>
+<h3 id="что-такое-доказательство-в-этом-контексте">Что такое «доказательство» в этом контексте<a aria-label="Прямая ссылка на раздел" class="anchor" href="#что-такое-доказательство-в-этом-контексте">#</a></h3>
+<p>Слово <em>evidence</em> не означает математического доказательства абсолютной правильности. Это <strong>наблюдение с известной областью применимости</strong>: тест прошёл в таком-то окружении, API вернул такой-то ответ, latency составила определённое значение при конкретной нагрузке, пользователь выполнил заданный сценарий.</p>
+<h2 id="2-лестница-уверенности-от-предположения-до-наблюдения-в-продакшене">2. Лестница уверенности: от предположения до наблюдения в продакшене<a aria-label="Прямая ссылка на раздел" class="anchor" href="#2-лестница-уверенности-от-предположения-до-наблюдения-в-продакшене">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Источник</th>
+<th>Что даёт</th>
+<th>Ограничение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Интуиция или ответ модели</td>
+<td>Гипотезу</td>
+<td>Может быть ошибкой или устаревшей информацией</td>
+</tr>
+<tr>
+<td>Документация и статьи</td>
+<td>Описание ожидаемого поведения</td>
+<td>Не гарантирует работу именно в вашей версии</td>
+</tr>
+<tr>
+<td>Чтение кода</td>
+<td>Представление о реализации</td>
+<td>Не показывает все реальные данные и окружения</td>
+</tr>
+<tr>
+<td>Изолированный запуск</td>
+<td>Проверку базового контракта</td>
+<td>Тестовое окружение отличается от настоящего</td>
+</tr>
+<tr>
+<td>Интеграционный сценарий</td>
+<td>Проверку совместной работы компонентов</td>
+<td>Может не учитывать редкие реальные состояния</td>
+</tr>
+<tr>
+<td>Canary, observability и продакшен</td>
+<td>Наиболее близкие к реальности наблюдения</td>
+<td>Дороже по рискам, требует защиты и отката</td>
+</tr>
+</tbody>
+</table>
+<p>Чем ближе проверка к среде эксплуатации, тем сильнее её свидетельство для соответствующего сценария. Однако даже продакшен-метрика не гарантирует, что покрыты все случаи; важно фиксировать <strong>границу проверенного</strong>.</p>
+<h2 id="3-spike-эксперимент-которыи-должен-изменить-решение">3. Spike: эксперимент, который должен изменить решение<a aria-label="Прямая ссылка на раздел" class="anchor" href="#3-spike-эксперимент-которыи-должен-изменить-решение">#</a></h2>
+<p><strong>Spike</strong> — краткая, ограниченная по времени исследовательская реализация, которая отвечает на конкретный вопрос. В классическом Extreme Programming такие эксперименты рекомендуют для снятия важной неопределённости. Рефат делает следующий вывод: с дешевеющими агентными экспериментами стоит чаще спрашивать не «почему нужен spike?», а «почему мы всё ещё не проверили гипотезу?».</p>
+<p>Хороший spike содержит:</p>
+<ol>
+<li><strong>Вопрос:</strong> какая неопределённость мешает принять решение.</li>
+<li><strong>Гипотезу:</strong> что мы ожидаем увидеть.</li>
+<li><strong>Тест:</strong> какое действие и какие измерения могут гипотезу опровергнуть.</li>
+<li><strong>Ограничение:</strong> бюджет времени и токенов, запрет лишних доработок.</li>
+<li><strong>Артефакт:</strong> скрипт, лог, скриншот, измерение, спецификация реально работающего интерфейса.</li>
+<li><strong>Решение:</strong> какой дальнейший путь теперь предпочтителен.</li>
+</ol>
+<pre><code class="language-text">Задача: проверить применимость API для [сценарий].
+Не создавай готовый продукт и не делай универсальную обёртку.
+Ограничение: максимум 3 гипотезы, один минимальный прототип.
+Проверь реальные ответы API, лимиты и обработку ошибок.
+Зафиксируй версии, параметры запроса и результаты.
+Отдели наблюдаемое от предполагаемого.
+В конце ответь: меняет ли это наше архитектурное решение?
+Если нет — какой один следующий эксперимент нужен?
+</code></pre>
+<h2 id="4-почему-длинная-спецификация-не-заменяет-факты">4. Почему длинная спецификация не заменяет факты<a aria-label="Прямая ссылка на раздел" class="anchor" href="#4-почему-длинная-спецификация-не-заменяет-факты">#</a></h2>
+<p>Один из критических тезисов доклада направлен против преждевременной детализации. Если в начальной постановке мало данных, агент способен создать безупречно оформленный документ, который лишь делает неопределённость менее заметной. <strong>Оформленная догадка не становится фактом от числа страниц.</strong></p>
+<p>Рефат не требует вообще отказаться от SDD. Он предлагает уточнить место спецификации в процессе: сначала исследование и контакт с реальностью, затем спецификация, опирающаяся на добытые данные. Тогда документ содержит не только «как должно быть», но и <strong>какие контракты уже проверены</strong>, какие метрики получены и где остался риск.</p>
+<p><strong>Аналогия.</strong> Проектировать мост по красивой карте не то же самое, что измерить грунт. Spike — инженерные изыскания, а спецификация — проект, написанный после их результатов.</p>
+<h2 id="5-реалистичныи-прототип-как-средство-выровнять-команду">5. Реалистичный прототип как средство выровнять команду<a aria-label="Прямая ссылка на раздел" class="anchor" href="#5-реалистичныи-прототип-как-средство-выровнять-команду">#</a></h2>
+<p>В докладе приведён случай, когда разные отделы понимали предметную область по-разному, а рабочая информация была разнесена по системам. Для выхода из тупика был создан <strong>переносимый прототип</strong>, приближённый к реальному процессу: он опирался на релевантные справочники, внешние контракты и реальные ограничения.</p><figure aria-label="Уверенность усиливается при контакте с реальностью." class="concept-viz" data-viz="layers"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 11</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Уверенность усиливается при контакте с реальностью." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 290" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="62" rx="16" width="700" x="90" y="30"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="696" x="92" y="32"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="61.0">Предположение</text><path class="viz-wire" d="M 440 92 L 440 115"></path><path class="viz-wire-glow" d="M 440 92 L 440 115"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="116"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="696" x="92" y="118"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="147.0">Тест / прототип</text><path class="viz-wire" d="M 440 178 L 440 201"></path><path class="viz-wire-glow" d="M 440 178 L 440 201"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="202"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="696" x="92" y="204"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="233.0">Реальная среда</text><text class="viz-small" transform="rotate(-90 45 55)" x="45" y="55">СЛОИ</text></svg><figcaption>Уверенность усиливается при контакте с реальностью. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Ценность такой среды выходит за рамки кода. Аналитики, дизайнеры, разработчики и владельцы продукта могут проверять один и тот же объект. Споры о том, «как это должно работать», превращаются в просмотр конкретного поведения. Важно, чтобы это был не пустой макет: демонстрация со случайными фиктивными ответами не снимет неопределённость по настоящим API.</p>
+<h2 id="6-проверяем-еще-до-кода-чужие-продукты-и-интерфеи-сы">6. Проверяем ещё до кода: чужие продукты и интерфейсы<a aria-label="Прямая ссылка на раздел" class="anchor" href="#6-проверяем-еще-до-кода-чужие-продукты-и-интерфеи-сы">#</a></h2>
+<p>Спикер расширяет понятие evidence: исследовать можно и уже существующие решения. Публичные интерфейсы, документация, образцы API, рабочие пользовательские сценарии и поведение конкурентов — материал, который можно включать в проектные решения.</p>
+<p>Редакторский пример: прежде чем строить собственную систему записи на занятия, исследуйте три существующих сервиса. Проверьте на практике, как работают отмена, повторное бронирование, часовые пояса и напоминания. Результат — таблица поведения и конкретных ограничений, а не список «похожих конкурентов».</p>
+<h2 id="7-hill-climbing-агент-может-оптимизировать-измеримую-цель">7. Hill climbing: агент может оптимизировать измеримую цель<a aria-label="Прямая ссылка на раздел" class="anchor" href="#7-hill-climbing-агент-может-оптимизировать-измеримую-цель">#</a></h2>
+<p>Если есть объективная метрика, можно построить автономный цикл <strong>проверяемого улучшения</strong>. Например, измерять время открытия страницы на одинаковом профиле устройства или задержку ответа сервера при фиксированном тесте.</p>
+<div class="visual-flow"><span>Базовый замер</span><i>→</i><span>Одна правка</span><i>→</i><span>Повторный замер</span><i>→</i><span>Сохранить / откатить</span></div>
+<p>Ключевая опасность — <strong>оптимизация неправильной метрики</strong>. Если мерить лишь размер HTML, агент может уменьшить его ценой ухудшения доступности. Поэтому к целевой метрике нужны контрметрики: успешность сценариев, время до интерактивности, ошибки, регрессии функциональности.</p>
+<h3 id="пример-договора-с-агентом-по-оптимизации">Пример договора с агентом по оптимизации<a aria-label="Прямая ссылка на раздел" class="anchor" href="#пример-договора-с-агентом-по-оптимизации">#</a></h3>
+<pre><code class="language-text">Целевая метрика: p95 времени ответа на тестовом стенде.
+Контрметрики: ошибки = 0, корректность ответов = 100%,
+потребление памяти не выше установленного порога.
+За одну итерацию — только одно осмысленное изменение.
+Перед изменением сохрани baseline.
+После каждой итерации приложи команду запуска и реальные числа.
+Не подменяй тестовую выборку и не упрощай сценарий ради результата.
+</code></pre>
+<h2 id="8-evidence-после-кода-не-я-проверил-а-вот-результат">8. Evidence после кода: не «я проверил», а «вот результат»<a aria-label="Прямая ссылка на раздел" class="anchor" href="#8-evidence-после-кода-не-я-проверил-а-вот-результат">#</a></h2>
+<p>Самая прикладная часть метода — отчёт об изменении, содержащий доказательства. В Pull Request или задаче агент должен оставить <strong>проверяемый маршрут</strong>: что изменил, какой сценарий запускал, что увидел, в какой среде, где находятся логи и скриншоты.</p>
+<table>
+<thead>
+<tr>
+<th>Утверждение</th>
+<th>Слабый отчёт</th>
+<th>Сильный отчёт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Исправлена авторизация</td>
+<td>«Проблема исправлена»</td>
+<td>Отрицательный и положительный сценарий с проверкой ролей</td>
+</tr>
+<tr>
+<td>UI не сломан</td>
+<td>«Выглядит нормально»</td>
+<td>Скриншоты ключевых состояний и запущенные E2E-проверки</td>
+</tr>
+<tr>
+<td>Миграция безопасна</td>
+<td>«SQL корректен»</td>
+<td>Сухой прогон на копии схемы и описанный план отката</td>
+</tr>
+<tr>
+<td>Производительность выросла</td>
+<td>«Стало быстрее»</td>
+<td>Baseline, новая метрика, аппаратная конфигурация и параметры нагрузки</td>
+</tr>
+</tbody>
+</table>
+<p>Важно попросить <strong>другого агента или независимый инструмент попробовать сломать решение</strong>, а не полагаться только на автора изменений.</p>
+<h2 id="9-тесты-из-реальных-инцидентов">9. Тесты из реальных инцидентов<a aria-label="Прямая ссылка на раздел" class="anchor" href="#9-тесты-из-реальных-инцидентов">#</a></h2>
+<p>Спикер рассказывает про проблемы, которые были найдены только в контакте с настоящей системой, включая ограничения доступности ресурса для поискового робота. Подобные истории хорошо показывают: тестовая среда может быть зелёной, а внешний пользователь — получать ошибку.</p>
+<p>Хороший процесс превращает реальные инциденты в новый тестовый сценарий. Ошибка → воспроизведение → фикстура → тест → проверка соседних случаев. Это уменьшает зависимость от памяти отдельных сотрудников и постепенно делает область проверенного шире.</p>
+<h2 id="10-инфраструктура-для-деше-вых-экспериментов">10. Инфраструктура для дешёвых экспериментов<a aria-label="Прямая ссылка на раздел" class="anchor" href="#10-инфраструктура-для-деше-вых-экспериментов">#</a></h2>
+<p>Метод предполагает инструменты: быстро поднимаемые стенды, санитарно обработанные снимки данных, безопасные копии схем БД, эмуляторы внешних API, наблюдаемость и доступ агента к чтению релевантных логов. Инвестиция здесь позволяет многократно проверять будущие задачи.</p><figure aria-label="Метрика должна иметь базовый уровень и контрпроверки." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 11</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Метрика должна иметь базовый уровень и контрпроверки." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Baseline</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Изменение</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Замер</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="252.0">Сохранить /</text><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="273.0">откатить</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Метрика должна иметь базовый уровень и контрпроверки. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p><strong>Важное уточнение:</strong> открывать агенту боевую БД с правом записи ради эксперимента не нужно. Предпочтительны readonly-доступ, тестовый снимок и отдельные подтверждения для рискованных операций. Этот технический компромисс согласуется с главой <a href="d2_12_security.html">12 — Безопасность агентного ядра</a>.</p>
+<h2 id="11-где-подход-особенно-полезен">11. Где подход особенно полезен<a aria-label="Прямая ссылка на раздел" class="anchor" href="#11-где-подход-особенно-полезен">#</a></h2>
+<ul>
+<li>В <strong>легаси-проекте</strong>, где документация не совпадает с действительностью и существуют скрытые зависимости.</li>
+<li>При <strong>выборе технологии</strong>, когда решить спор можно реальным прототипом за короткое время.</li>
+<li>На этапе <strong>коммерческого предложения</strong>, чтобы узнать стоимость интеграции до обещания сроков клиенту.</li>
+<li>В <strong>дизайне интерфейса</strong>, когда можно быстро сравнить несколько вариантов и проверить пользовательский сценарий.</li>
+<li>При <strong>настройке автономных оптимизаций</strong>, если есть репрезентативная метрика и критерии остановки.</li>
+</ul>
+<h3 id="контрольные-вопросы">Контрольные вопросы<a aria-label="Прямая ссылка на раздел" class="anchor" href="#контрольные-вопросы">#</a></h3>
+<ol>
+<li>Какие три наиболее дорогие предположения есть в вашем текущем проекте?</li>
+<li>Каким экспериментом дешевле всего проверить каждое из них?</li>
+<li>В каком виде результаты станут <strong>доступны и проверяемы</strong> для следующего инженера?</li>
+<li>Как отличить «прототип доказал возможность» от «систему можно безопасно выпускать в прод»?</li>
+</ol>
+<p><strong>Связанные главы:</strong> <a href="07_sdd.html">07 — SDD</a>, <a href="08_metrics.html">08 — Метрики эффекта</a>, <a href="d2_15_review.html">15 — AI-ревью</a>.</p>
+</article><nav class="chapter-nav"><a href="d2_10_learning.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>AI-разработка без выгорания: путь от новичка до системной прак</strong></a><a class="next" href="d2_12_security.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Безопасное AI-ядро: изоляция, память, полномочия</strong></a></nav><div class="end-card"><h3>Сохранить прогресс чтения</h3><p>Отметка сохраняется локально на этом устройстве.</p><label class="complete-label"><input class="chapter-complete" type="checkbox" data-complete="d2_11_evidence.html"> Я изучил(а) эту главу</label></div></main></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" target="_blank" rel="noopener">Официальная программа ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>

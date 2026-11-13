@@ -1,0 +1,191 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная книга AI Dev Live 2026: два дня, 18 докладов, 50+ анимированных схем, таймкоды и практикум."><title>MCP, Skills и CLI: интерфейсы продукта для агентов · AI Dev Live 2026</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="mcp,-skills-и-cli:-интерфейсы-продукта-для-агентов"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=RzAdlyut6Uc" target="_blank" rel="noopener">▶ Видео 2</a></nav><div class="header-actions"><button class="icon-btn motion-btn" id="motionToggle" aria-label="Включить или выключить анимации" title="Управление анимациями">◉</button><button class="icon-btn" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце </a>
+<a class="toc-item toc-level-2" href="#1-почему-браузерного-доступа-недостаточно">1. Почему браузерного доступа недостаточно </a>
+<a class="toc-item toc-level-2" href="#2-три-основных-способа-интеграции">2. Три основных способа интеграции </a>
+<a class="toc-item toc-level-2" href="#3-когда-mcp-предпочтительнее-cli">3. Когда MCP предпочтительнее CLI </a>
+<a class="toc-item toc-level-2" href="#4-как-проектировать-инструкции-чтобы-они-не-терялись">4. Как проектировать инструкции, чтобы они не терялись </a>
+<a class="toc-item toc-level-2" href="#5-операции-по-намерению-а-не-по-таблицам-базы-данных">5. Операции по намерению, а не по таблицам базы данных </a>
+<a class="toc-item toc-level-2" href="#6-понятные-ошибки-часть-интерфеи-са">6. Понятные ошибки — часть интерфейса </a>
+<a class="toc-item toc-level-2" href="#7-две-версии-интерфеи-са-для-человека-и-машины">7. Две версии интерфейса: для человека и машины </a>
+<a class="toc-item toc-level-2" href="#8-модель-доверия-и-риск-инструкции-извне">8. Модель доверия и риск инструкции извне </a>
+<a class="toc-item toc-level-2" href="#9-право-персональные-данные-и-подтверждение-деи-ствия">9. Право, персональные данные и подтверждение действия </a>
+<a class="toc-item toc-level-2" href="#10-тестировать-нужно-пользовательские-сценарии-а-не-только-методы">10. Тестировать нужно пользовательские сценарии, а не только методы </a>
+<a class="toc-item toc-level-2" href="#11-пошаговыи-план-для-своего-продукта">11. Пошаговый план для своего продукта </a>
+<a class="toc-item toc-level-3" href="#задание">Задание </a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a> <span>›</span> День 2 <span>›</span> Глава 14/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 14 <span>·</span> ИНТЕГРАЦИИ И ПРОТОКОЛЫ</div><h1>MCP, Skills и CLI: интерфейсы продукта для агентов</h1><p class="lead">Как открыть продукт агентам через безопасные операции, понятные инструменты и тестируемые сценарии.</p><div class="speaker-line"><span class="speaker-avatar">АП</span><div><strong>Александр Поляков</strong><small>AI Dev Live 2026 · 12 ноября · День 2</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=10861s" target="_blank" rel="noopener">▶ Смотреть с 03:01:01</a></div><div class="key-facts"><span>⏱ ≈ 45 мин</span><span>◎ 12 разделов</span><span>⌁ Расшифровка + авторский разбор</span></div></section><div class="editor-note"><strong>О точности.</strong> Материал основан на автоматической транскрипции видео. Схемы, таблицы и примеры добавлены для обучения; это не цитаты и не оригинальные слайды. Имена технологий и некоторые произнесённые цифры могут быть распознаны неточно.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=10861s" target="_blank" rel="noopener"><time>03:01:01</time> Начало доклада ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=11511s" target="_blank" rel="noopener"><time>03:11:51</time> Фрагмент 2 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=12107s" target="_blank" rel="noopener"><time>03:21:47</time> Фрагмент 3 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=12703s" target="_blank" rel="noopener"><time>03:31:43</time> Фрагмент 4 ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=RzAdlyut6Uc&t=13217s" target="_blank" rel="noopener"><time>03:40:17</time> Фрагмент 5 ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Прямая ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
+<p>Александр Поляков предлагает рассматривать <strong>интерфейс для ИИ-агента как новый продуктовый интерфейс</strong>, наравне с веб-сайтом и мобильным приложением. Людям нужна удобная навигация и понятные формы, а агенту — компактные инструкции, явные операции, безопасная авторизация, предсказуемые результаты, понятные ошибки и возможность проверки. В докладе обсуждаются <strong>MCP, CLI, Skills и плагины</strong>: каждый механизм подходит для своих задач. Основной вопрос уже не в том, «можно ли агенту открыть страницу», а в том, «почему продукт не предоставляет официального, управляемого способа выполнять действие».</p>
+<blockquote>
+<p><strong>Тезис доклада:</strong> агентный интерфейс — самостоятельная точка контакта продукта с пользователем; он должен проектироваться, тестироваться и защищаться как полноценный API.</p>
+</blockquote>
+<h2 id="1-почему-браузерного-доступа-недостаточно">1. Почему браузерного доступа недостаточно<a aria-label="Прямая ссылка на раздел" class="anchor" href="#1-почему-браузерного-доступа-недостаточно">#</a></h2>
+<p>Представьте задачу: найти железнодорожный билет для семьи с определёнными требованиями. Агент способен открыть сайт браузером, пройти по формам, отфильтровать результаты и предложить варианты. Но такой подход имеет слабые места: сессия авторизации может истечь, структура интерфейса измениться, часть действий потребует ручного подтверждения, а агент может неверно интерпретировать состояние страницы. Для массового продукта полагаться исключительно на управление мышью и скриншоты рискованно.</p><figure aria-label="Выбор интерфейса определяется формой сервиса и характером задачи." class="concept-viz" data-viz="fork"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 14</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Выбор интерфейса определяется формой сервиса и характером задачи." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 305" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="66" rx="16" width="280" x="300" y="22"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="24"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="55.0">Тип продукта</text><path class="viz-wire" d="M 440 88 Q 150 127 150 185"></path><path class="viz-wire-glow" d="M 440 88 Q 150 127 150 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="25" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="223.0">MCP: облако</text><path class="viz-wire" d="M 440 88 Q 440 127 440 185"></path><path class="viz-wire-glow" d="M 440 88 Q 440 127 440 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="315" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="223.0">CLI: локально</text><path class="viz-wire" d="M 440 88 Q 730 127 730 185"></path><path class="viz-wire-glow" d="M 440 88 Q 730 127 730 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="605" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="223.0">Skill: процедура</text><text class="viz-small" text-anchor="middle" x="440" y="287">ВАРИАНТЫ / ВЕТВИ</text></svg><figcaption>Выбор интерфейса определяется формой сервиса и характером задачи. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>При этом браузер остаётся важным <strong>резервным способом взаимодействия</strong>, особенно пока нет официальных интеграций. Докладчик не предлагает его запретить: задача продукта — дать более надёжный и удобный путь. Например, вместо восьми экранов оформления разового пропуска — операцию <code>create_pass</code> с параметрами и машинно понятным ответом.</p>
+<p><strong>Редакторская аналогия.</strong> Для человека дверная ручка — интерфейс. Для промышленного робота лучше предусмотреть стандартный привод: ему незачем вращать ручку антропоморфным манипулятором, если система допускает штатную команду.</p>
+<h2 id="2-три-основных-способа-интеграции">2. Три основных способа интеграции<a aria-label="Прямая ссылка на раздел" class="anchor" href="#2-три-основных-способа-интеграции">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Механизм</th>
+<th>В чём суть</th>
+<th>Когда особенно полезен</th>
+<th>Ключевой компромисс</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Протокол предоставления инструментов и данных агенту</td>
+<td>Удалённый сервис, общий доступ нескольких клиентов, централизованное обновление</td>
+<td>Различия реализаций клиентов, вопросы контекста и авторизации</td>
+</tr>
+<tr>
+<td><strong>CLI</strong></td>
+<td>Управление программой через команды терминала</td>
+<td>Локальные приложения, devtools, скриптуемая инфраструктура</td>
+<td>Требует среды исполнения и установки утилиты</td>
+</tr>
+<tr>
+<td><strong>Skill</strong></td>
+<td>Описанная процедура с инструкциями и, иногда, скриптами</td>
+<td>Сложные регламенты, последовательные действия, предметные правила</td>
+<td>Надо доставлять и обновлять; инструкции потенциально опасны</td>
+</tr>
+<tr>
+<td><strong>Плагин / пакет</strong></td>
+<td>Объединяет инструкции и инструменты</td>
+<td>Управляемая установка комплексной интеграции</td>
+<td>Совместимость и обновления на разных клиентах</td>
+</tr>
+</tbody>
+</table>
+<p>Выбор не сводится к соревнованию технологий. Для облачного сервиса, которым пользователи управляют из разных приложений, логичен удалённый MCP. Для локального редактора файлов или генератора ресурсов — CLI. Если главная сложность не в вызове метода, а в процедуре подготовки и проверки — Skill. Иногда разумно предоставлять <strong>оба интерфейса</strong>: командную утилиту человеку и MCP — удалённому агенту.</p>
+<h2 id="3-когда-mcp-предпочтительнее-cli">3. Когда MCP предпочтительнее CLI<a aria-label="Прямая ссылка на раздел" class="anchor" href="#3-когда-mcp-предпочтительнее-cli">#</a></h2>
+<p>У MCP есть архитектурный плюс: сервер может централизованно изменить состав инструментов и политику. Клиент при обновлении списка инструментов получит новые возможности без переустановки локального пакета. Для SaaS с десятками интеграций это важно.</p>
+<p>Но нельзя обещать одинаковое поведение всех клиентов. Спикер обсуждает несовпадения в том, сколько инструкций и метаданных реально попадёт в контекст модели: часть клиентов сокращает содержимое, а длительные сессии могут сохранять устаревший набор инструментов. Поэтому <strong>инструкция не должна существовать только в длинном вступительном описании</strong>.</p>
+<p>У CLI другая экономика: он естественно интегрируется в среду разработчика, его легко протестировать командами, а привычные <code>--help</code>, коды завершения и JSON-вывод делают поведение предсказуемым. Но обновление клиентов становится задачей распространения версий.</p>
+<h2 id="4-как-проектировать-инструкции-чтобы-они-не-терялись">4. Как проектировать инструкции, чтобы они не терялись<a aria-label="Прямая ссылка на раздел" class="anchor" href="#4-как-проектировать-инструкции-чтобы-они-не-терялись">#</a></h2>
+<p>Длинная документация «на 40 экранов», отправленная агенту при подключении, может оказаться бесполезной: модель не прочтёт её целиком либо важная часть будет обрезана. Практический паттерн — <strong>короткое описание возможностей + точечный инструмент получения инструкций</strong>.</p>
+<pre><code class="language-text">server.description: «Поиск и управление поездками».
+
+get_instructions(topic="tickets.search")
+    → требования к маршруту, детям, тарифам и фильтрам
+
+get_instructions(topic="tickets.checkout")
+    → последовательность подтверждения и оплаты
+
+search_tickets(criteria)
+    → список вариантов со стабильными ID
+
+prepare_booking(ticket_id)
+    → предварительная заявка без списания средств
+</code></pre>
+<p>Это редакторская иллюстрация подхода, а не реальное API Туту. Главное — дать возможность дочитать актуальные сведения <strong>в момент необходимости</strong>, а не загружать весь регламент заранее.</p>
+<h2 id="5-операции-по-намерению-а-не-по-таблицам-базы-данных">5. Операции по намерению, а не по таблицам базы данных<a aria-label="Прямая ссылка на раздел" class="anchor" href="#5-операции-по-намерению-а-не-по-таблицам-базы-данных">#</a></h2>
+<p>Автоматический конвертер OpenAPI → MCP может опубликовать сотни методов и заставить агента самому собирать бизнес-процесс из низкоуровневых шагов. Результат — ошибки в порядке вызовов, лишние запросы и риск нарушить инварианты.</p><figure aria-label="Agent-facing API должен возвращать понятные результаты и ошибки." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 14</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Agent-facing API должен возвращать понятные результаты и ошибки." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Намерение</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Инструмент</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Проверка прав</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Ответ</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Agent-facing API должен возвращать понятные результаты и ошибки. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Спикер предлагает поднимать уровень абстракции. Не <code>insertPaymentRow</code> и <code>updateOrderStatus</code>, а <code>prepareOrder</code>, <code>validateOrder</code>, <code>confirmOrder</code> с понятными состояниями и отдельным человеческим подтверждением операции оплаты. Каждый инструмент должен быть <strong>малым, но достаточно высокоуровневым</strong>, чтобы одной транзакцией сохранить бизнес-правила.</p>
+<table>
+<thead>
+<tr>
+<th>Низкоуровневый интерфейс</th>
+<th>Интерфейс по намерению</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /users</code>, <code>POST /cart</code>, <code>POST /reservation</code>, <code>POST /payment</code></td>
+<td><code>prepare_booking(...)</code> → <code>booking_draft_id</code></td>
+</tr>
+<tr>
+<td>Агент сам угадывает порядок</td>
+<td>Порядок контролирует сервер</td>
+</tr>
+<tr>
+<td>Ошибки требуют знания внутренностей</td>
+<td>Ошибка объясняет действие для исправления</td>
+</tr>
+<tr>
+<td>Частичное состояние трудно откатить</td>
+<td>Черновик можно отменить до подтверждения</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-понятные-ошибки-часть-интерфеи-са">6. Понятные ошибки — часть интерфейса<a aria-label="Прямая ссылка на раздел" class="anchor" href="#6-понятные-ошибки-часть-интерфеи-са">#</a></h2>
+<p>Сообщение <code>400 Bad Request</code> не помогает агенту разобраться в проблеме. Гораздо полезнее структурированный ответ:</p>
+<pre><code class="language-json">{
+  "error": "pass_duration_out_of_range",
+  "message": "Пропуск оформляется максимум на 2 часа",
+  "valid_range_hours": [1, 2],
+  "next_action": "Разбейте запрос на несколько пропусков или запросите согласование"
+}
+</code></pre>
+<p>Пример редакторский. Ошибки полезно разделять на <strong>исправляемые агентом</strong> (неверный формат, пропущенный параметр) и <strong>требующие человека</strong> (покупка, доступ к закрытым данным, действие с правовыми последствиями). Недопустимо подсказывать агенту обход проверки прав.</p>
+<h2 id="7-две-версии-интерфеи-са-для-человека-и-машины">7. Две версии интерфейса: для человека и машины<a aria-label="Прямая ссылка на раздел" class="anchor" href="#7-две-версии-интерфеи-са-для-человека-и-машины">#</a></h2>
+<p>При открытии адреса MCP обычный человек может увидеть пустую страницу или нечитаемый ответ. Но пользователю всё равно нужна публичная страница с возможностями сервиса, условиями подключения, авторизацией и документацией. В докладе приведён пример, когда ранний пользовательский тест показал именно такую проблему: сервис для агентов работает, но человек не понимает, куда попал.</p>
+<p>Разумный дизайн: один домен, <strong>понятная HTML-страница для людей</strong> и корректные протокольные ответы для поддерживаемых клиентов. Человеческая документация должна объяснять, какие данные будет читать агент и какие действия потребуют дополнительного подтверждения.</p>
+<h2 id="8-модель-доверия-и-риск-инструкции-извне">8. Модель доверия и риск инструкции извне<a aria-label="Прямая ссылка на раздел" class="anchor" href="#8-модель-доверия-и-риск-инструкции-извне">#</a></h2>
+<p>Skill, удалённый MCP и даже текст ответа API могут содержать инструкции, которые влияют на поведение модели. Сторонний пакет нужно проверять: что он читает, какие команды запускает, куда отправляет сведения, какая телеметрия встроена, кто поддерживает обновления.</p>
+<p>Для удалённых инструментов важны более жёсткие меры: ограниченные OAuth-scopes, server-side авторизация, разделение чтения и изменения, журнал действий, изоляция недоверенного пользовательского контента, отсутствие прямого доступа к секретам и понятное подтверждение опасных шагов. Сами по себе «хорошие» инструкции в промпте не заменяют ограничения сервера.</p>
+<p><strong>Запомните:</strong> если агент получает письмо от неизвестного отправителя, текст письма — <strong>данные</strong>, а не инструкции с полномочиями изменять систему. Это пересекается с главой о безопасности AI-ядра.</p>
+<h2 id="9-право-персональные-данные-и-подтверждение-деи-ствия">9. Право, персональные данные и подтверждение действия<a aria-label="Прямая ссылка на раздел" class="anchor" href="#9-право-персональные-данные-и-подтверждение-деи-ствия">#</a></h2>
+<p>Сервис, который только ищет справочные данные, отличается от сервиса, который регистрирует пользователя, оформляет бронирование или списывает деньги. Для последних необходимо отдельно продумать договорные условия, согласие на обработку персональных данных и момент, когда пользователь действительно подтверждает операцию.</p>
+<p>В выступлении затронуты российские правовые вопросы, включая 152-ФЗ. Универсального разрешения «агент может всё, что может человек в браузере» не существует. Архитектура должна отражать <strong>категорию данных, цель обработки, основание доступа, хранение, аудит и отзыв разрешений</strong>. Конкретную юридическую схему необходимо согласовать с профильными специалистами.</p>
+<h2 id="10-тестировать-нужно-пользовательские-сценарии-а-не-только-методы">10. Тестировать нужно пользовательские сценарии, а не только методы<a aria-label="Прямая ссылка на раздел" class="anchor" href="#10-тестировать-нужно-пользовательские-сценарии-а-не-только-методы">#</a></h2>
+<p>Даже если каждый endpoint проходит unit-тесты, полная последовательность может быть неправильной. Поэтому в проекте MCP для поездок команда прорабатывала реальные сценарии пользователей и тестировала их целиком. Спикер отмечает, что таким способом обнаруживались проблемы после первоначального запуска.</p><figure aria-label="Подтверждение и авторизация действуют на стороне продукта." class="concept-viz" data-viz="layers"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 14</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Подтверждение и авторизация действуют на стороне продукта." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 290" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="62" rx="16" width="700" x="90" y="30"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="696" x="92" y="32"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="61.0">Сценарий</text><path class="viz-wire" d="M 440 92 L 440 115"></path><path class="viz-wire-glow" d="M 440 92 L 440 115"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="116"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="696" x="92" y="118"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="147.0">API / MCP / CLI</text><path class="viz-wire" d="M 440 178 L 440 201"></path><path class="viz-wire-glow" d="M 440 178 L 440 201"></path><rect class="viz-box" height="62" rx="16" width="700" x="90" y="202"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="696" x="92" y="204"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="233.0">Аудит и данные</text><text class="viz-small" transform="rotate(-90 45 55)" x="45" y="55">СЛОИ</text></svg><figcaption>Подтверждение и авторизация действуют на стороне продукта. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
+<p>Пример матрицы тестов:</p>
+<table>
+<thead>
+<tr>
+<th>Сценарий</th>
+<th>Что проверяем</th>
+<th>Ожидаемый результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Простое чтение</td>
+<td>Поиск с понятным фильтром</td>
+<td>Верный структурированный ответ</td>
+</tr>
+<tr>
+<td>Неполные данные</td>
+<td>Не указан обязательный параметр</td>
+<td>Агент задаёт уточняющий вопрос</td>
+</tr>
+<tr>
+<td>Истёкшая авторизация</td>
+<td>Протух токен</td>
+<td>Безопасное переподключение, нет скрытого обхода</td>
+</tr>
+<tr>
+<td>Недоступный тариф</td>
+<td>Изменился внешний статус</td>
+<td>Корректная ошибка и альтернативы</td>
+</tr>
+<tr>
+<td>Покупка</td>
+<td>Не было подтверждения</td>
+<td>Нет списания, заявка остаётся черновиком</td>
+</tr>
+<tr>
+<td>Инъекция в описание</td>
+<td>Недоверенный текст содержит указания</td>
+<td>Инструкция игнорируется, данные остаются данными</td>
+</tr>
+</tbody>
+</table>
+<p>Важно проверять <strong>трейсы</strong>: модель могла получить правильный ответ за счёт случайности, нарушения процесса или подмены шага. Итоговая оценка «успех» без анализа маршрута недостаточна.</p>
+<h2 id="11-пошаговыи-план-для-своего-продукта">11. Пошаговый план для своего продукта<a aria-label="Прямая ссылка на раздел" class="anchor" href="#11-пошаговыи-план-для-своего-продукта">#</a></h2>
+<ol>
+<li>Выберите три самые распространённые пользовательские задачи; измерьте их частоту и стоимость выполнения через веб-интерфейс.</li>
+<li>Выделите устойчивые бизнес-операции с идемпотентностью, понятными состояниями и правами.</li>
+<li>Определите, нужен ли локальный CLI, удалённый MCP, Skill или их сочетание.</li>
+<li>Сделайте минимальный набор инструментов по намерению пользователя, а не автоматически выгружайте весь API.</li>
+<li>Создайте короткие описания инструментов и отдельные подробные инструкции по темам.</li>
+<li>Поставьте ограничения на стороне сервера и журналируйте все изменения.</li>
+<li>Напишите минимум десять сквозных сценариев, включая отказ, ошибку и недоверенные данные.</li>
+<li>Проверьте продукт в нескольких агентных клиентах: трактовка инструкций и ограничения могут различаться.</li>
+<li>Добавьте понятную страницу подключения для людей и канал поддержки.</li>
+<li>Смотрите реальные трейсы, исправляйте контракт и контролируйте регрессии.</li>
+</ol>
+<h3 id="задание">Задание<a aria-label="Прямая ссылка на раздел" class="anchor" href="#задание">#</a></h3>
+<p>Возьмите существующий образовательный веб-сервис: запись на консультацию, просмотр домашнего задания или выдача справки. Опишите три операции для агента, разделите readonly и write-права, добавьте сценарий отказа, определите, какое действие всегда должен подтверждать пользователь. Затем нарисуйте «человек → агент → шлюз → сервис → журнал». Это и есть черновик <strong>agent-facing интерфейса</strong>.</p>
+<p><strong>Связанные главы:</strong> <a href="02_ai_native.html">AI-ядро организации</a>, <a href="d2_12_security.html">Защита данных</a>, <a href="06_quality.html">Контроль качества</a>, <a href="d2_11_evidence.html">Evidence-based SDLC</a>.</p>
+</article><nav class="chapter-nav"><a href="d2_13_legacy.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Внедрение AI в легаси: от запуска до автономной разработки</strong></a><a class="next" href="d2_15_review.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>AI-ревью здорового человека: контекст, граф кода, шум</strong></a></nav><div class="end-card"><h3>Сохранить прогресс чтения</h3><p>Отметка сохраняется локально на этом устройстве.</p><label class="complete-label"><input class="chapter-complete" type="checkbox" data-complete="d2_14_interfaces.html"> Я изучил(а) эту главу</label></div></main></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" target="_blank" rel="noopener">Официальная программа ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>

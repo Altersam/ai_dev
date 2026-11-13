@@ -1,4 +1,6 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами."><title>Агентный сетап: инструменты, контекст, правила и навыки · AI Dev Live 2026 — книга</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="01_agent_setup.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html" aria-label="Оглавление книги"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>КНИГА · 2026 · ДЕНЬ 01</small></span></a><nav class="top-links" aria-label="Основная навигация"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">▶ Трансляция</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" title="Содержание" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ГЛАВЫ</div><div class="side-chapters"><a class="side-chapter active" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter " href="02_ai_native.html"><span>02</span>AI-native организация</a><a class="side-chapter " href="03_orchestration.html"><span>03</span>Оркестрация</a><a class="side-chapter " href="04_inference.html"><span>04</span>GPU и инференс</a><a class="side-chapter " href="05_career.html"><span>05</span>Карьера и найм</a><a class="side-chapter " href="06_quality.html"><span>06</span>Контроль качества</a><a class="side-chapter " href="07_sdd.html"><span>07</span>Spec-Driven Development</a><a class="side-chapter " href="08_metrics.html"><span>08</span>Эффект и метрики</a><a class="side-chapter " href="09_human.html"><span>09</span>Человек и ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце</a>
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><meta content="#0c1424" name="theme-color"/><meta content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами." name="description"/><title>Агентный сетап: инструменты, контекст, правила и навыки · AI Dev Live 2026 — книга</title><link href="assets/style.css" rel="stylesheet"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="assets/catalog.js"></script><script defer="" src="assets/app.js"></script></head><body data-page="01_agent_setup.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" rel="noopener" target="_blank">▶ Видео 1</a></nav><div class="header-actions"><button aria-label="Включить или выключить анимации" class="icon-btn motion-btn" id="motionToggle" title="Управление анимациями">◉</button><button aria-label="Переключить светлую и тёмную тему" class="icon-btn" id="themeToggle">◐</button><button aria-label="Показать содержание" class="icon-btn mobile-menu" id="menuToggle">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#главное-в-одном-абзаце">Главное в одном абзаце</a>
 <a class="toc-item toc-level-2" href="#1-из-чего-на-самом-деле-состоит-агент">1. Из чего на самом деле состоит агент</a>
 <a class="toc-item toc-level-2" href="#2-зачем-объединять-несколько-агентов">2. Зачем объединять несколько агентов</a>
 <a class="toc-item toc-level-3" href="#когда-единый-слой-оправдан">Когда единый слой оправдан</a>
@@ -14,57 +16,57 @@
 <a class="toc-item toc-level-3" href="#пример-skill-для-публикации-учебного-html">Пример: skill для публикации учебного HTML</a>
 <a class="toc-item toc-level-2" href="#10-длинные-задачи-один-исполнитель-и-наблюдающий-координатор">10. Длинные задачи: один исполнитель и наблюдающий координатор</a>
 <a class="toc-item toc-level-2" href="#11-инструменты-исполнения-меньше-лишней-инфраструктуры">11. Инструменты исполнения: меньше лишней инфраструктуры</a>
-<a class="toc-item toc-level-2" href="#12-что-попробовать-самостоятельно">12. Что попробовать самостоятельно</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Библиотека</a><span>›</span> Глава 01 / 09</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 01 <span>·</span> ИНСТРУМЕНТЫ И ПРАКТИКИ</div><h1>Агентный сетап: инструменты, контекст, правила и навыки</h1><p class="lead">Что находится между вашей просьбой и результатом агента — и почему именно этот слой часто важнее выбора самой «умной» модели.</p><div class="speaker-line"><span class="speaker-avatar">НШ</span><div><strong>Николай Шейко</strong><small>Агентный сетап на осень 2026: без субагентов, MCP, памяти и CLI</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=264s" target="_blank" rel="noopener">▶ Смотреть с 00:04:24</a></div><div class="key-facts"><span>⏱ ≈ 40 мин</span><span>◎ 17 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=264s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:04:24</time> Вступление и система работы ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=520s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:08:40</time> Оболочки и движки ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=850s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:14:10</time> Облачный агент ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=1130s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:18:50</time> AGENTS.md и голос ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=1390s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:23:10</time> Контекст и автономность ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=1850s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:30:50</time> Ревью и контроль ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=2150s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>00:35:50</time> Как выращивать skills ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a class="anchor" href="#главное-в-одном-абзаце" aria-label="Ссылка на раздел">#</a></h2>
+<a class="toc-item toc-level-2" href="#12-что-попробовать-самостоятельно">12. Что попробовать самостоятельно</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a><span>›</span> День 1 <span>›</span> Глава 01/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 01 <span>·</span> ИНСТРУМЕНТЫ И ПРАКТИКИ</div><h1>Агентный сетап: инструменты, контекст, правила и навыки</h1><p class="lead">Что находится между вашей просьбой и результатом агента — и почему именно этот слой часто важнее выбора самой «умной» модели.</p><div class="speaker-line"><span class="speaker-avatar">НШ</span><div><strong>Николай Шейко</strong><small>Агентный сетап на осень 2026: без субагентов, MCP, памяти и CLI</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=264s" rel="noopener" target="_blank">▶ Смотреть с 00:04:24</a></div><div class="key-facts"><span>⏱ ≈ 40 мин</span><span>◎ 17 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=264s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:04:24</time> Вступление и система работы ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=520s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:08:40</time> Оболочки и движки ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=850s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:14:10</time> Облачный агент ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=1130s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:18:50</time> AGENTS.md и голос ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=1390s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:23:10</time> Контекст и автономность ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=1850s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:30:50</time> Ревью и контроль ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=2150s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>00:35:50</time> Как выращивать skills ↗</a></div></nav><article class="article prose"><h2 id="главное-в-одном-абзаце">Главное в одном абзаце<a aria-label="Ссылка на раздел" class="anchor" href="#главное-в-одном-абзаце">#</a></h2>
 <p>Николай предлагает смотреть на ИИ-агента не как на отдельный чат и не как на выбранную модель, а как на <strong>инженерную систему</strong>. В неё входят движок исполнения, единый интерфейс, доступ к инструментам, инструкции, рабочие файлы, механизмы проверки и исправления ошибок. Отсюда практический вывод: вместо бесконечного поиска «самой лучшей модели» полезнее проектировать управляемую среду, в которой несколько разных моделей способны выполнять задачи по общим правилам.</p>
 <blockquote>
 <p><strong>Основная мысль доклада:</strong> агент начинает быть полезным системно, когда вы умеете управлять не только его ответом, но и маршрутом работы, стоимостью, видимостью ошибок и передачей опыта в следующие задачи.</p>
 </blockquote>
-<h2 id="1-из-чего-на-самом-деле-состоит-агент">1. Из чего на самом деле состоит агент<a class="anchor" href="#1-из-чего-на-самом-деле-состоит-агент" aria-label="Ссылка на раздел">#</a></h2>
-<p>Термины легко смешать, поэтому разложим конструкцию по уровням.</p>
+<h2 id="1-из-чего-на-самом-деле-состоит-агент">1. Из чего на самом деле состоит агент<a aria-label="Ссылка на раздел" class="anchor" href="#1-из-чего-на-самом-деле-состоит-агент">#</a></h2>
+<p>Термины легко смешать, поэтому разложим конструкцию по уровням.</p><figure aria-label="Контролируемое выполнение: инструментальный цикл важнее длины промпта." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 01</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Контролируемое выполнение: инструментальный цикл важнее длины промпта." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Задача</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Контекст</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Действие</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Проверка</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Контролируемое выполнение: инструментальный цикл важнее длины промпта. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <table>
 <thead>
 <tr>
-  <th>Уровень</th>
-  <th>Что это</th>
-  <th>За что отвечает</th>
+<th>Уровень</th>
+<th>Что это</th>
+<th>За что отвечает</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>Модель (LLM)</strong></td>
-  <td>Нейросеть, которая обрабатывает текст и принимает решения</td>
-  <td>Планирование, выбор следующего действия, генерация текста и кода</td>
+<td><strong>Модель (LLM)</strong></td>
+<td>Нейросеть, которая обрабатывает текст и принимает решения</td>
+<td>Планирование, выбор следующего действия, генерация текста и кода</td>
 </tr>
 <tr>
-  <td><strong>Агентный движок / harness</strong></td>
-  <td>Цикл исполнения вокруг модели</td>
-  <td>Доступ к файлам, командам, браузеру, запуску задач, управлению контекстом</td>
+<td><strong>Агентный движок / harness</strong></td>
+<td>Цикл исполнения вокруг модели</td>
+<td>Доступ к файлам, командам, браузеру, запуску задач, управлению контекстом</td>
 </tr>
 <tr>
-  <td><strong>Интерфейс</strong></td>
-  <td>CLI, IDE, веб-приложение или настольный клиент</td>
-  <td>Организация сессий и взаимодействия с человеком</td>
+<td><strong>Интерфейс</strong></td>
+<td>CLI, IDE, веб-приложение или настольный клиент</td>
+<td>Организация сессий и взаимодействия с человеком</td>
 </tr>
 <tr>
-  <td><strong>Инструменты</strong></td>
-  <td>API, браузер, терминал, соединители, специальные операции</td>
-  <td>Фактические действия во внешнем мире</td>
+<td><strong>Инструменты</strong></td>
+<td>API, браузер, терминал, соединители, специальные операции</td>
+<td>Фактические действия во внешнем мире</td>
 </tr>
 <tr>
-  <td><strong>Инструкции и skills</strong></td>
-  <td>Набор правил и воспроизводимых процедур</td>
-  <td>Стиль, ограничения, последовательность шагов, проверка результата</td>
+<td><strong>Инструкции и skills</strong></td>
+<td>Набор правил и воспроизводимых процедур</td>
+<td>Стиль, ограничения, последовательность шагов, проверка результата</td>
 </tr>
 <tr>
-  <td><strong>Проверки</strong></td>
-  <td>Тесты, контрольные наборы, ревью</td>
-  <td>Оценка правильности и сохранение качества</td>
+<td><strong>Проверки</strong></td>
+<td>Тесты, контрольные наборы, ревью</td>
+<td>Оценка правильности и сохранение качества</td>
 </tr>
 </tbody>
 </table>
 <p>В докладе подчёркивается: интерфейсы могут <strong>не только отображать работу движка, но и менять поведение</strong>, потому что передают ему собственные правила, инструменты и доступный контекст. Поэтому замена CLI на настольное приложение иногда меняет не только удобство, но и результаты.</p>
 <p><strong>Аналогия.</strong> Модель — это исполнитель; harness — станки, склад и правила мастерской; интерфейс — пульт мастера; skills — технологические карты; проверки — ОТК. Профессиональная мастерская не создаётся заменой одного рабочего другим.</p>
-<h2 id="2-зачем-объединять-несколько-агентов">2. Зачем объединять несколько агентов<a class="anchor" href="#2-зачем-объединять-несколько-агентов" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="2-зачем-объединять-несколько-агентов">2. Зачем объединять несколько агентов<a aria-label="Ссылка на раздел" class="anchor" href="#2-зачем-объединять-несколько-агентов">#</a></h2>
 <p>Николай демонстрирует собственный интерфейс над несколькими агентными движками. Главный интерес — не «запуск любой модели», а <strong>сохранение сильных сторон родных движков при общем пользовательском слое</strong>.</p>
 <p>Что даёт такой подход:</p>
 <ul>
@@ -75,9 +77,9 @@
 <li>собственный интерфейс для предметной области — например, помощь бухгалтерии или образовательной организации.</li>
 </ul>
 <p>Важное уточнение: в расшифровке имя демонстрируемого интерфейса распознаётся неоднозначно. В этой книге важен <strong>архитектурный принцип</strong>, а не рекомендация конкретного продукта. Проверять точное название инструмента лучше по демонстрации на видео.</p>
-<h3 id="когда-единый-слой-оправдан">Когда единый слой оправдан<a class="anchor" href="#когда-единый-слой-оправдан" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="когда-единый-слой-оправдан">Когда единый слой оправдан<a aria-label="Ссылка на раздел" class="anchor" href="#когда-единый-слой-оправдан">#</a></h3>
 <p>Для одного специалиста, который пишет короткие скрипты, может хватить обычного IDE-агента. Единая оболочка становится полезнее, если одновременно есть несколько проектов, разные типы задач, фоновые процессы, локальные и удалённые ресурсы, собственные интеграции и потребность в аудитируемом исполнении.</p>
-<h2 id="3-локальный-агент-или-агент-на-сервере">3. Локальный агент или агент на сервере<a class="anchor" href="#3-локальный-агент-или-агент-на-сервере" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="3-локальный-агент-или-агент-на-сервере">3. Локальный агент или агент на сервере<a aria-label="Ссылка на раздел" class="anchor" href="#3-локальный-агент-или-агент-на-сервере">#</a></h2>
 <p>В разговоре о среде исполнения спикер показывает эволюцию: сначала агент работает рядом с человеком, использует его файлы и авторизованный браузер. Затем для непрерывной доступности ядро переносится на удалённый сервер — <strong>VPS или иной постоянно включённый узел</strong>.</p>
 <pre><code class="language-text">             Человек: ноутбук / телефон
                        │
@@ -98,7 +100,7 @@
 </code></pre>
 <p><strong>Плюсы:</strong> процессы доступны вне рабочего ноутбука; автоматизации могут запускаться по расписанию или событию; параллельные задачи распределяются по ресурсам; человек может проверить прогресс с телефона.</p>
 <p><strong>Цена этих плюсов:</strong> нужно отдельно решить вопросы аутентификации, хранения секретов, изоляции сессий, обновлений, мониторинга, резервного копирования и доступа к локальным действиям. Особо чувствительные операции — платежи, подписание документов, изменение прав — не следует выполнять автоматически без предварительно установленной политики и подтверждения человека.</p>
-<h3 id="минимальная-безопасная-архитектура">Минимальная безопасная архитектура<a class="anchor" href="#минимальная-безопасная-архитектура" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="минимальная-безопасная-архитектура">Минимальная безопасная архитектура<a aria-label="Ссылка на раздел" class="anchor" href="#минимальная-безопасная-архитектура">#</a></h3>
 <ol>
 <li>Держите секреты в менеджере секретов или защищённом окружении, а не в текстовых промптах и репозитории.</li>
 <li>Выдавайте агенту отдельную учётную запись с минимальными правами.</li>
@@ -106,15 +108,15 @@
 <li>Пишите журнал команд и изменений; храните отдельно артефакты, которые создал агент.</li>
 <li>Ограничивайте длительность, число повторов и расход ресурсов на одну задачу.</li>
 </ol>
-<h2 id="4-удобство-общения-часть-производительности">4. Удобство общения — часть производительности<a class="anchor" href="#4-удобство-общения-часть-производительности" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="4-удобство-общения-часть-производительности">4. Удобство общения — часть производительности<a aria-label="Ссылка на раздел" class="anchor" href="#4-удобство-общения-часть-производительности">#</a></h2>
 <p>Неочевидный тезис доклада: если взаимодействие с агентом неприятное, вы реже будете использовать его для сложной работы. Поэтому стиль общения, удобная история диалогов, скорость перехода между задачами и <strong>голосовая диктовка</strong> имеют инженерное значение.</p>
 <p>При печати человек часто сжимает постановку задачи до двух строк. При диктовке легче передать мотивы, исключения и важные нюансы: что именно раздражает в текущем процессе, какие компромиссы допустимы, где ошибка особенно опасна.</p>
 <p>Однако распознавание речи создаёт новые риски — пропущенные отрицания, неверные названия продуктов, перепутанные числа. Инструкция агенту должна прямо требовать <strong>уточнять смысл при противоречиях</strong>, а не механически выполнять сомнительную команду.</p>
 <blockquote>
 <p><strong>Проверка на практике.</strong> Продиктуйте постановку задачи на две минуты, затем попросите агента сформулировать её как цель, ограничения, критерии успеха и список открытых вопросов. Сравните с первоначальным намерением: вы увидите, какую часть контекста обычный короткий запрос не передавал.</p>
 </blockquote>
-<h2 id="5-контекст-главная-цена-не-длина-ответов">5. Контекст: главная цена — не длина ответов<a class="anchor" href="#5-контекст-главная-цена-не-длина-ответов" aria-label="Ссылка на раздел">#</a></h2>
-<p>Спикер обращает внимание на часто недооценённую стоимость: агент сжигает контекст не столько разговорами с пользователем, сколько <strong>объёмными результатами инструментов</strong>. Прочитать весь репозиторий, гигантскую HTML-страницу или полный лог ради одной строки — плохая стратегия.</p>
+<h2 id="5-контекст-главная-цена-не-длина-ответов">5. Контекст: главная цена — не длина ответов<a aria-label="Ссылка на раздел" class="anchor" href="#5-контекст-главная-цена-не-длина-ответов">#</a></h2>
+<p>Спикер обращает внимание на часто недооценённую стоимость: агент сжигает контекст не столько разговорами с пользователем, сколько <strong>объёмными результатами инструментов</strong>. Прочитать весь репозиторий, гигантскую HTML-страницу или полный лог ради одной строки — плохая стратегия.</p><figure aria-label="Skill растёт из наблюдений над выполненной работой." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 01</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Skill растёт из наблюдений над выполненной работой." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Сессия</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Ошибка</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Правило</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Новый прогон</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>Skill растёт из наблюдений над выполненной работой. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p>Рабочее правило: <strong>найти → локализовать → прочитать маленький фрагмент → расширить только при необходимости</strong>.</p>
 <p>Пример работы с ошибкой в логе:</p>
 <pre><code class="language-text">Плохо:
@@ -128,33 +130,33 @@
 5. Проверь гипотезу тестом или повторяемым экспериментом.
 </code></pre>
 <p><strong>Почему работает:</strong> модель оперирует более высокой долей полезной информации; уменьшается число отвлекающих фрагментов, упрощается повторная проверка, падает стоимость длинного процесса.</p>
-<h2 id="6-как-правильно-ограничивать-автономность">6. Как правильно ограничивать автономность<a class="anchor" href="#6-как-правильно-ограничивать-автономность" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="6-как-правильно-ограничивать-автономность">6. Как правильно ограничивать автономность<a aria-label="Ссылка на раздел" class="anchor" href="#6-как-правильно-ограничивать-автономность">#</a></h2>
 <p>В докладе звучит важная мысль: «работает без человека 20 часов» — не универсальный показатель качества. Агент способен потратить это время на обход неработающего доступа, изобретение нестандартных костылей или решение задачи, которую стоило остановить.</p>
 <p>Полезно различать три ситуации:</p>
 <table>
 <thead>
 <tr>
-  <th>Ситуация</th>
-  <th>Правильная реакция агента</th>
+<th>Ситуация</th>
+<th>Правильная реакция агента</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Небольшая локальная ошибка, штатный способ исправления известен</td>
-  <td>Исправить, запустить проверку, записать результат</td>
+<td>Небольшая локальная ошибка, штатный способ исправления известен</td>
+<td>Исправить, запустить проверку, записать результат</td>
 </tr>
 <tr>
-  <td>Ожидаемый маршрут не работает, нужен обходной путь</td>
-  <td>Сообщить причину, предложить варианты, запросить разрешение</td>
+<td>Ожидаемый маршрут не работает, нужен обходной путь</td>
+<td>Сообщить причину, предложить варианты, запросить разрешение</td>
 </tr>
 <tr>
-  <td>Высокий риск, новая архитектура, удаление данных, расширение полномочий</td>
-  <td>Остановиться и запросить решение человека</td>
+<td>Высокий риск, новая архитектура, удаление данных, расширение полномочий</td>
+<td>Остановиться и запросить решение человека</td>
 </tr>
 </tbody>
 </table>
 <p>Николай рекомендует явным образом <strong>разрешить агенту не соглашаться с пользователем</strong>. Хороший агент должен уметь сказать: «Такая постановка создаст лишнюю сложность», «Текущая документация устарела», «Проверим экспериментально, прежде чем менять производство».</p>
-<h2 id="7-agents-md-как-договорённость-с-агентом">7. AGENTS.md как договорённость с агентом<a class="anchor" href="#7-agents-md-как-договорённость-с-агентом" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="7-agents-md-как-договорённость-с-агентом">7. AGENTS.md как договорённость с агентом<a aria-label="Ссылка на раздел" class="anchor" href="#7-agents-md-как-договорённость-с-агентом">#</a></h2>
 <p><code>AGENTS.md</code> — удобное место для <strong>коротких устойчивых правил</strong>, а не энциклопедии обо всём проекте. Его содержание должно сокращать повторные объяснения и предотвращать уже известные ошибки.</p>
 <p>Ниже — <strong>редакторский пример</strong>, составленный по принципам доклада, а не дословный файл Николая:</p>
 <pre><code class="language-markdown"># Общие правила работы агента
@@ -178,7 +180,7 @@
 - Если задача неполная, прямо перечисли незавершённое.
 </code></pre>
 <p>Частая ошибка — пытаться вписать туда <strong>каждый случай из истории</strong>. Инструкция растёт, важные правила теряются, а отдельные положения начинают противоречить друг другу. Сложные предметные процедуры стоит выносить в отдельные skills.</p>
-<h2 id="8-ревью-не-должно-превращаться-в-бесконечную-критику">8. Ревью не должно превращаться в бесконечную критику<a class="anchor" href="#8-ревью-не-должно-превращаться-в-бесконечную-критику" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="8-ревью-не-должно-превращаться-в-бесконечную-критику">8. Ревью не должно превращаться в бесконечную критику<a aria-label="Ссылка на раздел" class="anchor" href="#8-ревью-не-должно-превращаться-в-бесконечную-критику">#</a></h2>
 <p>Есть ловушка: если попросить модель «найти все проблемы», она будет искать проблемы даже там, где их нет. Если автоматически принимать каждый совет, простая система быстро обрастёт абстракциями, проверками и запасными ветками.</p>
 <p>Спикер предлагает <strong>аргументированное ревью с возможностью несогласия</strong>:</p>
 <ol>
@@ -189,9 +191,9 @@
 <li>Повторная проверка убеждается, что изменение не привело к регрессии.</li>
 </ol>
 <p>Это работает не только с кодом: такой же диалог полезен для закупочного ТЗ, учебного материала, аналитического отчёта или требований к сайту.</p>
-<h2 id="9-skills-превращаем-разовую-удачу-в-повторяемую-процедуру">9. Skills: превращаем разовую удачу в повторяемую процедуру<a class="anchor" href="#9-skills-превращаем-разовую-удачу-в-повторяемую-процедуру" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="9-skills-превращаем-разовую-удачу-в-повторяемую-процедуру">9. Skills: превращаем разовую удачу в повторяемую процедуру<a aria-label="Ссылка на раздел" class="anchor" href="#9-skills-превращаем-разовую-удачу-в-повторяемую-процедуру">#</a></h2>
 <p>Самый прикладной фрагмент доклада посвящён созданию навыков агента <strong>из реальной деятельности</strong>, а не из рассказа человека о том, «как он обычно работает».</p>
-<h3 id="итерационный-цикл-skill-learning">Итерационный цикл Skill Learning<a class="anchor" href="#итерационный-цикл-skill-learning" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="итерационный-цикл-skill-learning">Итерационный цикл Skill Learning<a aria-label="Ссылка на раздел" class="anchor" href="#итерационный-цикл-skill-learning">#</a></h3>
 <ol>
 <li>Человек и агент вместе выполняют <strong>реальный</strong> рабочий кейс.</li>
 <li>После получения корректного результата агент извлекает правила, ограничения и признаки успеха.</li>
@@ -201,7 +203,7 @@
 <li>Набор дополняют тремя-четырьмя <strong>разными</strong> случаями — получается небольшой регрессионный eval-набор.</li>
 </ol>
 <p>Это принципиально отличается от «напиши мне хороший промпт»: формируется <strong>проверяемая рабочая инструкция</strong>, проходящая испытания на задачах.</p>
-<h3 id="пример-skill-для-публикации-учебного-html">Пример: skill для публикации учебного HTML<a class="anchor" href="#пример-skill-для-публикации-учебного-html" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="пример-skill-для-публикации-учебного-html">Пример: skill для публикации учебного HTML<a aria-label="Ссылка на раздел" class="anchor" href="#пример-skill-для-публикации-учебного-html">#</a></h3>
 <ul>
 <li>Вход: тема, материалы урока, ограничение среды публикации.</li>
 <li>Действия: извлечь ключевые понятия → составить план → объяснить примерами → оформить HTML → проверить безопасность и отображение.</li>
@@ -209,8 +211,8 @@
 <li>Eval-кейсы: урок с формулами, урок с таблицами, урок со встроенным видео, урок с проблемной разметкой.</li>
 </ul>
 <p>Это <strong>пример применения идеи</strong>, а не кейс, дословно представленный на конференции.</p>
-<h2 id="10-длинные-задачи-один-исполнитель-и-наблюдающий-координатор">10. Длинные задачи: один исполнитель и наблюдающий координатор<a class="anchor" href="#10-длинные-задачи-один-исполнитель-и-наблюдающий-координатор" aria-label="Ссылка на раздел">#</a></h2>
-<p>В своей практике Николай описывает осторожный вариант многоагентности: <strong>исполнитель делает работу, координатор сохраняет стратегический контекст и периодически проверяет направление</strong>. Координатор не должен ждать завершения огромного блока, если за первые минуты уже видно, что исполнитель идёт не туда.</p>
+<h2 id="10-длинные-задачи-один-исполнитель-и-наблюдающий-координатор">10. Длинные задачи: один исполнитель и наблюдающий координатор<a aria-label="Ссылка на раздел" class="anchor" href="#10-длинные-задачи-один-исполнитель-и-наблюдающий-координатор">#</a></h2>
+<p>В своей практике Николай описывает осторожный вариант многоагентности: <strong>исполнитель делает работу, координатор сохраняет стратегический контекст и периодически проверяет направление</strong>. Координатор не должен ждать завершения огромного блока, если за первые минуты уже видно, что исполнитель идёт не туда.</p><figure aria-label="Унифицированный harness подключает разные инструменты без дублирования процесса." class="concept-viz" data-viz="tree"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 01</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Унифицированный harness подключает разные инструменты без дублирования процесса." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 300" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="65" rx="16" width="280" x="300" y="25"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="27"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="57.5">Агент</text><path class="viz-wire" d="M 440 90 C 440 130 152 130 152 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 152 130 152 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="25" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="218.5">Файлы</text><path class="viz-wire" d="M 440 90 C 440 130 442 130 442 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 442 130 442 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="315" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="218.5">Браузер</text><path class="viz-wire" d="M 440 90 C 440 130 732 130 732 181"></path><path class="viz-wire-glow" d="M 440 90 C 440 130 732 130 732 181"></path><rect class="viz-box" height="67" rx="16" width="255" x="605" y="185"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="187"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="218.5">CLI</text></svg><figcaption>Унифицированный harness подключает разные инструменты без дублирования процесса. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <pre><code class="language-text">                 КООРДИНАТОР
              цель / план / критерии
                         │
@@ -224,27 +226,27 @@
                  ПРИЁМКА
 </code></pre>
 <p><strong>Зачем:</strong> при очень длинных сессиях и сжатии контекста агент может забывать часть ранних решений. Внешние артефакты — план, журнал, тесты — создают опорные точки, не зависящие от того, сколько сообщений осталось в активном окне.</p>
-<h2 id="11-инструменты-исполнения-меньше-лишней-инфраструктуры">11. Инструменты исполнения: меньше лишней инфраструктуры<a class="anchor" href="#11-инструменты-исполнения-меньше-лишней-инфраструктуры" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="11-инструменты-исполнения-меньше-лишней-инфраструктуры">11. Инструменты исполнения: меньше лишней инфраструктуры<a aria-label="Ссылка на раздел" class="anchor" href="#11-инструменты-исполнения-меньше-лишней-инфраструктуры">#</a></h2>
 <p>Доклад содержит практический пример: для небольшого Python-скрипта, которому нужны зависимости, необязательно создавать полноценный проект и постоянное виртуальное окружение. Для сценариев, где это подходит, можно использовать <strong>PEP 723</strong>, описывающий зависимости в заголовке скрипта, и совместимый инструмент запуска, например <code>uv</code>.</p>
 <pre><code class="language-python"># /// script
-# dependencies = [&quot;requests&quot;]
+# dependencies = ["requests"]
 # ///
 import requests
 
-response = requests.get(&quot;https://example.org&quot;, timeout=10)
+response = requests.get("https://example.org", timeout=10)
 print(response.status_code)
 </code></pre>
 <p>Этот пример предназначен только для иллюстрации подхода. В производственном окружении фиксируйте версии зависимостей, проверяйте источники пакетов и применяйте корпоративные политики безопасности.</p>
-<h2 id="12-что-попробовать-самостоятельно">12. Что попробовать самостоятельно<a class="anchor" href="#12-что-попробовать-самостоятельно" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="12-что-попробовать-самостоятельно">12. Что попробовать самостоятельно<a aria-label="Ссылка на раздел" class="anchor" href="#12-что-попробовать-самостоятельно">#</a></h2>
 <p><strong>Мини-проект на один рабочий день:</strong> возьмите повторяющуюся задачу — например, подготовку отчёта из папки файлов. Запишите инструкцию, запустите агента, отметьте все места, где пришлось вмешаться, превратите исправления в skill, проверьте его в новой сессии и на двух альтернативных файлах.</p>
 <p><strong>Чек-лист результата:</strong></p>
 <ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Есть конкретные входные данные и проверяемые критерии успеха.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Агент читает только нужные файлы и части данных.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Нештатные обходы требуют согласования.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Ревью требует доказательств, а не количества замечаний.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Ошибки превращаются в изменение инструкции или инструментов.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Новый запуск skill способен повторить результат.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Есть конкретные входные данные и проверяемые критерии успеха.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Агент читает только нужные файлы и части данных.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Нештатные обходы требуют согласования.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ревью требует доказательств, а не количества замечаний.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ошибки превращаются в изменение инструкции или инструментов.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Новый запуск skill способен повторить результат.</li>
 </ul>
 <p><strong>Вопрос для самопроверки.</strong> Что даст более устойчивый результат через месяц: заменить модель на более мощную или записать и протестировать три часто повторяющиеся процедуры? Ответ зависит от задач, но именно <strong>накопленный процесс</strong> позволяет проверить пользу любого последующего обновления модели.</p>
-</article><nav class="chapter-nav"><a href="index.html"><span>← Вернуться</span><strong>Оглавление книги</strong></a><a class="next" href="02_ai_native.html"><span>Следующая глава →</span><strong>Агентоцентричная организация: от чата к ядру процессов</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input type="checkbox" class="chapter-complete" data-complete="01_agent_setup.html"> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Эффективность агента определяется не только моделью, но и окружающей системой: инструментами, инструкциями, контролем и обучением на реальных ошибках.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>Harness</span><span>AGENTS.md</span><span>Skills</span><span>VPS</span><span>Dictation</span><span>Review</span><span>Eval</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=264s" target="_blank" rel="noopener">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · День 1</b><p>Редакторское учебное пособие по выступлениям 11 ноября 2026 года. Неофициальное изложение: определения, схемы, иллюстрации, задания и примеры добавлены редактором.</p></div><div class="footer-links"><a href="index.html">Все главы</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="https://ai-dev.live/" target="_blank" rel="noopener">Программа ↗</a><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">Первоисточник ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+</article><nav class="chapter-nav"><a href="index.html"><span>← НАЗАД</span><strong>Оглавление</strong></a><a class="next" href="02_ai_native.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Агентоцентричная организация: от чата к ядру процессов</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input class="chapter-complete" data-complete="01_agent_setup.html" type="checkbox"/> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Эффективность агента определяется не только моделью, но и окружающей системой: инструментами, инструкциями, контролем и обучением на реальных ошибках.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>Harness</span><span>AGENTS.md</span><span>Skills</span><span>VPS</span><span>Dictation</span><span>Review</span><span>Eval</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=264s" rel="noopener" target="_blank">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" rel="noopener" target="_blank">Официальная программа ↗</a></div></footer><div aria-live="polite" id="toast" role="status"></div></body></html>

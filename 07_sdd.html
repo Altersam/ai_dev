@@ -1,4 +1,6 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0c1424"><meta name="description" content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами."><title>Spec-Driven Development в существующем проекте · AI Dev Live 2026 — книга</title><link rel="stylesheet" href="assets/style.css"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script defer src="assets/catalog.js"></script><script defer src="assets/app.js"></script></head><body data-page="07_sdd.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html" aria-label="Оглавление книги"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>КНИГА · 2026 · ДЕНЬ 01</small></span></a><nav class="top-links" aria-label="Основная навигация"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">▶ Трансляция</a></nav><div class="header-actions"><button class="icon-btn" id="themeToggle" title="Переключить тему" aria-label="Переключить тему">◐</button><button class="icon-btn mobile-menu" id="menuToggle" title="Содержание" aria-label="Показать содержание">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ГЛАВЫ</div><div class="side-chapters"><a class="side-chapter " href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter " href="02_ai_native.html"><span>02</span>AI-native организация</a><a class="side-chapter " href="03_orchestration.html"><span>03</span>Оркестрация</a><a class="side-chapter " href="04_inference.html"><span>04</span>GPU и инференс</a><a class="side-chapter " href="05_career.html"><span>05</span>Карьера и найм</a><a class="side-chapter " href="06_quality.html"><span>06</span>Контроль качества</a><a class="side-chapter active" href="07_sdd.html"><span>07</span>Spec-Driven Development</a><a class="side-chapter " href="08_metrics.html"><span>08</span>Эффект и метрики</a><a class="side-chapter " href="09_human.html"><span>09</span>Человек и ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#что-такое-sdd-и-почему-это-больше-чем-длинный-промпт">Что такое SDD и почему это больше, чем длинный промпт</a>
+<!DOCTYPE html>
+
+<html lang="ru"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><meta content="#0c1424" name="theme-color"/><meta content="Подробная интерактивная HTML-книга по конференции AI Dev Live 2026. День 1 — 9 докладов, практики, глоссарий, навигация и видео с таймкодами." name="description"/><title>Spec-Driven Development в существующем проекте · AI Dev Live 2026 — книга</title><link href="assets/style.css" rel="stylesheet"/><link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/><script defer="" src="assets/catalog.js"></script><script defer="" src="assets/app.js"></script></head><body data-page="07_sdd.html"><div class="reading-progress" id="readingProgress"></div><header class="site-header"><a class="site-brand" href="index.html"><span class="brand-icon">◈</span><span><strong>AI DEV / LIVE</strong><small>HTML-КНИГА · 11–12 НОЯБРЯ 2026</small></span></a><nav class="top-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги двух дней</a><a class="external-link" href="https://www.youtube.com/watch?v=PkTZHEngE3Q" rel="noopener" target="_blank">▶ Видео 1</a></nav><div class="header-actions"><button aria-label="Включить или выключить анимации" class="icon-btn motion-btn" id="motionToggle" title="Управление анимациями">◉</button><button aria-label="Переключить светлую и тёмную тему" class="icon-btn" id="themeToggle">◐</button><button aria-label="Показать содержание" class="icon-btn mobile-menu" id="menuToggle">☰</button></div></header><div class="book-layout"><aside class="sidebar" id="sideBar"><div class="side-section-label">ДЕНЬ 1 · 11 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="01_agent_setup.html"><span>01</span>Агентный сетап</a><a class="side-chapter" href="02_ai_native.html"><span>02</span>Агентоцентричная организация</a><a class="side-chapter" href="03_orchestration.html"><span>03</span>Оркестрация длинных задач</a><a class="side-chapter" href="04_inference.html"><span>04</span>Свой инференс для агентов</a><a class="side-chapter" href="05_career.html"><span>05</span>Найм, компетенции и грейды после мас</a><a class="side-chapter" href="06_quality.html"><span>06</span>Гарантия качества</a><a class="side-chapter" href="07_sdd.html"><span>07</span>Spec-Driven Development в существующ</a><a class="side-chapter" href="08_metrics.html"><span>08</span>Ускорил ли ИИ разработку? Метрики, э</a><a class="side-chapter" href="09_human.html"><span>09</span>Человеческая сторона агентной разраб</a></div><div class="side-section-label">ДЕНЬ 2 · 12 НОЯБРЯ</div><div class="side-chapters"><a class="side-chapter" href="d2_10_learning.html"><span>10</span>AI-разработка без выгорания</a><a class="side-chapter" href="d2_11_evidence.html"><span>11</span>Evidence-based SDLC</a><a class="side-chapter" href="d2_12_security.html"><span>12</span>Безопасное AI-ядро</a><a class="side-chapter" href="d2_13_legacy.html"><span>13</span>Внедрение AI в легаси</a><a class="side-chapter" href="d2_14_interfaces.html"><span>14</span>MCP, Skills и CLI</a><a class="side-chapter" href="d2_15_review.html"><span>15</span>AI-ревью здорового человека</a><a class="side-chapter" href="d2_16_product.html"><span>16</span>Продуктовое мышление</a><a class="side-chapter" href="d2_17_knowledge.html"><span>17</span>LLM Wiki 2.0</a><a class="side-chapter" href="d2_18_risks.html"><span>18</span>Риски сильного ИИ</a></div><div class="side-section-label">НА ЭТОЙ СТРАНИЦЕ</div><nav class="side-toc"><a class="toc-item toc-level-2" href="#что-такое-sdd-и-почему-это-больше-чем-длинный-промпт">Что такое SDD и почему это больше, чем длинный промпт</a>
 <a class="toc-item toc-level-2" href="#1-три-проблемы-которые-sdd-помогает-решать">1. Три проблемы, которые SDD помогает решать</a>
 <a class="toc-item toc-level-3" href="#ограничение-эффективного-контекста">Ограничение эффективного контекста</a>
 <a class="toc-item toc-level-3" href="#недостаточно-выраженный-intent">Недостаточно выраженный intent</a>
@@ -16,22 +18,22 @@
 <a class="toc-item toc-level-2" href="#8-живые-спецификации-почему-документ-не-становится-абсолютной-истиной">8. Живые спецификации: почему документ не становится абсолютной истиной</a>
 <a class="toc-item toc-level-2" href="#9-где-хранить-спеки-и-нужно-ли-их-коммитить">9. Где хранить спеки и нужно ли их коммитить</a>
 <a class="toc-item toc-level-2" href="#10-стоит-ли-пересматривать-спеки-вместо-кода">10. Стоит ли пересматривать спеки вместо кода</a>
-<a class="toc-item toc-level-2" href="#11-как-внедрить-sdd-без-бюрократии">11. Как внедрить SDD без бюрократии</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Библиотека</a><span>›</span> Глава 07 / 09</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 07 <span>·</span> УПРАВЛЕНИЕ СЛОЖНОСТЬЮ</div><h1>Spec-Driven Development в существующем проекте</h1><p class="lead">Как управлять большим агентно-разрабатываемым проектом, не утонув в Markdown-файлах, и когда спецификация действительно стоит затраченного времени.</p><div class="speaker-line"><span class="speaker-avatar">ЕТ</span><div><strong>Егор Толстой</strong><small>Кому нужен Spec-Driven Development в brownfield-проектах</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=14980s" target="_blank" rel="noopener">▶ Смотреть с 04:09:40</a></div><div class="key-facts"><span>⏱ ≈ 40 мин</span><span>◎ 19 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=15000s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:10:00</time> Почему нужен SDD ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=15430s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:17:10</time> Контекст и намерение ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=15820s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:23:40</time> Цена переключения ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=16100s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:28:20</time> Тесты по требованиям ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=16480s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:34:40</time> Сравнение toolkit ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=16870s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:41:10</time> Brownfield и ревью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=17230s" title="Перейти к соответствующему фрагменту YouTube" target="_blank" rel="noopener"><time>04:47:10</time> Выводы ↗</a></div></nav><article class="article prose"><h2 id="что-такое-sdd-и-почему-это-больше-чем-длинный-промпт">Что такое SDD и почему это больше, чем длинный промпт<a class="anchor" href="#что-такое-sdd-и-почему-это-больше-чем-длинный-промпт" aria-label="Ссылка на раздел">#</a></h2>
+<a class="toc-item toc-level-2" href="#11-как-внедрить-sdd-без-бюрократии">11. Как внедрить SDD без бюрократии</a></nav></aside><main class="reading-column"><div class="breadcrumbs"><a href="index.html">Книга</a><span>›</span> День 1 <span>›</span> Глава 07/18</div><section class="chapter-hero"><div class="eyebrow">ГЛАВА 07 <span>·</span> УПРАВЛЕНИЕ СЛОЖНОСТЬЮ</div><h1>Spec-Driven Development в существующем проекте</h1><p class="lead">Как управлять большим агентно-разрабатываемым проектом, не утонув в Markdown-файлах, и когда спецификация действительно стоит затраченного времени.</p><div class="speaker-line"><span class="speaker-avatar">ЕТ</span><div><strong>Егор Толстой</strong><small>Кому нужен Spec-Driven Development в brownfield-проектах</small></div><a class="watch-btn" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=14980s" rel="noopener" target="_blank">▶ Смотреть с 04:09:40</a></div><div class="key-facts"><span>⏱ ≈ 40 мин</span><span>◎ 19 разделов</span><span>⌁ Расшифровка + разбор</span></div></section><div class="editor-note"> <strong>Как читать эту главу.</strong> Сначала — основные идеи докладчика; затем — разъяснения терминов, схемы, примеры и практические шаги. Формулировки не являются дословными цитатами. Автоматическая расшифровка может содержать ошибки в именах продуктов и цифрах.</div><nav class="jump-points"><div class="jump-head">ПЕРЕХОДЫ К ВИДЕО <span>Открываются в новой вкладке</span></div><div class="time-chips"><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=15000s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:10:00</time> Почему нужен SDD ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=15430s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:17:10</time> Контекст и намерение ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=15820s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:23:40</time> Цена переключения ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=16100s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:28:20</time> Тесты по требованиям ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=16480s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:34:40</time> Сравнение toolkit ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=16870s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:41:10</time> Brownfield и ревью ↗</a><a class="time-chip" href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=17230s" rel="noopener" target="_blank" title="Перейти к соответствующему фрагменту YouTube"><time>04:47:10</time> Выводы ↗</a></div></nav><article class="article prose"><h2 id="что-такое-sdd-и-почему-это-больше-чем-длинный-промпт">Что такое SDD и почему это больше, чем длинный промпт<a aria-label="Ссылка на раздел" class="anchor" href="#что-такое-sdd-и-почему-это-больше-чем-длинный-промпт">#</a></h2>
 <p><strong>Spec-Driven Development (SDD)</strong> — подход, при котором до реализации формируется явное описание желаемого поведения системы, ограничений, ключевых решений и критериев проверки. Агент не просто выполняет «сделай как-нибудь», а работает по документированному намерению.</p>
 <p>Егор Толстой подчёркивает: SDD — не магический новый язык программирования и не обещание, что «документация теперь всегда актуальна». Это <strong>инженерный способ снизить неопределённость и управлять сложностью</strong>, особенно когда исполнение стало дешёвым и быстрым, а ошибки понимания — дорогими.</p>
 <blockquote>
 <p><strong>Главный тезис:</strong> важнейшая роль спецификации — не заставить модель лучше писать код, а сделать так, чтобы вы и агент одинаково понимали, <strong>какую проблему следует решить</strong>.</p>
 </blockquote>
-<h2 id="1-три-проблемы-которые-sdd-помогает-решать">1. Три проблемы, которые SDD помогает решать<a class="anchor" href="#1-три-проблемы-которые-sdd-помогает-решать" aria-label="Ссылка на раздел">#</a></h2>
-<h3 id="ограничение-эффективного-контекста">Ограничение эффективного контекста<a class="anchor" href="#ограничение-эффективного-контекста" aria-label="Ссылка на раздел">#</a></h3>
-<p>Номинально модель может принимать очень большой контекст. Но это не означает, что все детали длинной переписки будут одинаково надёжно учитываться в конце работы. Со временем накапливаются отвлекающие результаты инструментов, компромиссы и устаревшие предположения.</p>
+<h2 id="1-три-проблемы-которые-sdd-помогает-решать">1. Три проблемы, которые SDD помогает решать<a aria-label="Ссылка на раздел" class="anchor" href="#1-три-проблемы-которые-sdd-помогает-решать">#</a></h2>
+<h3 id="ограничение-эффективного-контекста">Ограничение эффективного контекста<a aria-label="Ссылка на раздел" class="anchor" href="#ограничение-эффективного-контекста">#</a></h3>
+<p>Номинально модель может принимать очень большой контекст. Но это не означает, что все детали длинной переписки будут одинаково надёжно учитываться в конце работы. Со временем накапливаются отвлекающие результаты инструментов, компромиссы и устаревшие предположения.</p><figure aria-label="Спецификация фиксирует цель, не только план файлов." class="concept-viz" data-viz="pipeline"><div class="viz-heading"><span class="viz-kicker">СХЕМА 01 <span class="viz-day-dot">●</span> ГЛАВА 07</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Спецификация фиксирует цель, не только план файлов." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="76" rx="16" width="176" x="25" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="172" x="27" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="113.0" y="138.0">Намерение</text><path class="viz-wire" d="M 201 138 L 240 138"></path><path class="viz-wire-glow" d="M 201 138 L 240 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="243" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="172" x="245" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="331.0" y="138.0">Спецификация</text><path class="viz-wire" d="M 419 138 L 458 138"></path><path class="viz-wire-glow" d="M 419 138 L 458 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="461" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="172" x="463" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="549.0" y="138.0">Реализация</text><path class="viz-wire" d="M 637 138 L 676 138"></path><path class="viz-wire-glow" d="M 637 138 L 676 138"></path><rect class="viz-box" height="76" rx="16" width="176" x="679" y="100"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="172" x="681" y="102"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="767.0" y="138.0">Проверка</text><text class="viz-small" x="25" y="62">ВХОД</text><text class="viz-small" x="790" y="62">РЕЗУЛЬТАТ</text></svg><figcaption>Спецификация фиксирует цель, не только план файлов. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p>Спецификация позволяет <strong>перенести устойчивые решения в компактный внешний артефакт</strong>: новый агент читает короткую актуальную суть, а не всю историю исследования.</p>
-<h3 id="недостаточно-выраженный-intent">Недостаточно выраженный intent<a class="anchor" href="#недостаточно-выраженный-intent" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="недостаточно-выраженный-intent">Недостаточно выраженный intent<a aria-label="Ссылка на раздел" class="anchor" href="#недостаточно-выраженный-intent">#</a></h3>
 <p>Человек знает, какой результат ему нравится, но редко полностью выражает это в первом запросе. Модель заполняет недосказанное собственными решениями, которые могут оказаться неверными. В SDD сначала уточняют требования, исключения, границы и критерии, затем поручают реализацию.</p>
-<h3 id="когнитивная-нагрузка-при-параллельной-работе">Когнитивная нагрузка при параллельной работе<a class="anchor" href="#когнитивная-нагрузка-при-параллельной-работе" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="когнитивная-нагрузка-при-параллельной-работе">Когнитивная нагрузка при параллельной работе<a aria-label="Ссылка на раздел" class="anchor" href="#когнитивная-нагрузка-при-параллельной-работе">#</a></h3>
 <p>Когда одновременно работают несколько агентов, человек вынужден помнить, какие решения были согласованы в каждой ветке. Спецификации уменьшают зависимость от кратковременной памяти и помогают возвращаться к задаче после перерыва.</p>
 <p><strong>Важно:</strong> не все эти проблемы одинаково сильны для всех проектов. Для небольших правок избыточный SDD-процесс может стать хуже простого диалога.</p>
-<h2 id="2-как-выглядит-минимальный-цикл-sdd">2. Как выглядит минимальный цикл SDD<a class="anchor" href="#2-как-выглядит-минимальный-цикл-sdd" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="2-как-выглядит-минимальный-цикл-sdd">2. Как выглядит минимальный цикл SDD<a aria-label="Ссылка на раздел" class="anchor" href="#2-как-выглядит-минимальный-цикл-sdd">#</a></h2>
 <pre><code class="language-text">   ПРОБЛЕМА / ИДЕЯ
          │
          ▼
@@ -57,55 +59,55 @@
     ПРИЁМКА / АРХИВ
 </code></pre>
 <p>На каждом этапе есть отдельный результат. Это полезно при смене модели, сбросе контекста или передаче работы другому агенту: следующая сессия получает подготовленный материал, а не пересказ «что мы там обсуждали».</p>
-<h2 id="3-какой-должна-быть-хорошая-спецификация">3. Какой должна быть хорошая спецификация<a class="anchor" href="#3-какой-должна-быть-хорошая-спецификация" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="3-какой-должна-быть-хорошая-спецификация">3. Какой должна быть хорошая спецификация<a aria-label="Ссылка на раздел" class="anchor" href="#3-какой-должна-быть-хорошая-спецификация">#</a></h2>
 <p>Не существует универсального числа страниц. Есть набор вопросов, на которые желательно ответить.</p>
 <table>
 <thead>
 <tr>
-  <th>Раздел</th>
-  <th>Что нужно описать</th>
+<th>Раздел</th>
+<th>Что нужно описать</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Проблема</td>
-  <td>Какую реальную потребность закрываем</td>
+<td>Проблема</td>
+<td>Какую реальную потребность закрываем</td>
 </tr>
 <tr>
-  <td>Scope</td>
-  <td>Что входит и не входит в изменение</td>
+<td>Scope</td>
+<td>Что входит и не входит в изменение</td>
 </tr>
 <tr>
-  <td>Пользовательские сценарии</td>
-  <td>Кто и каким образом использует функцию</td>
+<td>Пользовательские сценарии</td>
+<td>Кто и каким образом использует функцию</td>
 </tr>
 <tr>
-  <td>Критерии готовности</td>
-  <td>Как независимо подтвердить успех</td>
+<td>Критерии готовности</td>
+<td>Как независимо подтвердить успех</td>
 </tr>
 <tr>
-  <td>Инварианты</td>
-  <td>Что обязательно сохранить неизменным</td>
+<td>Инварианты</td>
+<td>Что обязательно сохранить неизменным</td>
 </tr>
 <tr>
-  <td>Совместимость</td>
-  <td>Какие старые данные и API продолжают работать</td>
+<td>Совместимость</td>
+<td>Какие старые данные и API продолжают работать</td>
 </tr>
 <tr>
-  <td>Дизайн</td>
-  <td>Почему выбрано это решение и какие альтернативы отклонены</td>
+<td>Дизайн</td>
+<td>Почему выбрано это решение и какие альтернативы отклонены</td>
 </tr>
 <tr>
-  <td>Риски</td>
-  <td>Что может пойти не так</td>
+<td>Риски</td>
+<td>Что может пойти не так</td>
 </tr>
 <tr>
-  <td>Проверки</td>
-  <td>Какие тесты подтверждают каждый критичный пункт</td>
+<td>Проверки</td>
+<td>Какие тесты подтверждают каждый критичный пункт</td>
 </tr>
 </tbody>
 </table>
-<h3 id="пример-небольшая-спека">Пример: небольшая спека<a class="anchor" href="#пример-небольшая-спека" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="пример-небольшая-спека">Пример: небольшая спека<a aria-label="Ссылка на раздел" class="anchor" href="#пример-небольшая-спека">#</a></h3>
 <pre><code class="language-markdown"># Функция: импорт результатов тестирования из Excel
 
 ## Цель
@@ -131,9 +133,9 @@
 5. Исходный файл сохраняется неизменным.
 </code></pre>
 <p>Это <strong>учебный пример</strong>, созданный для книги. Ценность здесь в проверяемости: агент не может считать задачу завершённой, если исчезла часть учеников или поменялись исходные результаты.</p>
-<h2 id="4-связь-спецификации-с-тестированием">4. Связь спецификации с тестированием<a class="anchor" href="#4-связь-спецификации-с-тестированием" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="4-связь-спецификации-с-тестированием">4. Связь спецификации с тестированием<a aria-label="Ссылка на раздел" class="anchor" href="#4-связь-спецификации-с-тестированием">#</a></h2>
 <p>Важнейшее преимущество SDD — тесты можно генерировать <strong>не по готовому коду</strong>, а по требованиям. Иначе агент может написать тесты, которые идеально подтверждают его собственную неверную реализацию.</p>
-<h3 id="требование-сценарий-тест">Требование → сценарий → тест<a class="anchor" href="#требование-сценарий-тест" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="требование-сценарий-тест">Требование → сценарий → тест<a aria-label="Ссылка на раздел" class="anchor" href="#требование-сценарий-тест">#</a></h3>
 <pre><code class="language-gherkin">Функция: импорт Excel
 
   Сценарий: неизвестный идентификатор
@@ -145,8 +147,8 @@
     И исходные баллы не меняются
 </code></pre>
 <p>Такой формат напоминает BDD — <strong>Behavior-Driven Development</strong>. Не обязательно использовать Gherkin буквально. Смысл в том, чтобы <strong>наблюдаемое поведение</strong> связывалось с отдельной проверкой.</p>
-<h2 id="5-когда-спека-окупается-а-когда-нет">5. Когда спека окупается, а когда нет<a class="anchor" href="#5-когда-спека-окупается-а-когда-нет" aria-label="Ссылка на раздел">#</a></h2>
-<p>Используйте SDD, если:</p>
+<h2 id="5-когда-спека-окупается-а-когда-нет">5. Когда спека окупается, а когда нет<a aria-label="Ссылка на раздел" class="anchor" href="#5-когда-спека-окупается-а-когда-нет">#</a></h2>
+<p>Используйте SDD, если:</p><figure aria-label="Объём формального процесса должен соответствовать сложности задачи." class="concept-viz" data-viz="fork"><div class="viz-heading"><span class="viz-kicker">СХЕМА 02 <span class="viz-day-dot">●</span> ГЛАВА 07</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="Объём формального процесса должен соответствовать сложности задачи." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 305" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="66" rx="16" width="280" x="300" y="22"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="276" x="302" y="24"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="440.0" y="55.0">Изменение</text><path class="viz-wire" d="M 440 88 Q 150 127 150 185"></path><path class="viz-wire-glow" d="M 440 88 Q 150 127 150 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="25" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="251" x="27" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="152.5" y="223.0">Малый фикс</text><path class="viz-wire" d="M 440 88 Q 440 127 440 185"></path><path class="viz-wire-glow" d="M 440 88 Q 440 127 440 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="315" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="251" x="317" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="442.5" y="223.0">Сложная фича</text><path class="viz-wire" d="M 440 88 Q 730 127 730 185"></path><path class="viz-wire-glow" d="M 440 88 Q 730 127 730 185"></path><rect class="viz-box" height="66" rx="16" width="255" x="605" y="190"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="251" x="607" y="192"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="732.5" y="223.0">Рефакторинг</text><text class="viz-small" text-anchor="middle" x="440" y="287">ВАРИАНТЫ / ВЕТВИ</text></svg><figcaption>Объём формального процесса должен соответствовать сложности задачи. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <ul>
 <li>изменения затрагивают несколько модулей и людей;</li>
 <li>есть существенная неоднозначность требований;</li>
@@ -156,48 +158,48 @@
 <li>решения нужно объяснять и сопровождать спустя месяцы.</li>
 </ul>
 <p>Скорее <strong>не используйте полный процесс</strong>, если задача сводится к исправлению опечатки, замене одной ссылки или однозначной локальной правке с простой проверкой.</p>
-<h3 id="полезный-фильтр">Полезный фильтр<a class="anchor" href="#полезный-фильтр" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="полезный-фильтр">Полезный фильтр<a aria-label="Ссылка на раздел" class="anchor" href="#полезный-фильтр">#</a></h3>
 <p>Спросите: «Сколько времени уйдёт на исправление неверного решения, если мы сейчас не уточним задачу?» Если цена ошибки выше стоимости короткой спеки — она, вероятно, оправдана.</p>
-<h2 id="6-инструментальные-подходы-чем-отличаются">6. Инструментальные подходы: чем отличаются<a class="anchor" href="#6-инструментальные-подходы-чем-отличаются" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="6-инструментальные-подходы-чем-отличаются">6. Инструментальные подходы: чем отличаются<a aria-label="Ссылка на раздел" class="anchor" href="#6-инструментальные-подходы-чем-отличаются">#</a></h2>
 <p>Егор обсуждает несколько популярных семейств инструментов. Названия ниже приведены в нормализованном написании; подробности конкретных версий нужно сверять с актуальной документацией.</p>
 <table>
 <thead>
 <tr>
-  <th>Подход</th>
-  <th>Характер</th>
-  <th>Кому подходит</th>
+<th>Подход</th>
+<th>Характер</th>
+<th>Кому подходит</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td><strong>OpenSpec</strong></td>
-  <td>Относительно лёгкая работа с изменениями и спецификациями</td>
-  <td>Командам, которым нужна ясность без тяжёлого процесса</td>
+<td><strong>OpenSpec</strong></td>
+<td>Относительно лёгкая работа с изменениями и спецификациями</td>
+<td>Командам, которым нужна ясность без тяжёлого процесса</td>
 </tr>
 <tr>
-  <td><strong>Superpowers</strong></td>
-  <td>Коллекция инженерных навыков, планирования и проверок</td>
-  <td>Тем, кто хочет усилить существующий процесс отдельными практиками</td>
+<td><strong>Superpowers</strong></td>
+<td>Коллекция инженерных навыков, планирования и проверок</td>
+<td>Тем, кто хочет усилить существующий процесс отдельными практиками</td>
 </tr>
 <tr>
-  <td><strong>BMAD Method</strong></td>
-  <td>Более структурированная цепочка ролей и артефактов</td>
-  <td>Большим или новым продуктовым инициативам с высокой сложностью</td>
+<td><strong>BMAD Method</strong></td>
+<td>Более структурированная цепочка ролей и артефактов</td>
+<td>Большим или новым продуктовым инициативам с высокой сложностью</td>
 </tr>
 <tr>
-  <td><strong>Spec Kit / подобные toolkit</strong></td>
-  <td>Шаблоны и команды вокруг спецификаций</td>
-  <td>Тем, кому важна стандартизация процесса</td>
+<td><strong>Spec Kit / подобные toolkit</strong></td>
+<td>Шаблоны и команды вокруг спецификаций</td>
+<td>Тем, кому важна стандартизация процесса</td>
 </tr>
 <tr>
-  <td><strong>Собственный лёгкий шаблон</strong></td>
-  <td>Только нужные команде файлы и правила</td>
-  <td>Небольшим командам, хорошо понимающим свои требования</td>
+<td><strong>Собственный лёгкий шаблон</strong></td>
+<td>Только нужные команде файлы и правила</td>
+<td>Небольшим командам, хорошо понимающим свои требования</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Осторожно с выбором:</strong> популярность и число команд в toolkit не доказывают эффективность. По докладу, избыток процедур способен съедать время и внимание.</p>
-<h2 id="7-brownfield-что-сложнее-чем-в-новом-проекте">7. Brownfield — что сложнее, чем в новом проекте<a class="anchor" href="#7-brownfield-что-сложнее-чем-в-новом-проекте" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="7-brownfield-что-сложнее-чем-в-новом-проекте">7. Brownfield — что сложнее, чем в новом проекте<a aria-label="Ссылка на раздел" class="anchor" href="#7-brownfield-что-сложнее-чем-в-новом-проекте">#</a></h2>
 <p><strong>Brownfield</strong> — система с существующим кодом, историей решений, пользователями, данными и неочевидными ограничениями. В новом проекте можно сравнительно легко принять архитектуру с нуля; в старом даже маленькая функция может затронуть устаревшие API, миграции и чужие договорённости.</p>
 <p>Главная задача перед изменением — <strong>узнать уже существующие инварианты</strong>:</p>
 <ul>
@@ -207,9 +209,9 @@
 <li>какие ограничения связаны с развёртыванием;</li>
 <li>какие модули используют общий формат данных.</li>
 </ul>
-<h3 id="минимальный-паспорт-изменения">Минимальный «паспорт» изменения<a class="anchor" href="#минимальный-паспорт-изменения" aria-label="Ссылка на раздел">#</a></h3>
+<h3 id="минимальный-паспорт-изменения">Минимальный «паспорт» изменения<a aria-label="Ссылка на раздел" class="anchor" href="#минимальный-паспорт-изменения">#</a></h3>
 <p>Хороший план для brownfield содержит: описание текущего поведения, список затронутых контрактов, изменения для обратной совместимости, стратегию миграции, список тестов, план отката и ответственного за приёмку.</p>
-<h2 id="8-живые-спецификации-почему-документ-не-становится-абсолютной-истиной">8. Живые спецификации: почему документ не становится абсолютной истиной<a class="anchor" href="#8-живые-спецификации-почему-документ-не-становится-абсолютной-истиной" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="8-живые-спецификации-почему-документ-не-становится-абсолютной-истиной">8. Живые спецификации: почему документ не становится абсолютной истиной<a aria-label="Ссылка на раздел" class="anchor" href="#8-живые-спецификации-почему-документ-не-становится-абсолютной-истиной">#</a></h2>
 <p>Звучит привлекательно: «У нас есть спецификация, значит, всегда знаем, как система работает». Но реальный проект меняется десятками мелких правок, многие из которых проходят без полноценного SDD. Через несколько месяцев документы могут устареть.</p>
 <p>В докладе обсуждается практичная позиция:</p>
 <ul>
@@ -219,7 +221,7 @@
 <li>ключевые архитектурные решения и публичные контракты храните дольше, чем мелкие рабочие планы.</li>
 </ul>
 <p><strong>Опасность:</strong> если «источником истины» объявили старый документ, агент способен восстановить поведение, которое продукт уже давно перестал поддерживать.</p>
-<h2 id="9-где-хранить-спеки-и-нужно-ли-их-коммитить">9. Где хранить спеки и нужно ли их коммитить<a class="anchor" href="#9-где-хранить-спеки-и-нужно-ли-их-коммитить" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="9-где-хранить-спеки-и-нужно-ли-их-коммитить">9. Где хранить спеки и нужно ли их коммитить<a aria-label="Ссылка на раздел" class="anchor" href="#9-где-хранить-спеки-и-нужно-ли-их-коммитить">#</a></h2>
 <p>Зависит от структуры разработки:</p>
 <ul>
 <li>при монорепозитории и локальных изменениях — рядом с кодом;</li>
@@ -241,8 +243,8 @@
     └── ...
 </code></pre>
 <p>Плохая практика — хранить одновременно несколько взаимно противоречащих папок со «спеками», которые разные агенты воспринимают как актуальные.</p>
-<h2 id="10-стоит-ли-пересматривать-спеки-вместо-кода">10. Стоит ли пересматривать спеки вместо кода<a class="anchor" href="#10-стоит-ли-пересматривать-спеки-вместо-кода" aria-label="Ссылка на раздел">#</a></h2>
-<p>Для крупных изменений <strong>ревью спецификации до реализации</strong> часто дешевле исправления уже написанного модуля. Особенно когда проверяют архитектуру, совместимость и соответствие бизнес-замыслу.</p>
+<h2 id="10-стоит-ли-пересматривать-спеки-вместо-кода">10. Стоит ли пересматривать спеки вместо кода<a aria-label="Ссылка на раздел" class="anchor" href="#10-стоит-ли-пересматривать-спеки-вместо-кода">#</a></h2>
+<p>Для крупных изменений <strong>ревью спецификации до реализации</strong> часто дешевле исправления уже написанного модуля. Особенно когда проверяют архитектуру, совместимость и соответствие бизнес-замыслу.</p><figure aria-label="SDD уменьшает риск недосказанного намерения." class="concept-viz" data-viz="loop"><div class="viz-heading"><span class="viz-kicker">СХЕМА 03 <span class="viz-day-dot">●</span> ГЛАВА 07</span><span class="viz-mode">АНИМИРОВАННАЯ МОДЕЛЬ · SVG</span></div><svg aria-label="SDD уменьшает риск недосказанного намерения." role="img" style="font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif" viewbox="0 0 880 340" xmlns="http://www.w3.org/2000/svg"><rect class="viz-box" height="75" rx="16" width="260" x="40" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.00s" width="256" x="42" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="77.5">Контекст</text><path class="viz-wire" d="M 300 77 L 552 77"></path><path class="viz-wire-glow" d="M 300 77 L 552 77"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="40"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.27s" width="256" x="557" y="42"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="77.5">Вопросы</text><path class="viz-wire" d="M 677 115 L 677 220"></path><path class="viz-wire-glow" d="M 677 115 L 677 220"></path><rect class="viz-box" height="75" rx="16" width="260" x="555" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.54s" width="256" x="557" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="685.0" y="262.5">Spec review</text><path class="viz-wire" d="M 555 264 L 302 264"></path><path class="viz-wire-glow" d="M 555 264 L 302 264"></path><rect class="viz-box" height="75" rx="16" width="260" x="40" y="225"></rect><rect class="viz-accent" height="5" rx="3" style="animation-delay:0.81s" width="256" x="42" y="227"></rect><text class="viz-txt" dominant-baseline="middle" font-size="15" font-weight="650" text-anchor="middle" x="170.0" y="262.5">Решение</text><path class="viz-wire" d="M 165 225 L 165 117"></path><path class="viz-wire-glow" d="M 165 225 L 165 117"></path><text class="viz-loop-center" text-anchor="middle" x="440" y="172">↻</text></svg><figcaption>SDD уменьшает риск недосказанного намерения. <span>Редакторская схема по мотивам доклада</span></figcaption></figure>
 <p>Но spec review <strong>не заменяет code review и тесты</strong>. Спецификация может быть отличной, а реализация — ошибочной; или наоборот, технически хороший код решит другую задачу.</p>
 <p>Практичное разделение:</p>
 <ul>
@@ -250,18 +252,18 @@
 <li><strong>Code review:</strong> действительно ли реализация соблюдает ограничения, нет ли дефектов и технического долга.</li>
 <li><strong>Acceptance:</strong> получила ли организация нужный результат.</li>
 </ul>
-<h2 id="11-как-внедрить-sdd-без-бюрократии">11. Как внедрить SDD без бюрократии<a class="anchor" href="#11-как-внедрить-sdd-без-бюрократии" aria-label="Ссылка на раздел">#</a></h2>
+<h2 id="11-как-внедрить-sdd-без-бюрократии">11. Как внедрить SDD без бюрократии<a aria-label="Ссылка на раздел" class="anchor" href="#11-как-внедрить-sdd-без-бюрократии">#</a></h2>
 <p><strong>Эксперимент на трёх задачах:</strong> выберите одну сложную, одну среднюю и одну простую. Для сложной сделайте полный цикл; для средней — компактный <code>SPEC.md</code>; для простой — обычный план и тест. Сравните время до принятого результата, число переделок, субъективную нагрузку и количество неучтённых решений.</p>
 <p>Результатом будет <strong>собственное правило выбора процесса</strong>, а не новая обязанность «писать 30 файлов для каждой задачи».</p>
 <p><strong>Чек-лист:</strong></p>
 <ul>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Спека описывает поведение, а не красивый текст про архитектуру.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Есть явный scope и out-of-scope.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Критерии готовности проверяемы.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Для старого проекта изучены зависимости и совместимость.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Тесты связаны с требованиями.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Документы архивируются, устаревшие версии не выдаются за истину.</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>Процесс облегчает работу, а не превращается в самоцель.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Спека описывает поведение, а не красивый текст про архитектуру.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Есть явный scope и out-of-scope.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Критерии готовности проверяемы.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Для старого проекта изучены зависимости и совместимость.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Тесты связаны с требованиями.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Документы архивируются, устаревшие версии не выдаются за истину.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Процесс облегчает работу, а не превращается в самоцель.</li>
 </ul>
 <p><strong>Вопрос для самопроверки.</strong> Нужен ли SDD, если новая модель научится идеально писать код? Да, если <strong>людям</strong> всё ещё нужно согласовать намерение, ответственность и решения; нет, если для конкретной простой задачи дополнительных согласований не требуется.</p>
-</article><nav class="chapter-nav"><a href="06_quality.html"><span>← Предыдущая глава</span><strong>Гарантия качества: quality gates и feedback loops для агентного кода</strong></a><a class="next" href="08_metrics.html"><span>Следующая глава →</span><strong>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input type="checkbox" class="chapter-complete" data-complete="07_sdd.html"> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Спецификации помогают сохранить намерение, уменьшить когнитивную нагрузку и тестировать требования; но избыточный процесс может стать дороже самой задачи.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>SDD</span><span>Brownfield</span><span>OpenSpec</span><span>Superpowers</span><span>BMAD</span><span>Acceptance</span><span>Design review</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&t=14980s" target="_blank" rel="noopener">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · День 1</b><p>Редакторское учебное пособие по выступлениям 11 ноября 2026 года. Неофициальное изложение: определения, схемы, иллюстрации, задания и примеры добавлены редактором.</p></div><div class="footer-links"><a href="index.html">Все главы</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="https://ai-dev.live/" target="_blank" rel="noopener">Программа ↗</a><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q" target="_blank" rel="noopener">Первоисточник ↗</a></div></footer><div id="toast" role="status" aria-live="polite"></div></body></html>
+</article><nav class="chapter-nav"><a href="06_quality.html"><span>← ПРЕДЫДУЩАЯ ГЛАВА</span><strong>Гарантия качества: quality gates и feedback loops для агентног</strong></a><a class="next" href="08_metrics.html"><span>СЛЕДУЮЩАЯ ГЛАВА →</span><strong>Ускорил ли ИИ разработку? Метрики, эксперименты и экономика</strong></a></nav><div class="end-card"><h3>Закрепите материал</h3><p>В конце главы есть чек-лист и вопросы для самопроверки. Отмечайте пройденные главы — прогресс сохраняется в этом браузере.</p><label class="complete-label"><input class="chapter-complete" data-complete="07_sdd.html" type="checkbox"/> Глава изучена</label></div></main><aside class="rail"><div class="rail-box"><div class="rail-title">ПО СУТИ</div><p>Спецификации помогают сохранить намерение, уменьшить когнитивную нагрузку и тестировать требования; но избыточный процесс может стать дороже самой задачи.</p></div><div class="rail-box"><div class="rail-title">КЛЮЧЕВЫЕ ТЕРМИНЫ</div><div class="tag-cloud"><span>SDD</span><span>Brownfield</span><span>OpenSpec</span><span>Superpowers</span><span>BMAD</span><span>Acceptance</span><span>Design review</span></div></div><div class="rail-box"><div class="rail-title">ПЕРВОИСТОЧНИК</div><a href="https://www.youtube.com/watch?v=PkTZHEngE3Q&amp;t=14980s" rel="noopener" target="_blank">Видео доклада ↗</a><p>Таймкоды приблизительные и привязаны к оригинальной трансляции.</p></div></aside></div><footer class="footer"><div><b>AI Dev Live 2026 · HTML-книга · два дня</b><p>Подробные редакторские конспекты по автоматической транскрипции конференции. Схемы, код и учебные примеры добавлены редактором. Мнения докладчиков не являются официальными рекомендациями организаторов.</p></div><div class="footer-links"><a href="index.html">Оглавление</a><a href="10_glossary.html">Словарь</a><a href="11_playbook.html">Практикум</a><a href="comparison.html">Итоги</a><a href="https://ai-dev.live" rel="noopener" target="_blank">Официальная программа ↗</a></div></footer><div aria-live="polite" id="toast" role="status"></div></body></html>
