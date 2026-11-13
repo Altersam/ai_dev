@@ -1,0 +1,164 @@
+{
+  "edition": "AI Dev Live 2026 — 11–12 November — revised 2026-11-13",
+  "official_program": "https://ai-dev.live/",
+  "recap_url": "https://ai-dev.live/recaps/all/faqn4b1h533e04ec0rdg/",
+  "playlist_urls": [
+    "https://www.youtube.com/playlist?list=PLWlcUZ1augs8",
+    "https://www.youtube.com/playlist?list=PLI71iT3utVoI"
+  ],
+  "playlist_contents_verified": false,
+  "transcripts_confirmed_days": [
+    1,
+    2
+  ],
+  "day_videos": {
+    "1": "https://youtu.be/PkTZHEngE3Q",
+    "2": "https://youtu.be/RzAdlyut6Uc"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "page": "01_agent_setup.html",
+      "speaker": "Николай Шейко",
+      "start_seconds": 264,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=264s"
+    },
+    {
+      "number": 2,
+      "page": "02_ai_native.html",
+      "speaker": "Данила Симонов",
+      "start_seconds": 2680,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=2680s"
+    },
+    {
+      "number": 3,
+      "page": "03_orchestration.html",
+      "speaker": "Родион Мостовой",
+      "start_seconds": 4940,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=4940s"
+    },
+    {
+      "number": 4,
+      "page": "04_inference.html",
+      "speaker": "Валерий Ковальский",
+      "start_seconds": 7950,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=7950s"
+    },
+    {
+      "number": 5,
+      "page": "05_career.html",
+      "speaker": "Екатерина Фирсова",
+      "start_seconds": 10470,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=10470s"
+    },
+    {
+      "number": 6,
+      "page": "06_quality.html",
+      "speaker": "Константин Доронин",
+      "start_seconds": 12320,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=12320s"
+    },
+    {
+      "number": 7,
+      "page": "07_sdd.html",
+      "speaker": "Егор Толстой",
+      "start_seconds": 14980,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=14980s"
+    },
+    {
+      "number": 8,
+      "page": "08_metrics.html",
+      "speaker": "Александр Поломодов",
+      "start_seconds": 17400,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=17400s"
+    },
+    {
+      "number": 9,
+      "page": "09_human.html",
+      "speaker": "Максим Ключников",
+      "start_seconds": 20060,
+      "day": 1,
+      "watch_url": "https://www.youtube.com/watch?v=PkTZHEngE3Q&t=20060s"
+    },
+    {
+      "number": 10,
+      "page": "d2_10_learning.html",
+      "speaker": "Тимур Хахалев",
+      "start_seconds": 148,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=148s"
+    },
+    {
+      "number": 11,
+      "page": "d2_11_evidence.html",
+      "speaker": "Рефат Аметов",
+      "start_seconds": 2669,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=2669s"
+    },
+    {
+      "number": 12,
+      "page": "d2_12_security.html",
+      "speaker": "Глеб Кудрявцев",
+      "start_seconds": 5454,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=5454s"
+    },
+    {
+      "number": 13,
+      "page": "d2_13_legacy.html",
+      "speaker": "Кирилл Мокевнин",
+      "start_seconds": 8066,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=8066s"
+    },
+    {
+      "number": 14,
+      "page": "d2_14_interfaces.html",
+      "speaker": "Александр Поляков",
+      "start_seconds": 10861,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=10861s"
+    },
+    {
+      "number": 15,
+      "page": "d2_15_review.html",
+      "speaker": "Алекс Волочнев",
+      "start_seconds": 13570,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=13570s"
+    },
+    {
+      "number": 16,
+      "page": "d2_16_product.html",
+      "speaker": "Максим Романовский",
+      "start_seconds": 17180,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=17180s"
+    },
+    {
+      "number": 17,
+      "page": "d2_17_knowledge.html",
+      "speaker": "Илья Измайлов",
+      "start_seconds": 19528,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=19528s"
+    },
+    {
+      "number": 18,
+      "page": "d2_18_risks.html",
+      "speaker": "Павел Комаровский",
+      "start_seconds": 21557,
+      "day": 2,
+      "watch_url": "https://www.youtube.com/watch?v=RzAdlyut6Uc&t=21557s"
+    }
+  ]
+}
